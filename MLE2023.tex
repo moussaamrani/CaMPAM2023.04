@@ -9,24 +9,34 @@
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-
+\usepackage{xspace}
+\RequirePackage{technicalterms}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 \begin{document}
 
-\title{Co-Evolving Metamodels and View Types\\ in View-Based Development\\
+\title{Co-Evolving \MetaModels and \ViewTypes\\ in View-Based Development\\
 \thanks{This publication is part of the project DIGITAL TWIN (with project number P18-03) of the research programme TTW Perspective which is (partly) financed by the Dutch Research Council (NWO). This work was supported by funding from the topic Engineering Secure Systems of the Helmholtz Association (HGF) and by KASTEL Security Research Labs.}
 }
 
 
 \author{
 \IEEEauthorblockN{Lars König}
-\IEEEauthorblockA{\textit{KASTEL - Institute of Information Security and Dependability}\\
+\IEEEauthorblockA{\textit{KASTEL - Institute of Information }\\
+\textit{Security and Dependability}\\
 \textit{Karlsruhe Institute of Technology (KIT)}\\
 \textit{Karlsruhe, Germany} \\
 \texttt{lars.koenig@kit.edu}\\https://orcid.org/0000-0002-1751-1291}
+\and
+\IEEEauthorblockN{Thomas Weber}
+\IEEEauthorblockA{\textit{KASTEL - Institute of Information }\\
+\textit{Security and Dependability}\\
+\textit{Karlsruhe Institute of Technology (KIT)}\\
+Karlsruhe, Germany \\
+\texttt{thomas.weber@kit.edu}\\
+https://orcid.org/0009-0001-5775-2225}
 \and
 \IEEEauthorblockN{Moussa Amrani}
 \IEEEauthorblockA{\textit{Faculty of Computer Science}\\
@@ -35,28 +45,25 @@
 Namur, Belgium \\
 \texttt{Moussa.Amrani@unamur.be}\\https://orcid.org/0000-0002-6987-1037}
 \and
-\IEEEauthorblockN{Loek Cleophas}
-\IEEEauthorblockA{\textit{Department of Mathematics and Computer Science} \\
-\textit{Eindhoven University of Technology}\\
-Eindhoven, The Netherlands \\
-\texttt{l.g.w.a.cleophas@tue.nl}\\https://orcid.org/0000-0002-7221-3676}
-\and
 \IEEEauthorblockN{Hossain Muhammad Muctadir}
 \IEEEauthorblockA{\textit{Department of Mathematics and Computer Science} \\
-\textit{Eindhoven University of Technology}\\
+\textit{Eindhoven University of Technology (TU/e)}\\
 Eindhoven, The Netherlands \\
 \texttt{h.m.muctadir@tue.nl}\\https://orcid.org/0000-0002-2090-4766}
 \and
-\IEEEauthorblockN{Thomas Weber}
-\IEEEauthorblockA{\textit{KASTEL - Institute of Information Security and Dependability} \\
-\textit{Karlsruhe Institute of Technology (KIT)}\\
-Karlsruhe, Germany \\
-\texttt{thomas.weber@kit.edu}}
+\IEEEauthorblockN{Loek Cleophas}
+\IEEEauthorblockA{\textit{Department of Mathematics and Computer Science} \\
+\textit{Eindhoven University of Technology (TU/e)}\\
+Eindhoven, The Netherlands \\
+\texttt{l.g.w.a.cleophas@tue.nl}\\https://orcid.org/0000-0002-7221-3676}
 }
 \maketitle
 
 \input{chapters/Abstract}
 \input{chapters/Introduction}
+\input{chapters/Background}
+\input{chapters/Approach}
+\input{chapters/Evaluation}
 \input{chapters/RW}
 \input{chapters/Conclusion}
 
