@@ -1,7 +1,7 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -11,6 +11,23 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \usepackage{xspace}
 \RequirePackage{technicalterms}
+
+\usepackage[
+	hyperref=true,
+	backref=true,
+	bibencoding=utf8,
+	backend=biber,
+	style=ieee,
+	bibstyle=authoryear,
+	citestyle=authoryear-comp,
+	useprefix=true,
+	uniquename=init,
+	maxnames=100,
+	minnames=3,
+	maxcitenames=3,
+	mincitenames=1
+]{biblatex}
+\bibliography{MLE2023}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -67,7 +84,7 @@ Eindhoven, The Netherlands \\
 \input{chapters/RW}
 \input{chapters/Conclusion}
 
-\bibliographystyle{IEEEtran}
-\bibliography{./MLE2023}
+%\bibliographystyle{IEEEtran}
+\printbibliography
 
 \end{document}
