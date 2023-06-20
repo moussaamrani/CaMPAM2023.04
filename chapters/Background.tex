@@ -1,10 +1,90 @@
 \section{Background}
 \label{sec:Background}
 
+Today's software systems, and systems in general, have reached a complexity which makes it nearly impossible to comprehend the entire system at once.
+This is especially the case when, e.g., in the development of cyber-physical systems, developers from multiple domains are working together on the same system.
+Modern model-driven development tools therefore need to provide abstractions of the modeled system.
+In order to reduce the accidental complexity for a specific task, tools should present only the necessary part of the system in the most appropriate way.
+An established solution for this are \emph{views}, which show a part of the system from a certain \emph{viewpoint} \autocite{atkinson_orthographic_2010}.
+In a model-driven context, views are usually also models and therefore adhere to a \metamodel.
+The \metamodel of a view is called a \viewtype \autocite{goldschmidt_towards_2012} and describes which information is shown in a view and how it is presented.
+
+There is a distinction between \emph{synthetic} and \emph{projective} approaches to view-based modeling \autocite{atkinson_fundamental_2015}.
+In synthetic approaches, the system is represented by the union of all views.
+For that purpose, changes must be propagate between the views to ensure the system description is consistent.
+This is different in projective approaches where, in addition to the views, an underlying model of the system exists, which is the source of all information.
+Views in projective approaches are transient, i.e., not persistent, and generated dynamically from the underlying model whenever they are required \autocite{atkinson_orthographic_2010}.
+With projective views, the user is only allowed to interact with the system through the views, while the underlying model is usually hidden.
+In particular, when a user wants to make changes to the system, the changes need to be applied to (editable) views first and are then propagated to the underlying model.
+The relationship between views, \viewtypes, models and \metamodels in projective approaches is shown in \autoref{fig:view_concept}.
+
+\begin{figure}
+    % TODO recreate figure (with \metamodel and \viewtype)
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/ViewTypeTerminology.png}
+    \end{center}
+
+    \caption{Visualization of the view terminology for projective approaches as defined by \textcite{burger_flexible_2014} and \textcite{klare_enabling_2021}.}
+    \label{fig:view_concept}
+\end{figure}
+
+For projective view-based environments there are different ways of constructing the (single) underlying model (SUM).
+\Textcite{atkinson_fundamental_2015} differentiate between \emph{essential} and \emph{pragmatic} SUMs.
+With an essential SUM there is a single model, which contains the complete system description and is free of any internal redundancies.
+For the synchronization between the views, this is the easiest solution, because the views are simply required to write the changes back to the SUM.
+Subsequently generated views are then automatically consistent.
+An example of an approach employing an essential SUM is OSM by \textcite{atkinson_orthographic_2010}.
+In contrast to a single redundancy-free model, there are also pragmatic approaches where the underlying model consists of multiple submodels.
+The main benefit of pragmatic approaches is the construction of the underlying model.
+While it is difficult to create a single redundancy-free \metamodel, especially for a domain-spanning system, pragmatic SUMs allow the integration of already available \metamodels, e.g., from development tools used in the various domains.
+Additional effort is, however, necessary to keep the models consistent.
+One framework for constructing pragmatic SUMs, here called virtual SUMs (V-SUMs), is Vitruvius \autocite{klare_enabling_2021}.
+
+\Textcite{atkinson_orthographic_2010} identified two roles when employing a view-based development process.
+First, the \emph{methodologist} is responsible for creating the view-based environment.
+For this, the methodologist creates or assembles the SUM, which includes specifying the consistency relations between the models, if necessary.
+In addition, they define the view types on the system, including rules how changes are propagated back to the underlying model.
+The second role, the \emph{developer}, uses the environment created by the methodologist to develop the actual system.
+The developer creates views on the system to inspect its properties and performs changes on them, which are then applied to the underlying model.
+
+Since the content of projective views is derived from the underlying model, the methodologist must define a \emph{view generation transformation (VGT)} for each view type, which dynamically creates a view from the model instances when required \autocite{tunjic_synchronization_2015}.
+For pragmatic SUMs, the VGTs must be able to combine models from multiple \metamodels, since the content of a view can be scattered over different internal \metamodels \autocite{burger_flexible_2014}.
+For users to make changes to the system, views in general must be editable, which requires at least partially bidirectional VGTs.
+Of course, there might be cases in which the backpropagation of changes is not possible, e.g., when showing a sum of multiple values, which causes the affected elements to be read-only in the view.
+In some cases, the methodologist might restrict the editing capabilities further, e.g., when the view is intended for a specific task where only some of the elements should be edited in the process.
+For the definition of the VGTs, common model transformation languages, such as \cite{omg_qvt} or \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
+A different approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
+ModelJoin also supports the derivation of a view type based on a query.
+
+In our work, we assume that a model query language similar to ModelJoin is used to define the VGTs, since we require semantic information on how a model element is used in a view type.
+Our approach will derive this information from the query language operators in which model elements are used in a VGT.
+The operators, which we assume to be used in model query languages for view generation, are shown in \autoref{fig:model-query-operators}.
+
+\begin{figure}[h]
+    \begin{itemize}
+        \item \texttt{Select}
+        \item \texttt{Filter}
+        \item \texttt{Join}
+        \item \texttt{Aggregate}
+        \item \texttt{Calculate}
+    \end{itemize}
+
+    \caption{Proposed set of operators for a model query language for view generation based on \textcite{burger_model-join_2016}.}
+    \label{fig:model-query-operators}
+\end{figure}
+
+The expected behavior of the model query operators in \autoref{fig:model-query-operators} is as follows.
+The \texttt{select} operator selects \metamodel elements to be included in the view type, while the \texttt{filter} operator is used to define criteria by which model elements on the instance level are included in the view.
+For the multi-\metamodel case, the \texttt{join} operator connects model instances from different \metamodels.
+Both, the \texttt{aggregate} and the \texttt{calculate} operator create new model elements.
+While the former combines the values of a single property in multiple instances of a \metaclass, the latter is used to calculate a new property based on multiple existing ones.
+Following \textcite{burger_model-join_2016}, we assume this is a reasonable set of operators for the definition of generic views.
+
+
+\vspace{2.5ex}
+\noindent To do:
 \begin{itemize}
-    \item view-based development
-    \item \viewtypes
-    \item model query language? maybe at least operators
+    \item model deltas, atomic changes
     \item catalogue paper
     \item detecting complex changes paper
 \end{itemize}

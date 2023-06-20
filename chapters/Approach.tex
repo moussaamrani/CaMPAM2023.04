@@ -1,2 +1,70 @@
-\section{Approach}
-\label{sec:Approach}
+\section{Approach} \label{sec:Approach}
+For the \metamodel-\viewtype co-evolution we identified 34 operators from the change catalogue proposed by \cite{herrmannsdoerfer_extensive_2011}, which contains 27 \textit{primitive} and 34 \textit{complex} operators. Our work addresses all of the primitive and 7 complex operators. We choose the complex operators based on the work of \cite{khelladi_detecting_2015} who claims that these changes constitute 72\% of all complex changes during the evolution of GMF. \Cref{tab:suggestions} summarises the operators, their types, corresponding suggestions, and severity of applying these operators in the context of view-based development. We divided the chosen operators into three severity categories: major, minor, and ignore. When applied to a \metamodel, the operators in the latter category has no effect on the corresponding \viewtypes. The operators that can break the relationship between the evolving \metamodel and the corresponding \viewtypes are categorised as major. We classify the rest of the operators as minor since they are not breaking and has the potential of enriching the \viewtypes with additional information.
+
+Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, and enumeration, we only notify the modeller about the addition of these entities. According to the \metamodeling formalism proposed by \cite{herrmannsdoerfer_extensive_2011}, attributes, literals, and references has composition relation with classes and enumerations. Therefore, in the event of the creation of these entities, we first identify the \viewtypes that reference the corresponding container (i.e., enumeration, class) and suggest the addition of the new entities for these \viewtypes.
+
+The deletion of a package is possible iff it is empty and therefore, this operation can be safely ignored. 
+
+\begin{table*}[ht!]
+\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C.} \label{tab:suggestions}
+\centering
+\begin{tabular}{|l|l|p{.33\linewidth}|p{.31\linewidth}|l|}
+\hline
+Operator & Type & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
+
+Create Package &  
+\multirow{4}{*}{P} & 
+\multirow{4}{*}{None} &      
+\multirow{4}{*}{Notify the addition of the new entities} &
+\multirow{4}{*}{Minor} \\ \cline{1-1}
+Create Class &  &    &      &             \\ \cline{1-1}
+Create Data Type &  &    &      &             \\ \cline{1-1}
+Create Enum &    &  &      &             \\ \hline
+
+Create Reference & \multirow{4}{*}{P} &    
+\multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
+\multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
+\multirow{4}{*}{Minor} \\ \cline{1-1}
+Create Opposite Ref. &   &   &      &             \\ \cline{1-1}
+Create Attribute &  &    &      &             \\ \cline{1-1}
+Create Literal &    &  &      &             \\ \hline
+
+Delete Package  & P &
+None & None. & Minor \\ \hline
+
+Delete Class & \multirow{4}{*}{P} & 
+\multirow{4}{*}{\parbox{\linewidth}{Entity or corresponding feature referenced by \viewtype}} &
+\multirow{4}{*}{Suggest the deletion of the corresponding entity} & \multirow{4}{*}{Major}           \\ \cline{1-1}
+Delete Feature  &     & &      &             \\ \cline{1-1}
+Delete Data Type  &    &  &      &             \\ \cline{1-1}
+Delete Enum  &   &   &      &             \\ \hline
+
+
+Drop Class Abstract  & P &   None   & None & Ignore            \\ \hline
+Delete Opposite Ref.  & P &  \Viewtype refers the referencing class & Suggest referenced class not accessible & Major            \\ \hline
+Merge Literal  & P&  Merged literal referenced by \viewtype    & Suggest the replacing literal  & Major            \\ \hline
+Rename  & P& Old name referred in the \viewtype  &  Suggest rename  & Major \\ \hline
+Change Package  & P& Corresponding entity referred in \viewtype & Suggest changing of the package & Major \\ \hline
+Make Class Abstract  & P& None     & None     & Ignore          \\ \hline
+Add Super Type  & P& Child types are referred in \viewtype & Suggest addition of inherited features for all child types & Minor  
+% (does ST has property?) yes.       
+\\ \hline
+Remove Super Type  & P& Features inherited from removed super type are referred in \viewtype & Suggest removal of features that were previously inherited & Major 
+% (super type is empty?) no.     
+\\ \hline
+Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{Ignore}            \\ \cline{1-1}
+Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
+Make Ref. Composite  & &      &      &             \\ \cline{1-1}
+Switch Ref. Composite  & &      &      &             \\ \hline
+Make Ref. Opposite  & P&      &   Discuss   &             \\ \hline
+Drop Ref. Opposite  & P&      &    Discuss  &             \\ \hline
+Move Property  & C &  Corresponding property referred in \viewtype  & Suggest the source and destination of the moved property & Major \\ \hline
+Push Property   & C & Super class referred in \viewtype  & Suggest removal of features from super class & Major \\ \hline
+Pull Property   & C & None & None & Ignore \\ \hline
+Extract Super Class  & C & Child classes referred in \viewtype  & Suggest possible replacement of child classes with newly created super class & Minor  \\ \hline
+Flatten Hierarchy   & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  Major           \\ \hline
+Extract Class   & C & Extracted features from the delegate class are referred in \viewtype & Suggest the moving of features to the delegate class from the original class & Major \\ \hline
+Inline Class   & C & Delegate class is referenced in \viewtype & Suggest moving of features from delegate class to class that referenced the delegate class & Major            \\ \hline
+
+\end{tabular}
+\end{table*}
