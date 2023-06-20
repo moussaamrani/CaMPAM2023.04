@@ -40,12 +40,14 @@ While it is difficult to create a single redundancy-free \metamodel, especially 
 Additional effort is, however, necessary to keep the models consistent.
 One framework for constructing pragmatic SUMs, here called virtual SUMs (V-SUMs), is Vitruvius \autocite{klare_enabling_2021}.
 
+% BEGIN OPTIONAL (if we need space)
 \Textcite{atkinson_orthographic_2010} identified two roles when employing a view-based development process.
 First, the \emph{methodologist} is responsible for creating the view-based environment.
 For this, the methodologist creates or assembles the SUM, which includes specifying the consistency relations between the models, if necessary.
 In addition, they define the view types on the system, including rules how changes are propagated back to the underlying model.
 The second role, the \emph{developer}, uses the environment created by the methodologist to develop the actual system.
 The developer creates views on the system to inspect its properties and performs changes on them, which are then applied to the underlying model.
+% END OPTIONAL
 
 Since the content of projective views is derived from the underlying model, the methodologist must define a \emph{view generation transformation (VGT)} for each view type, which dynamically creates a view from the model instances when required \autocite{tunjic_synchronization_2015}.
 For pragmatic SUMs, the VGTs must be able to combine models from multiple \metamodels, since the content of a view can be scattered over different internal \metamodels \autocite{burger_flexible_2014}.
@@ -56,6 +58,7 @@ For the definition of the VGTs, common model transformation languages, such as \
 A different approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
 
+% TODO may need further justification
 In our work, we assume that a model query language similar to ModelJoin is used to define the VGTs, since we require semantic information on how a model element is used in a view type.
 Our approach will derive this information from the query language operators in which model elements are used in a VGT.
 The operators, which we assume to be used in model query languages for view generation, are shown in \autoref{fig:model-query-operators}.
