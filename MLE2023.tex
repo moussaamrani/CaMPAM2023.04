@@ -12,6 +12,10 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \usepackage{xspace}
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    citecolor = {blue}
+}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,6 +41,30 @@
 \bibliography{MLE2023}
 
 \RequirePackage{technicalterms}
+
+%%%%% COMMENT SYSTEM %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ifthen}
+\usepackage{xcolor, color}
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}} 
+{\newcommand{\nb}[2]{
+\fcolorbox{gray}{yellow}{\bfseries\sffamily #1}
+{$\blacktriangleright$#2$\blacktriangleleft$}
+}
+\newcommand{\version}{\emph{\scriptsize$-$working$-$}}
+}
+{\newcommand{\nb}[2]{} 
+\newcommand{\version}{}
+}
+\newcommand\LK[1]{\nb{Lars}{\textcolor{teal}{#1}}}
+\newcommand\MA[1]{\nb{Moussa}{\textcolor{blue}{#1}}} 
+\newcommand\TW[1]{\nb{Thomas}{\textcolor{red}{#1}}}
+\newcommand\HM[1]{\nb{Hossain}{\textcolor{green}{#1}}}
+\newcommand\LC[1]{\nb{Loek}{\textcolor{purple}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
