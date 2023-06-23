@@ -1,9 +1,9 @@
 \section{Formalization}
 \label{sec:Formalization}
-In this chapter we define the terms definition and applicable suggestion. We introduce possible ways to refine a suggestion and to add domain specific knowledge.
+In this chapter we define the terms suggestion and applicable suggestion. We introduce possible ways to refine a suggestion and to add domain specific knowledge.
 
 \begin{definition}[Suggestion]
-We define a suggestion $SUG$ as a 4-Tuple of a change on the \metamodel $MMC$, a view generation transformation $VGT$, constraints $CON$ and a suggestion content $SUC$. Short: $SUG = (MMC, VGT, CON, SUC)$
+We define a suggestion $SUG$ as a 4-Tuple of a type of a change on the \metamodel $MMC$, a view generation transformation $VGT$, constraints $CON$ and a suggestion content $SUC$. Short: $SUG = (MMC, VGT, CON, SUC)$
 \end{definition}
 Possible $MMC$ are defined in \cref{tab:suggestions}. A suggestion always contains one change. Change sequences that have domain semantics should define a new complex change, because the contained domain knowledge is interesting for other analyses besides suggestions. The view generation operators $VGO$ are defined in \cref{fig:model-query-operators}. They can be combined to a $VGT$. $VGTs$ may form a hierarchy that can be used for the refinement of suggestions. The constraints are defined on either the \metamodel, its instance, the view generation operators or the target \metamodel. Constraints may also form a hierarchy for the refinement of suggestions. The $SUC$ is either a textual description of the suggestion or a change on the viewtype or a combination of both. Both is preferable as it enables the methodologist to precisely define the change on the \viewtype \metamodel as well as giving some rationale.
 

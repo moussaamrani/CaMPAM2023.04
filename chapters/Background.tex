@@ -1,13 +1,12 @@
 \section{Background}
 \label{sec:Background}
 
-Today's software systems, and systems in general, have reached a complexity which makes it nearly impossible to comprehend the entire system at once.
-This is especially the case when, e.g., in the development of cyber-physical systems, developers from multiple domains are working together on the same system.
-Modern model-driven development tools therefore need to provide abstractions of the modeled system.
-In order to reduce the accidental complexity for a specific task, tools should present only the necessary part of the system in the most appropriate way.
-An established solution for this are \emph{views}, which show a part of the system from a certain \emph{viewpoint} \autocite{atkinson_orthographic_2010}.
-In a model-driven context, views are usually also models and therefore adhere to a \metamodel.
-The \metamodel of a view is called a \viewtype \autocite{goldschmidt_towards_2012} and describes which information is shown in a view and how it is presented.
+In this section, we will explain the necessary concepts on which our approach builds. First, in \cref{sec:ViewBasedDevelopment}, we will explain different solution strategies to view-based development, as well as a short introduction to the development process in view-based environments. \Cref{sec:ViewGeneration} will then explain how views are generated and the impact of different view generation languages on our approach to \metamodel \viewtype co-evolution. Finally, in \cref{sec:MetaModelEvolution}, we will provide an explanation on how we break down \metamodel evolution in semantically meaningful steps and how these steps can be detected a posteriori.
+
+% \MA{Does it make sense to split the Section into two: (i) Views; (ii) View Generation (or something similar)}
+
+\subsection{View-Based Development}
+\label{sec:ViewBasedDevelopment}
 
 There is a distinction between \emph{synthetic} and \emph{projective} approaches to view-based modeling \autocite{atkinson_fundamental_2015}.
 In synthetic approaches, the system is represented by the union of all views.
@@ -16,7 +15,8 @@ This is different in projective approaches where, in addition to the views, an u
 Views in projective approaches are transient, i.e., not persistent, and generated dynamically from the underlying model whenever they are required \autocite{atkinson_orthographic_2010}.
 With projective views, the user is only allowed to interact with the system through the views, while the underlying model is usually hidden.
 In particular, when a user wants to make changes to the system, the changes need to be applied to (editable) views first and are then propagated to the underlying model.
-The relationship between views, \viewtypes, models and \metamodels in projective approaches is shown in \autoref{fig:view_concept}.
+The relationship between views, \viewtypes, models and \metamodels in projective approaches is shown in \cref{fig:view_concept}.
+The \cite{ISO42010} standard also contains a definition of the \emph{view} concept, as well as of synthetic and projective approaches, but in a broader sense for software architecture and software architecture description languages.
 
 \begin{figure}
     % TODO recreate figure (with \metamodel and \viewtype)
@@ -40,28 +40,31 @@ While it is difficult to create a single redundancy-free \metamodel, especially 
 Additional effort is, however, necessary to keep the models consistent.
 One framework for constructing pragmatic SUMs, here called virtual SUMs (V-SUMs), is Vitruvius \autocite{klare_enabling_2021}.
 
-% BEGIN OPTIONAL (if we need space)
 \Textcite{atkinson_orthographic_2010} identified two roles when employing a view-based development process.
 First, the \emph{methodologist} is responsible for creating the view-based environment.
 For this, the methodologist creates or assembles the SUM, which includes specifying the consistency relations between the models, if necessary.
 In addition, they define the view types on the system, including rules how changes are propagated back to the underlying model.
 The second role, the \emph{developer}, uses the environment created by the methodologist to develop the actual system.
 The developer creates views on the system to inspect its properties and performs changes on them, which are then applied to the underlying model.
-% END OPTIONAL
+
+\subsection{View Generation}
+\label{sec:ViewGeneration}
 
 Since the content of projective views is derived from the underlying model, the methodologist must define a \emph{view generation transformation (VGT)} for each view type, which dynamically creates a view from the model instances when required \autocite{tunjic_synchronization_2015}.
 For pragmatic SUMs, the VGTs must be able to combine models from multiple \metamodels, since the content of a view can be scattered over different internal \metamodels \autocite{burger_flexible_2014}.
 For users to make changes to the system, views in general must be editable, which requires at least partially bidirectional VGTs.
+This may either be achieved by having a transformation language that can derive the reverse direction from the specification of the view generation transformation or by manually writing the transformations for both directions, i.e., the view generation transformation and the transformation of the changes on the view to changes on the models, on which the view is based.
+% \MA{The term "bidirectional" assumes that you only define one direction, and the Trafo Framework automatically infers the other direction. This is usually too much trouble: having a spec of both sense can do the trick.}
 Of course, there might be cases in which the backpropagation of changes is not possible, e.g., when showing a sum of multiple values, which causes the affected elements to be read-only in the view.
 In some cases, the methodologist might restrict the editing capabilities further, e.g., when the view is intended for a specific task where only some of the elements should be edited in the process.
 For the definition of the VGTs, common model transformation languages, such as \cite{omg_qvt} or \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
 A different approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
 
-% TODO may need further justification
+% TODO may need further justification, also we might not need to focus on a specific model query language if we only differentiate between "included in VT" and "included in VGT"
 In our work, we assume that a model query language similar to ModelJoin is used to define the VGTs, since we require semantic information on how a model element is used in a view type.
 Our approach will derive this information from the query language operators in which model elements are used in a VGT.
-The operators, which we assume to be used in model query languages for view generation, are shown in \autoref{fig:model-query-operators}.
+The operators, which we assume to be used in model query languages for view generation, are shown in \cref{fig:model-query-operators}.
 
 \begin{figure}[h]
     \begin{itemize}
@@ -76,16 +79,19 @@ The operators, which we assume to be used in model query languages for view gene
     \label{fig:model-query-operators}
 \end{figure}
 
-The expected behavior of the model query operators in \autoref{fig:model-query-operators} is as follows.
-The \texttt{select} operator selects \metamodel elements to be included in the view type, while the \texttt{filter} operator is used to define criteria by which model elements on the instance level are included in the view.
+The expected behavior of the model query operators in \cref{fig:model-query-operators} is as follows.
+The \texttt{select} operator selects \metamodel elements, which will appear in the view type, while the \texttt{filter} operator is used to define criteria by which model instances are included in a view when generating it.
+\MA{So, if I understand correctly, a "select" is a "filter" with no filtering criterium?}
+\LK{Not directly. Comparing it to databases, the "select" operator would create the column headers, i.e. specify what kind of data will be presented, while the "filter" operator would define (e.g., by defining a predicate function) which rows from the database will be included in the result. Is this understandable from what I wrote or do you have an idea how I could improve the explanation?}
 For the multi-\metamodel case, the \texttt{join} operator connects model instances from different \metamodels.
 Both, the \texttt{aggregate} and the \texttt{calculate} operator create new model elements.
 While the former combines the values of a single property in multiple instances of a \metaclass, the latter is used to calculate a new property based on multiple existing ones.
 Following \textcite{burger_model-join_2016}, we assume this is a reasonable set of operators for the definition of generic views.
+\MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
 
+\subsection{\Metamodel Evolution}
+\label{sec:MetaModelEvolution}
 
-\vspace{2.5ex}
-\noindent To do:
 \begin{itemize}
     \item model deltas, atomic changes
     \item catalogue paper

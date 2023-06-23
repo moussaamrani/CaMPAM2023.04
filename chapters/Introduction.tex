@@ -1,17 +1,33 @@
 \section{Introduction}
 \label{sec:Introduction}
 
+Today's software systems, and systems in general, have reached a complexity which makes it nearly impossible to comprehend the entire system at once.
+This is especially the case when, e.g., in the development of cyber-physical systems, developers from multiple domains are working together on the same system.
+Modern model-driven development tools therefore need to provide abstractions of the modeled system.
+In order to reduce the accidental complexity for a specific task, tools should present only the necessary part of the system in the most appropriate way.
+An established solution for this are \emph{views}, which show a part of the system from a certain \emph{viewpoint} \autocite{atkinson_orthographic_2010}.
+In a model-driven context, views are usually also models and therefore adhere to a \metamodel.
+The \metamodel of a view is called a \viewtype \autocite{goldschmidt_towards_2012} and describes which information is shown in a view and how it is presented.
+
+While for established, general purpose (modeling) languages (e.g., Java, UML, SysML, Simulink), evolution is typically infrequent, for domain specific languages developed in-house in industrial settings this may not be the case: there, evolution will typically be more frequent as languages are developed and adapted over time, with increasing insight or to reflect increasing use and capabilities in such in-house DSLs. Since languages evolve, so do their \metamodels. This is well-known from the literature and industrial practice [TODO MM evolution study in references]. Yet as a result of this, viewpoints depending on such languages and \metamodels need to evolve along with evolution of the underlying \metamodels. Regardless of the frequency of \metamodel evolution, any view-based framework should support such evolution and hence \metamodel-\viewtype co-evolution, in order for the various views to stay consistent with the models. 
+
+In this paper, we focus on such \metamodel-\viewtype co-evolution---in that direction. That is, we do not consider evolution scenarios where first the \viewtype is changed and then the underlying \metamodel should be co-evolved. Note that the latter (a) is a less realistic way of working and (b) is not a limitation, since conceptually one can still start from the \viewtype.
+
+We also do not explicitly consider scenarios where a \viewtype to be evolved depends on multiple \metamodels. (Since multiple \metamodels can be integrated into one, this is not a severe limitation.)
+
 \begin{itemize}
-    \item short motivation for setting (view-based development)
-    \item motivation for why we want to do this (\metamodel evolution, industry study paper)
-    \item motivating example (in-house developed DNS, domain-specific \metamodel extension, BPMN4CPS)
+    \item \st{short motivation for setting (view-based development)}
+    \item \st{motivation for why we want to do this (metamodel evolution, industry study paper)}
+    \item motivating example (in-house developed DSLs, domain-specific \metamodel extension, BPMN4CPS)
     \item overview of approach and contributions
 \end{itemize}
 
 \textbf{Limitations:}
 \begin{itemize}
-    \item we do not support \metamodel \metamodel co-evolution
+    \item we do not support \metamodel \metamodel co-evolution [we’re looking at view-based only, not necessarily V-SUM, so MM-MM co-evolution not a concern]
     \item we do not support \metamodel model co-evolution
-    \item we only support co-evolution from the \metamodel to the \viewtype (which is actually not a limitation, since conceptually one can still start at the \viewtype)
-    \item we only support one \metamodel as the source of a \viewtype (multiple \metamodels can be integrated into one, so no severe limitation)
+    \item \st{we only support co-evolution from the metamodel to the viewtype (which is actually not a limitation, since conceptually one can still start at the viewtype)}
+    \item \st{we only support one metamodel as the source of a viewtype}
 \end{itemize}
+
+\MA{Find a running example to illustrate (i) some of the operators; (ii) the formal definitions in \S \ref{sec:Formalization}; }
