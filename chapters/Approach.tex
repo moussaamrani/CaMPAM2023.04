@@ -2,11 +2,13 @@
 \label{sec:Approach}
 
 For the \metamodel-\viewtype co-evolution we identified 34 operators from the change catalogue proposed by \cite{herrmannsdoerfer_extensive_2011}, which contains 27 \textit{primitive} and 34 \textit{complex} operators. Our work addresses all primitive and 7 complex operators. We choose the complex operators based on the work of \cite{khelladi_detecting_2015} who claims that these changes constitute 72\% of all complex changes during the evolution of GMF. \Cref{tab:suggestions} summarises the operators, their types, corresponding suggestions, and severity of applying these operators. We divided the chosen operators into three severity categories: major (M), minor (N), and ignore (I).
-% \MA{Consider introducing abbreviations to reduce the Table's size: \textsf{M}, \textsf{J}, \textsf{I} resp. or something else?}
+\MA{IMO, it's not the severity that "divides" the operators. 
+The severity "characterises", or "classifies". However, I suggest to 
+use some kind of classification of operators to avoid the long list.
+cf. Herrmannsdoerfer et al. among others.}
 When applied to a \metamodel, the operators in the latter category have no effect on the corresponding \viewtypes. The operators that can break the relationship between the evolving \metamodel and the corresponding \viewtypes are categorised as major. We classify the rest of the operators as minor since they are not breaking and can enrich the \viewtypes with additional information.
 
 Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, and enumeration, we only notify the modeller about the addition of these entities. 
-\MA{IMO, "Package" is merely a "grouping" concept in MOF-like MMM: they rarely translate into a \emph{visual} representation. But for \emph{textual} ones (like a Textual CS), it may be interesting. This may actually be a good candidate to refine the suggestions we issue for operators.}
 According to the \metamodeling formalism proposed by \cite{herrmannsdoerfer_extensive_2011}, attributes and references, and literals, have composition relation with resp. classes and enumerations. Therefore, in the event of the creation of these entities, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
 
 The deletion of a package is possible iff it is empty and therefore, this operation can be safely ignored. Deleting class, feature, data type, and enumeration can have major consequence if these entities are referred from one or more related \viewtypes as the partial representation relation with the corresponding \metamodel no longer holds. Therefore, the suggestion is to remove these entities also from the \viewtypes.
@@ -26,7 +28,7 @@ The \textit{Move Property} operator triggers the suggestion to update the corres
 Extracting super class does not influence the effective set of features and therefore, triggers a minor suggestion for replacing some occurrences of the child class reference with the parent. The \textit{Flatten Hierarchy} moves all the features from the parent to the child classes and deletes the parent class. Therefore, this triggers a major suggestion for replacing all the references of the removed super class with the appropriate child class reference. Since the effective features of the child classes remain the same before and after fattening, we offer no suggestion for the child classes. The \textit{Extract Class} operator groups a set of features into a new delegate class and replaces their occurrences with a reference to the delegate class. The \textit{Inline Class} operator is the exact opposite of \textit{Extract Class}. Both triggers a major suggestion of adapting the location of any related feature referenced in the \viewtype.
 
 \begin{table*}[ht!]
-\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C. \MA{Give a legend for the abbreviations in "Type" and "Severity" columns}} \label{tab:suggestions}
+\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C. \MA{Give a legend for the abbreviations in "Type" and "Severity" columns. Similarly, the "TYPE" values are never explained in the text (and should be part of the legend as well).}} \label{tab:suggestions}
 \centering
 \begin{tabular}{|l|c|p{.33\linewidth}|p{.31\linewidth}|c|}
 \hline
