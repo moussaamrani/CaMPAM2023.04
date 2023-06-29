@@ -57,11 +57,16 @@ This may either be achieved by having a transformation language that can derive 
 % \MA{The term "bidirectional" assumes that you only define one direction, and the Trafo Framework automatically infers the other direction. This is usually too much trouble: having a spec of both sense can do the trick.}
 Of course, there might be cases in which the backpropagation of changes is not possible, e.g., when showing a sum of multiple values, which causes the affected elements to be read-only in the view.
 In some cases, the methodologist might restrict the editing capabilities further, e.g., when the view is intended for a specific task where only some of the elements should be edited in the process.
+
 For the definition of the VGTs, common model transformation languages, such as \cite{omg_qvt} or \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
-A different approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
+% \MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
+The query part of the constraint language OCL can also be used for the generation of simple views.
+However, because it does not support deriving new model elements from existing ones and is limited to a single source \metamodel, it is not sufficient for our envisioned scenario.
+Another approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
 
-% TODO may need further justification, also we might not need to focus on a specific model query language if we only differentiate between "included in VT" and "included in VGT"
+\LK{As discussed, we might not need to focus on a specific language if we differentiate only between ``used in the VT'' and ``used in the VGT''.}
+% TODO may need further justification if we keep this
 In our work, we assume that a model query language similar to ModelJoin is used to define the VGTs, since we require semantic information on how a model element is used in a view type.
 Our approach will derive this information from the query language operators in which model elements are used in a VGT.
 The operators, which we assume to be used in model query languages for view generation, are shown in \cref{fig:model-query-operators}.
@@ -87,13 +92,30 @@ For the multi-\metamodel case, the \texttt{join} operator connects model instanc
 Both, the \texttt{aggregate} and the \texttt{calculate} operator create new model elements.
 While the former combines the values of a single property in multiple instances of a \metaclass, the latter is used to calculate a new property based on multiple existing ones.
 Following \textcite{burger_model-join_2016}, we assume this is a reasonable set of operators for the definition of generic views.
-\MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
 
 \subsection{\Metamodel Evolution}
 \label{sec:MetaModelEvolution}
 
-\begin{itemize}
-    \item model deltas, atomic changes
-    \item catalogue paper
-    \item detecting complex changes paper
-\end{itemize}
+In order to reason about \metamodel evolution, a description of the difference between consecutive states of the \metamodel is required.
+For analyzing the difference between two states of an evolved \metamodel, a common representation of the difference is a list of smaller changes or evolution steps.
+For us to provide meaningful suggestions or even automate certain co-evolution steps, the description of the evolution steps should contain semantic information about the kind of change that is represented through it.
+On the other hand, defining a set of meaningful evolution steps, which at the same time is complete in the sense that every difference between two \metamodels can be constructed from it, is neither realistic nor necessarily useful.
+As a solution for this, we distinguish between \emph{atomic} \metamodel changes, which are a complete description of the evolution process, and \emph{complex} changes, which provide more semantic information.
+
+As a complete set of atomic change types, \textcite{khelladi_detecting_2015} list the operations \emph{add}, \emph{delete} and \emph{update}.
+These atomic change types can be used on various \metamodel elements.
+In combination they are able to describe any difference between two \metamodels as a change sequence.
+\textcite{burger_change_2010} go even further by defining a change \metamodel, which also provides a complete description of \metamodel changes, but in a more formalized way.
+With their change \metamodel, \metamodel changes can be treated as usual models.
+
+In order to define more meaningful change types for the purpose of analyzing \metamodel evolution, \textcite{herrmannsdoerfer_extensive_2011} define a catalogue of 61 \metamodel evolution operators.
+Instead of claiming that this list is complete for all possible \metamodel differences, they state that they ``consider [the catalogue] complete for practical application'' \autocite{herrmannsdoerfer_extensive_2011}.
+Their catalogue is split into primitive operators, such as \emph{Create Class}, and complex operators, such as \emph{Move Property} or \emph{Extract Super Class}.
+In contrast to the atomic change types, these operators represent meaningful evolution steps on which further analyses and automated co-evolution support can be built.
+In addition to providing a list of \metamodel evolution operators, \textcite{herrmannsdoerfer_extensive_2011} discuss the impact of the described evolution steps on the models adhering to the evolved \metamodels.
+For our approach, we will use a subset of their evolution operators to characterize the performed evolution steps and analyze their impact on dependent view types.
+
+While \textcite{herrmannsdoerfer_extensive_2011} already describe that the complex changes can be built from atomic changes, \cite{khelladi_change_2018} provide an approach to reconstruct complex changes from a sequence of atomic changes.
+Their approach can handle overlapping, incomplete and hidden complex changes, as well as dependencies between them, and can be instantiated for arbitrary sets of complex changes.
+Since we do not expect developers to describe the evolution steps performed on a \metamodel manually, we rely on the analysis from \cite{khelladi_change_2018} to extract the complex changes from a sequence of atomic changes.
+The sequence of atomic changes can either be recorded while the \metamodel is edited in a suitable development environment or derived from the difference between the \metamodel before and after the evolution process \autocite{wittler_derivation_2021}.

@@ -2,3 +2,10 @@
 \label{sec:Conclusion}
 
 conclusion and future work \cite{braun_classification_2014}
+
+Future work - make suggestions applicable 
+\TW{TODO: remove the formalisation, cut the definition short and try to define the idea more precisely} \begin{definition}[Applicable Suggestion]
+We define an applicable suggestion as a 3-Tuple of a suggestion, a transformation of the $VGT$($TVGT$) and a transformation between the $MMC$ and the $SUC$($TSUC$). Short $ASU = (SUG, TVGT, TSUC)$
+\end{definition}
+\HM{This definition seems unclear to me. I am also not sure of its relevance in the context of this work.} \TW{As discussed in the meeting, this definition is not part of the scope of this paper but future work on how to use our definitions. We may keep it as limitation or move its content to the future work section (a formal definition won't make sense there, but i think we should keep the ideas and present them.)}
+Note that the $SUC$ of an $ASU$ has to contain the definition of the change on the \viewtype \metamodel. The $TVGT$ transforms the $VGO$, e.g. by adding a newly created attribute as input. The $TSUC$ transforms the change on the \metamodel in a change on the \viewtype \metamodel. In the example above, the change on the \metamodel will be transformed by changing its target from the \metamodel to the \viewtype \metamodel. A suggestion can have multiple applicable suggestions from which the methodologist can chose the most appropriate one.
