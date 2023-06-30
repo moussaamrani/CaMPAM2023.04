@@ -2,6 +2,8 @@
 \label{sec:Approach}
 
 For the \metamodel-\viewtype co-evolution we identified 34 operators from the change catalogue proposed by \cite{herrmannsdoerfer_extensive_2011}, which contains 27 \textit{primitive} and 34 \textit{complex} operators. Our work addresses all primitive and 7 complex operators. We choose the complex operators based on the work of \cite{khelladi_detecting_2015} who claims that these changes constitute 72\% of all complex changes during the evolution of GMF. \Cref{tab:suggestions} summarises the operators, their types, corresponding suggestions, and severity of applying these operators. We divided the chosen operators into three severity categories: major (M), minor (N), and ignore (I).
+\MA{Is this severity really useful? Where is it subsequently used anyway?}
+\LK{I think it could be useful for developers when deciding to perform certain evolution steps, so maybe we can give that as additional benefit.}
 \MA{IMO, it's not the severity that "divides" the operators. 
 The severity "characterises", or "classifies". However, I suggest to 
 use some kind of classification of operators to avoid the long list.
@@ -21,7 +23,7 @@ The \textit{Add Super Type} and \textit{Remove Super Type} operators adds and re
 
 The \textit{Make Attribute Identified} and \textit{Drop Attribute Identifier} operators adds or removes a constraint that ensures the uniqueness of the attribute values. The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for an reference. Since, these are instance level constraints, they do not influence the \viewtype and therefore, can be ignored.
 
-\HM{Discuss \textit{Make ref opposite and drop ref opposite}}
+\HM{Discuss \textit{Make ref opposite and drop ref opposite}} \MA{I have some arguments to say that we could ignore these in a first attempt, because "opposite"s may always be computed, assuming you have a "decent" meta-metamodel API (as EMF/Ecore provides, among others).}
 
 The \textit{Move Property} operator triggers the suggestion to update the corresponding location in the \viewtype. Pushing a property down in the hierarchy removes the property from the super class and therefore, it needs to be removed from the \viewtype wherever it is referred using a reference of the super class. The \textit{Pull Up} operator can be applied iff the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.
 

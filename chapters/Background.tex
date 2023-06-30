@@ -60,13 +60,12 @@ In some cases, the methodologist might restrict the editing capabilities further
 
 For the definition of the VGTs, common model transformation languages, such as \cite{omg_qvt} or \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
 % \MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
-The query part of the constraint language OCL can also be used for the generation of simple views.
+The query part of the constraint language \cite{omg_ocl} can also be used for the generation of simple views.
 However, because it does not support deriving new model elements from existing ones and is limited to a single source \metamodel, it is not sufficient for our envisioned scenario.
 Another approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
 
-\LK{As discussed, we might not need to focus on a specific language if we differentiate only between ``used in the VT'' and ``used in the VGT''.}
-% TODO may need further justification if we keep this
+\begin{comment}
 In our work, we assume that a model query language similar to ModelJoin is used to define the VGTs, since we require semantic information on how a model element is used in a view type.
 Our approach will derive this information from the query language operators in which model elements are used in a VGT.
 The operators, which we assume to be used in model query languages for view generation, are shown in \cref{fig:model-query-operators}.
@@ -92,6 +91,7 @@ For the multi-\metamodel case, the \texttt{join} operator connects model instanc
 Both, the \texttt{aggregate} and the \texttt{calculate} operator create new model elements.
 While the former combines the values of a single property in multiple instances of a \metaclass, the latter is used to calculate a new property based on multiple existing ones.
 Following \textcite{burger_model-join_2016}, we assume this is a reasonable set of operators for the definition of generic views.
+\end{comment}
 
 \subsection{\Metamodel Evolution}
 \label{sec:MetaModelEvolution}
