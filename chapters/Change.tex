@@ -1,6 +1,13 @@
 \subsection{Change}
 \label{sec:Suggestion:Change}
 
+A \textsf{Change} refers to an \textsf{Operator} that may be parameterised with 
+extra data, and contains contextual information (in \textsf{ApplicationPattern}). 
+Change \textsf{Operator}s may target \emph{any} instanciable metamodel element, 
+thus referring to the class \textsf{NamedElement} in \textsc{Mof}. Note that we 
+will distinguish between \emph{primitive} and \emph{complex} \textsf{Operator}s,
+depending on the number of such \metamodel elements an \textsf{Operator} acts on.
+
 Since \viewtypes are structurally \metamodels, we reviewed the literature to
 identify relevant change \textsf{Operator}s. The change catalogue proposed by 
 \cite{herrmannsdoerfer_extensive_2011} presents 27 \emph{primitive}, and 34
