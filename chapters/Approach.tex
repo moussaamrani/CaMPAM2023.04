@@ -1,15 +1,6 @@
 \section{Approach} 
 \label{sec:Approach}
 
-For the \metamodel-\viewtype co-evolution we identified 34 operators from the change catalogue proposed by \cite{herrmannsdoerfer_extensive_2011}, which contains 27 \textit{primitive} and 34 \textit{complex} operators. Our work addresses all primitive and 7 complex operators. We choose the complex operators based on the work of \cite{khelladi_detecting_2015} who claims that these changes constitute 72\% of all complex changes during the evolution of GMF. \Cref{tab:suggestions} summarises the operators, their types, corresponding suggestions, and severity of applying these operators. We divided the chosen operators into three severity categories: major (M), minor (N), and ignore (I).
-\MA{Is this severity really useful? Where is it subsequently used anyway?}
-\LK{I think it could be useful for developers when deciding to perform certain evolution steps, so maybe we can give that as additional benefit.}
-\MA{IMO, it's not the severity that "divides" the operators. 
-The severity "characterises", or "classifies". However, I suggest to 
-use some kind of classification of operators to avoid the long list.
-cf. Herrmannsdoerfer et al. among others.}
-When applied to a \metamodel, the operators in the latter category have no effect on the corresponding \viewtypes. The operators that can break the relationship between the evolving \metamodel and the corresponding \viewtypes are categorised as major. We classify the rest of the operators as minor since they are not breaking and can enrich the \viewtypes with additional information.
-
 Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, and enumeration, we only notify the modeller about the addition of these entities. 
 According to the \metamodeling formalism proposed by \cite{herrmannsdoerfer_extensive_2011}, attributes and references, and literals, have composition relation with resp. classes and enumerations. Therefore, in the event of the creation of these entities, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
 

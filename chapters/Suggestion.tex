@@ -1,0 +1,45 @@
+\section{Suggesting Changes In View(s Types)}
+\label{sec:Suggestion}
+
+Figure \ref{fig:Suggestion} depicts a \metamodel that capture the
+required elements for helping methodologists improve their designs.
+On the following, we assume that a methodologist is evolving a \metamodel
+\textsf{MM} that is linked to a family of viewtypes $(\mathsf{VT}_i)$ 
+(with $i\in [1..n]$). Note that in the discussion above, when we discuss
+\textsf{MM}'s (meta-)elements, we consider \textsf{MM} as a \emph{model}
+conforming to a particular meta-\metamodel (such as \textsc{Mof} \ref{}):
+we therefore discuss changes on \textsf{MM}'s packages, classes (e.g. 
+\textsf{FSM} or \textsf{State} in our example) and their structural features
+(such as the attribute \textsf{name} or the reference \textsf{src}).
+
+A \textsf{Suggestion} is the core element of our approach, and contains three 
+parts: a \textsf{Change}, some \textsf{Relation}s, and a list of 
+\textsf{Recommendation}s. 
+%
+As detailed in Figure \ref{fig:Change}, a \textsf{Change} captures the nature of
+alterations operated on \textsf{MM}'s meta-elements. A \textsf{Change} refers 
+to an \textsf{Operator} that may be parameterised with extra data, and contains 
+contextual information (in \textsf{ApplicationPattern}). 
+Change \textsf{Operator}s may target \emph{any} instanciable metamodel element, 
+thus referring to the class \textsf{NamedElement} in \textsc{Mof}. Note that we 
+will distinguish between \emph{primitive} and \emph{complex} \textsf{Operator}s,
+depending on the number of such \metamodel elements an \textsf{Operator} acts on.
+
+\textsf{Relation}s contain traceability links between \textsf{MM}'s and \viewtypes'
+meta-elements. Note that these links may target \emph{several} meta-elements on 
+the same \viewtype $\mathsf{VT_i}$, but also on \emph{various} \viewtypes. 
+
+A \textsf{Recommendation} captures possible actions a methodologist may perform
+to realign a \viewtype after a change. Note that a \textsf{Suggestion} may 
+associate \emph{no} \textsf{Recommendation}s, in case a \textsf{Change} has no
+impact on \viewtypes; or \emph{several} \textsf{Recommendation}s for the same 
+\textsf{Change}, depending on the complexity of the \textsf{Change}, and how 
+many \viewtypes are concerned by the \textsf{Change}.
+
+The rest of this Section details each part in a \textsf{Suggestion}; a summary
+is presented in Table \ref{tab:suggestions}.
+
+\input{chapters/Change}
+\input{chapters/Relations}
+\input{chapters/Recommendation}
+
