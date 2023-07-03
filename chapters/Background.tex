@@ -58,9 +58,9 @@ This may either be achieved by having a transformation language that can derive 
 Of course, there might be cases in which the backpropagation of changes is not possible, e.g., when showing a sum of multiple values, which causes the affected elements to be read-only in the view.
 In some cases, the methodologist might restrict the editing capabilities further, e.g., when the view is intended for a specific task where only some of the elements should be edited in the process.
 
-For the definition of the VGTs, common model transformation languages, such as \cite{omg_qvt} or \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
+For the definition of the VGTs, common model transformation languages, such as QVT \cite{omg_qvt} or ATL \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
 % \MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
-The query part of the constraint language \cite{omg_ocl} can also be used for the generation of simple views.
+The query part of the constraint language OCL \cite{omg_ocl} can also be used for the generation of simple views.
 However, because it does not support deriving new model elements from existing ones and is limited to a single source \metamodel, it is not sufficient for our envisioned scenario.
 Another approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
