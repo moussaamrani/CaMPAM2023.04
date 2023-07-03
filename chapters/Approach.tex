@@ -1,6 +1,11 @@
 \section{Approach} 
 \label{sec:Approach}
 
+\MA{The description of the MM for \textsf{Suggestion} has been lifted up on \S \ref{sec:Suggestion}. This Section should now
+detail Table \ref{tab:suggestions}, and explain the \emph{choices} operated by our \textsf{Recommendation}s: \textbf{\emph{Why}}, 
+when a MM element of this type is \emph{craeted}, do we suggest the \textsf{ADD}ition of ... in the \textsf{VT}? In other words,
+this Section details the "content" of the \textsf{Suggestion} MM!}
+
 Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, and enumeration, we only notify the modeller about the addition of these entities. 
 According to the \metamodeling formalism proposed by \cite{herrmannsdoerfer_extensive_2011}, attributes and references, and literals, have composition relation with resp. classes and enumerations. Therefore, in the event of the creation of these entities, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
 
