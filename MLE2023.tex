@@ -76,6 +76,34 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
+%%%%%%%%%%%%%%%% uml class diagrams %%%%%%%%
+\usepackage{pgf-umlcd}
+\usepackage{tikzscale}
+\usetikzlibrary{calc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% =================== Configuration of umlcd =======
+\renewcommand {\umlfillcolor}{black!0}
+\renewcommand {\umltextcolor}{black}
+\renewcommand {\umldrawcolor}{black}
+% https://tex.stackexchange.com/questions/98021/how-to-extend-pgf-umlcd-with-self-association-connection
+\newcommand{\selfassociation}[5]{
+\coordinate (a) at ($(#1.north)$);
+\coordinate (b) at ($(#1.north) + (0,1)$);
+\coordinate (d) at ($(#1.east) + (1,0.8)$);
+\coordinate (e) at ($(#1.east) + (0, 0.8)$);
+\coordinate (t) at ($(#1.east) + (1,1)$);
+\coordinate (c) at ($(d)!(b)!(t)$);
+  \draw [umlcd style] (a) -- (b)
+  node[midway, left]{#2}
+  node[midway, right]{#3};
+  \draw [umlcd style] (b) -- (c);
+  \draw [umlcd style] (c) -- (d);
+  \draw [umlcd style, ->] (d) -- (e)
+  node[midway, above]{#4}
+  node[midway, below]{#5};
+  }
+% ====================================================
+
 \begin{document}
 
 \title{Co-Evolving \MetaModels and \ViewTypes\\ in View-Based Development\\

@@ -1,0 +1,18 @@
+    \begin{tikzpicture}
+      \begin{class}[text width=3cm]{Suggestion}{0,0}
+      \end{class}
+      \begin{class}[text width=2cm]{Change}{0, -1.5}
+      \end{class}
+      \begin{class}[text width=2cm]{Relation}{3, 0}
+      \end{class}
+      \begin{class}[text width=3cm]{Recommendation}{3, -1.5}
+      \end{class}
+      \begin{class}[text width=2cm]{Constraint}{3, -0.75}
+      \end{class}
+
+      \aggregation{Suggestion}{1}{change}{Change}
+      \aggregation{Suggestion}{0..*}{relations}{Relation}
+      \aggregation{Suggestion}{0..*}{recommendations}{Recommendation}
+      \aggregation{Suggestion}{0..*}{constraints}{Constraint}
+      
+\end{tikzpicture}
