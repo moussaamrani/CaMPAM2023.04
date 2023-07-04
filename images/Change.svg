@@ -85,10 +85,10 @@
                 <path d="M179 69 L372 69 L372 122 L179 122 L179 69 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath8">
-                <path d="M249 74 L301 74 L301 92 L249 92 L249 74 Z"/>
+                <path d="M243 74 L307 74 L307 92 L243 92 L243 74 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
-                <path d="M249 74 L303 74 L303 92 L249 92 L249 74 Z"/>
+                <path d="M243 74 L309 74 L309 92 L243 92 L243 74 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath10">
                 <path d="M184 97 L347 97 L347 115 L184 115 L184 97 Z"/>
@@ -414,8 +414,8 @@
             <rect x="182" y="72" clip-path="url(#clipPath6)" fill="rgb(131,122,133)" width="191" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
             <rect x="180" y="70" clip-path="url(#clipPath7)" fill="url(#linearGradient2)" width="191" rx="4" ry="4" height="51" stroke="none"/>
             <rect x="180" y="70" clip-path="url(#clipPath7)" fill="none" width="190" rx="4" ry="4" height="50" stroke="rgb(125,125,125)"/>
-            <image stroke="rgb(125,125,125)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(125,125,125)" preserveAspectRatio="none" height="16" font-style="italic" x="250" y="75" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
-            <text font-style="italic" x="269" xml:space="preserve" y="87" clip-path="url(#clipPath9)" stroke="none">Action</text>
+            <image stroke="rgb(125,125,125)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(125,125,125)" preserveAspectRatio="none" height="16" font-style="italic" x="244" y="75" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
+            <text font-style="italic" x="263" xml:space="preserve" y="87" clip-path="url(#clipPath9)" stroke="none">Operator</text>
             <image x="185" y="98" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
             <text x="204" xml:space="preserve" y="110" clip-path="url(#clipPath11)" font-weight="bold" stroke="none">severity : Severity = MINOR</text>
             <line clip-path="url(#clipPath12)" fill="none" x1="181" x2="370" y1="96" y2="96" stroke="rgb(125,125,125)"/>
