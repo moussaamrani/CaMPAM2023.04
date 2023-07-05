@@ -2,7 +2,8 @@
 \label{sec:Suggestion:Relation}
 
 The \textsf{Relation} part provides traceability links between \textsf{MM}
-elements and all \viewtype elements they impact. One \textsf{MM} element
+elements that are \textsf{changed}, and all \viewtype elements that are 
+\textsf{impacted} by that \textsf{Change}. One \textsf{MM} element
 may impact several elements in the same \viewtype, but may also potentially
 impact several \viewtypes. We only require so-called \emph{links}, but richer
 data structures for traceability may be used \autocite{Batot-Cabot-Gerard:2021}.
@@ -14,3 +15,10 @@ allows for a complete evolution session to termine before triggering the
 computation (based on diffing \autocite{Kehrer-Kelter-Taentzer:2011}, or using 
 operation-based approaches \parencite{J:Lippe-Oosterom:1992}).
 \MA{What else should be discussed here?}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{Relation.pdf}
+    \caption{Capturing \textsf{Relation}s between \textsf{MM} elements and \textsf{VT} elements.}
+    \label{fig:Change}
+\end{figure}
