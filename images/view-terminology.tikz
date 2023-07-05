@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+    \node[rectangle, draw, minimum width=7em, minimum height=5ex] (model) {Model};
+    \node[rectangle, draw, minimum width=7em, minimum height=5ex] (meta-model) [right=7em of model] {\MetaModel};
+    \node[rectangle, draw, minimum width=7em, minimum height=5ex] (view) [below=4em of model] {View};
+    \node[rectangle, draw, minimum width=7em, minimum height=5ex] (view-type) [below=4em of meta-model] {\ViewType};
+
+    \draw[dashed, -latex] (model.east) -- (meta-model.west) node [midway, above] {\guillemotleft instance of\guillemotright};
+    \draw[dashed, -latex] (view.east) -- (view-type.west) node [midway, above] {\guillemotleft instance of\guillemotright};
+
+    \draw[-latex] (view.north) -- (model.south)
+        node [midway, left=0.5em, text width=5em, align=right] {shows elements of}
+        node [near end, right] {1..$\ast$}
+        node [near start, right] {$\ast$};
+    \draw[-latex] (view-type.north) -- (meta-model.south)
+        node [midway, left=0.5em, text width=5em, align=right] {represents parts of}
+        node [near end, right] {1..$\ast$}
+        node [near start, right] {$\ast$};
+\end{tikzpicture}
