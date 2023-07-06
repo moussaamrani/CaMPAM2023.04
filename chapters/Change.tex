@@ -31,7 +31,6 @@ on the corresponding \viewtypes; \textsf{Operator}s that can break the relations
 between \textsf{MM }and its \viewtypes are categorised as \textsf{M}; the rest of the
 \textsf{Operator}s are \textsf{N}, since they are not breaking and can enrich 
 the \viewtypes with additional information.
-\MA{Align MM in figures + Extend with op-relevant info}
 
 \begin{figure}[t]
     \centering
@@ -40,3 +39,38 @@ the \viewtypes with additional information.
 		\MA{Note that the \textsf{NamedElement}s actually come from two different MMs!}}
     \label{fig:Change}
 \end{figure}
+
+The evolution steps of Figure \ref{fig:FSM} make use of different \textsf{Operator}s.
+\begin{itemize}
+	\item In Step 1 (depicted from Figure \ref{fig:FSM:Init} to \ref{fig:FSM:Relevant}),
+	the following sequence of \textsf{Operator}s is applied:
+	$$\langle \mathsf{PushProperty} \cdot \mathsf{Rename} \cdot \mathsf{Rename} \rangle$$
+	First, \textsf{PushProperty} pushes down $\mathsf{Named} \squaredots \mathsf{name}$
+	(i.e. pushes down the \textsf{element} \textsf{name} in the \textsf{container}
+	\textsf{Named})
+	into each subclass (namely, \textsf{FSM}, \textsf{State} and \textsf{Transition});
+	then \textsf{Rename} is applied to the \textsf{element} \textsf{name}, 
+	located respectively in \textsf{container}s $\mathsf{FSM}$ and 
+	$\mathsf{Transition}$, thus obtaining the result of Figure \ref{fig:FSM:Relevant}.
+	
+	\item Step 2 only consists of the following \textsf{Operator}s sequence:
+	$$\langle \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \rangle$$
+	where each \textsf{Operator} adds a new Attribute \textsf{element} in 
+	\textsf{container} \textsf{Transition}, ending up in the situation of
+	Figure \ref{fig:FSM:Guard}.
+	
+	\item Step 3 requires a longer sequence of \textsf{Operator}s, since it creates
+	a new class hieararchy under \textsf{Expression}. However, this sequence may
+	start with the following:
+	$$\langle \mathsf{Delete}^3 \cdot \mathsf{Create}^2 \cdot \ldots \rangle$$
+	The three first \textsf{Delete} undo the \textsf{Create} operations of Step 2
+	(thus, referring to the same \textsf{element}s and \textsf{container}); and
+	the two following \textsf{Create} create the new \textsf{Expression} class
+	(with the default package as a \textsf{container}) and the \textsf{guard}
+	reference (with \textsf{Transition} as a \textsf{container}).
+\end{itemize}
+With these examples, we immediately notice that some \textsf{Operator}s
+in a \textsf{Change} sequence may depend on previous ones (e.g. \textsf{Rename}
+in Step 1 should only be performed after \textsf{PushProperty}); while others
+may freely commute (e.g. the \textsf{Create} in Step 2 may be performed in any 
+order).
