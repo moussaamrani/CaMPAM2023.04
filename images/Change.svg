@@ -426,10 +426,10 @@
                 <path d="M441 107 L561 107 L561 148 L441 148 L441 107 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath119">
-                <path d="M465 112 L536 112 L536 130 L465 130 L465 112 Z"/>
+                <path d="M470 112 L532 112 L532 130 L470 130 L470 112 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath120">
-                <path d="M465 112 L538 112 L538 130 L465 130 L465 112 Z"/>
+                <path d="M470 112 L534 112 L534 130 L470 130 L470 112 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath121">
                 <path d="M442 133 L560 133 L560 147 L442 147 L442 133 Z"/>
@@ -635,8 +635,8 @@
             <rect x="444" y="110" clip-path="url(#clipPath117)" fill="rgb(131,122,133)" width="118" rx="4" opacity="0.255" ry="4" height="39" stroke="none"/>
             <rect x="442" y="108" clip-path="url(#clipPath118)" fill="url(#linearGradient17)" width="118" rx="4" ry="4" height="39" stroke="none"/>
             <rect x="442" y="108" clip-path="url(#clipPath118)" fill="none" width="117" rx="4" ry="4" height="38"/>
-            <image x="466" y="113" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:type="simple" font-style="italic" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
-            <text x="485" y="125" clip-path="url(#clipPath120)" fill="black" font-style="italic" stroke="none" xml:space="preserve">Composite</text>
+            <image x="471" y="113" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:type="simple" font-style="italic" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="490" y="125" clip-path="url(#clipPath120)" fill="black" font-style="italic" stroke="none" xml:space="preserve">Complex</text>
             <line y2="134" fill="none" x1="443" clip-path="url(#clipPath121)" x2="559" y1="134"/>
             <line clip-path="url(#clipPath122)" fill="none" x1="343" x2="537" y1="38" y2="38" stroke="black"/>
             <text fill="black" x="348" xml:space="preserve" y="34" clip-path="url(#clipPath123)" stroke="none">[0..1] element</text>
