@@ -1,6 +1,7 @@
 \section{Approach} 
 \label{sec:Approach}
 
+\LC{TODO: talk about domain-specific approach / refinements to approach, considering state charts }
 \MA{The description of the MM for \textsf{Suggestion} has been lifted up on \S \ref{sec:Suggestion}. This Section should now
 detail Table \ref{tab:suggestions}, and explain the \emph{choices} operated by our \textsf{Recommendation}s: \textbf{\emph{Why}}, 
 when a MM element of this type is \emph{craeted}, do we suggest the \textsf{ADD}ition of ... in the \textsf{VT}? In other words,
@@ -26,7 +27,7 @@ The \textit{Move Property} operator triggers the suggestion to update the corres
 Extracting super class does not influence the effective set of features and therefore, triggers a minor suggestion for replacing some occurrences of the child class reference with the parent. The \textit{Flatten Hierarchy} moves all the features from the parent to the child classes and deletes the parent class. Therefore, this triggers a major suggestion for replacing all the references of the removed super class with the appropriate child class reference. Since the effective features of the child classes remain the same before and after fattening, we offer no suggestion for the child classes. The \textit{Extract Class} operator groups a set of features into a new delegate class and replaces their occurrences with a reference to the delegate class. The \textit{Inline Class} operator is the exact opposite of \textit{Extract Class}. Both triggers a major suggestion of adapting the location of any related feature referenced in the \viewtype.
 
 \begin{table*}[ht!]
-\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C. \MA{Give a legend for the abbreviations in "Type" and "Severity" columns. Similarly, the "TYPE" values are never explained in the text (and should be part of the legend as well).}} \label{tab:suggestions}
+\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C. \MA{Give a legend for the abbreviations in "Type" and "Severity" columns. Similarly, the "TYPE" values are never explained in the text (and should be part of the legend as well).}\HM{group all none suggestions}} \label{tab:suggestions}
 \centering
 \begin{tabular}{|l|c|p{.33\linewidth}|p{.31\linewidth}|c|}
 \hline
@@ -34,8 +35,8 @@ Operator & Type & Condition to offer suggestion & Suggestion & Severity \\ \hlin
 
 Create Package &  
 \multirow{4}{*}{P} & 
-\multirow{4}{*}{None} &      
-\multirow{4}{*}{Notify the addition of the new entities} &
+\multirow{4}{*}{\parbox{\linewidth}{The corresponding container is referred in the \viewtype}} &      
+\multirow{4}{*}{Suggest the addition of the new entities} &
 \multirow{4}{*}{N} \\ \cline{1-1}
 Create Class &  &    &      &             \\ \cline{1-1}
 Create Data Type &  &    &      &             \\ \cline{1-1}
@@ -76,9 +77,9 @@ Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \mu
 Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
 Make Ref. Composite  & &      &      &             \\ \cline{1-1}
 Switch Ref. Composite  & &      &      &             \\ \hline
-Make Ref. Opposite  & P&      &   Discuss   &             \\ \hline
-Drop Ref. Opposite  & P&      &    Discuss  &             \\ \hline
-Move Property  & C &  Corresponding property referred in \viewtype  & Suggest the source and destination of the moved property & M \\ \hline
+Make Ref. Opposite  & P&  None    &   None   &             \\ \hline
+Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
+Move Property  & C &  Corresponding property referred in \viewtype  & Suggest to move the property from the source to the destination & M \\ \hline
 Push Property   & C & Super class referred in \viewtype  & Suggest removal of features from super class & M \\ \hline
 Pull Property   & C & None & None & I \\ \hline
 Extract Super Class  & C & Child classes referred in \viewtype  & Suggest possible replacement of child classes with newly created super class & N  \\ \hline
