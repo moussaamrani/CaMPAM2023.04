@@ -2,7 +2,8 @@
 \label{sec:Suggestion}
 
 Figure \ref{fig:Suggestion} depicts a \metamodel that captures the
-required elements for helping methodologists improve their designs.
+required elements for helping methodologists improve their \viewtype designs,
+by suggesting possible ways to reflect evolution changes inside \viewtypes.
 In the following, we assume that a methodologist is working on a \metamodel
 under evolution \textsf{MM}, that is linked to a set $\mathsf{VT}$ of viewtypes
 (i.e. $\mathsf{VT} = (\mathsf{VT}_\mathsf{i})_{\mathsf{i}\in [1..n]}$). Note that in the discussion above, when we discuss
@@ -17,9 +18,11 @@ parts:
 \begin{enumerate}
     \item A change \textsf{Operator}, detailed in Figure \ref{fig:Operator}, capturing the nature of
 alterations operated on \textsf{MM}'s meta-elements; 
-    \item A \textsf{Relation}, providing traceability links between \textsf{MM} and \textsf{VT}: for each meta-element in \textsf{MM} subject to a \textsf{Change}, a \textsf{Relation}
-identifies which meta-elements in \textsf{VT} may be affected;
-    \item A \textsf{Recommendation}, detailing possible actions a methodologist may perform to realign \textsf{VT} after the \textsf{Change}. 
+    \item A \textsf{Relation}, providing traceability links between \textsf{MM} 
+		and \textsf{VT}: for each meta-element in \textsf{MM} subject to a 
+		change by an \textsf{Operator}, a \textsf{Relation} identifies which 
+		meta-elements in \textsf{VT} may be affected;
+    \item A \textsf{Recommendation}, detailing possible actions a methodologist may perform to realign \textsf{VT} after a change. 
 \end{enumerate}
 
 Note that a \textsf{Suggestion} may 

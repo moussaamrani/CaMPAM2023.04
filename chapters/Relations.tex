@@ -3,7 +3,7 @@
 
 The \textsf{Relation} part provides traceability links between \textsf{MM}
 elements that are \textsf{changed}, and all \viewtype elements that are 
-\textsf{impacted} by that \textsf{Change}. One \textsf{MM} element
+\textsf{impacted} by that change. One \textsf{MM} element
 may impact several elements in the same \viewtype, but may also potentially
 impact several \viewtypes. We only require so-called \emph{links}, but richer
 data structures for traceability may be used \autocite{Batot-Cabot-Gerard:2021}.
@@ -21,19 +21,33 @@ operation-based approaches \parencite{J:Lippe-Oosterom:1992}).
     \label{fig:Relation}
 \end{figure}
 
-For our \textsf{FSM} example associated to the \viewtypes of Figure \ref{fig:VT},
+In the \textsf{FSM} example associated to the \textsf{VT\_FSM},
 we would have, among others, the following relations (with \textsf{Link}s noted 
 as $\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 \begin{itemize}
-	\item For Step 1, we would only have one \textsf{Link} 
-	$\mathsf{<} \mathsf{??} ; \mathsf{TextArea} \mathsf{>}$ in \textsf{Canvas}, \LC{the question marks?}
-	since the latter is the only class impacted by the \textsf{PushProperty}. We would
-	have two \textsf{Link}s in \textsf{TxtFSM}: 
+	\item Since computing the \textsf{name}s in \textsf{VT\_FSM} requires access
+	to $\mathsf{Named \squaredots name}$, the following \textsf{Link}s would be
+	created: 
+	$\mathsf{<} \mathsf{Named \squaredots name} ; \mathsf{VT\_FSM \squaredots name} \mathsf{>}$;
+	$\mathsf{<} \mathsf{Named \squaredots name} ; \mathsf{State \squaredots name} \mathsf{>}$;
+	$\mathsf{<} \mathsf{Named \squaredots name} ; \mathsf{Transition \squaredots name} \mathsf{>}$.
+
+	\item Creating an instance of \textsf{State} requires to take into account
+	the value of $\mathsf{State \squaredots kind}$, which would produce the following
+	\textsf{Link}s: 
+	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{State} \mathsf{>}$;
+	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Initial} \mathsf{>}$;
+	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Regular} \mathsf{>}$.
+	Depending on the precision of the traceability analysis, the following may
+	eventually be produced as well: 
+	$\mathsf{<} \mathsf{Kind \squaredots REGULAR} ; \mathsf{Regular} \mathsf{>}$ and
+	$\mathsf{<} \mathsf{Kind \squaredots INITIAL} ; \mathsf{Initial} \mathsf{>}$.
 	
-	\item For Step 2, we would have in \textsf{Canva} two \textsf{Link}s: 
-	$\mathsf{<} \mathsf{Transition} ; \mathsf{Arrow} \mathsf{>}$ and
-	$\mathsf{<} \mathsf{Transition} ; \mathsf{TextArea} \mathsf{>}$. Similarly, ...
-	
-	\item The \textsf{Link}s produced for Step 3 would be same as the ones
-	from Step 2.
+
+
+	\item After Step 2, some \textsf{Link}s between the newly added attributes
+	in $\mathsf{FSM \squaredots Transition}$ and the corresponding attributes in 
+	$\mathsf{VT\_FSM \squaredots Transition}$ may be added as well. New 
+	\textsf{Link}s taking into account the newly added literal in \textsf{Kind}
+	would be added, similarly to the previous point.
 \end{itemize}
