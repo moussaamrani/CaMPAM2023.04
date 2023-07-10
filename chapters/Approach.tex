@@ -20,7 +20,7 @@ The \textit{Add Super Type} and \textit{Remove Super Type} operators adds and re
 
 The \textit{Make Attribute Identified} and \textit{Drop Attribute Identifier} operators adds or removes a constraint that ensures the uniqueness of the attribute values. The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for an reference. Since, these are instance level constraints, they do not influence the \viewtype and therefore, can be ignored.
 
-\HM{Discuss \textit{Make ref opposite and drop ref opposite}} \MA{I have some arguments to say that we could ignore these in a first attempt, because "opposite"s may always be computed, assuming you have a "decent" meta-metamodel API (as EMF/Ecore provides, among others).}
+\HM{Discuss \textit{Make ref opposite and drop ref opposite}} \MA{I have some arguments to say that we could ignore these in a first attempt, because "opposite"s may always be computed, assuming you have a "decent" meta-metamodel API (as EMF/Ecore provides, among others).}\LC{I agree.}
 
 The \textit{Move Property} operator triggers the suggestion to update the corresponding location in the \viewtype. Pushing a property down in the hierarchy removes the property from the super class and therefore, it needs to be removed from the \viewtype wherever it is referred using a reference of the super class. The \textit{Pull Up} operator can be applied iff the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.
 
@@ -60,8 +60,8 @@ Delete Feature  &     & &      &             \\ \cline{1-1}
 Delete Data Type  &    &  &      &             \\ \cline{1-1}
 Delete Enum  &   &   &      &             \\ \hline
 
-Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
-Drop Class Abstract  &  & &  & \\ \hline
+%Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
+%Drop Class Abstract  &  & &  & \\ \hline
 
 Delete Opposite Ref.  & P &  \Viewtype refers the referencing class & Suggest referenced class and corresponding features not accessible & M            \\ \hline
 Merge Literal  & P&  Merged literal referenced by \viewtype    & Suggest the replacing literal  & M            \\ \hline
@@ -73,15 +73,15 @@ Add Super Type  & P& Child types are referred in \viewtype & Suggest addition of
 Remove Super Type  & P& Features inherited from removed super type are referred in \viewtype & Suggest removal of features that were previously inherited & M 
 % (super type is empty?) no.     
 \\ \hline
-Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
-Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
-Make Ref. Composite  & &      &      &             \\ \cline{1-1}
-Switch Ref. Composite  & &      &      &             \\ \hline
+%Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
+%Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
+%Make Ref. Composite  & &      &      &             \\ \cline{1-1}
+%Switch Ref. Composite  & &      &      &             \\ \hline
 Make Ref. Opposite  & P&  None    &   None   &             \\ \hline
 Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
 Move Property  & C &  Corresponding property referred in \viewtype  & Suggest to move the property from the source to the destination & M \\ \hline
 Push Property   & C & Super class referred in \viewtype  & Suggest removal of features from super class & M \\ \hline
-Pull Property   & C & None & None & I \\ \hline
+%Pull Property   & C & None & None & I \\ \hline
 Extract Super Class  & C & Child classes referred in \viewtype  & Suggest possible replacement of child classes with newly created super class & N  \\ \hline
 Flatten Hierarchy   & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  M           \\ \hline
 Extract Class   & C & Extracted features from the delegate class are referred in \viewtype & Suggest the moving of features to the delegate class from the original class & M \\ \hline

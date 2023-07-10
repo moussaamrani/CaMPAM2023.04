@@ -9,10 +9,8 @@ impact several \viewtypes. We only require so-called \emph{links}, but richer
 data structures for traceability may be used \autocite{Batot-Cabot-Gerard:2021}.
 
 The way these traceability links are computed are left as implementation
-details, and may happen in two ways: \textsf{on-the-fly} imposes to create
-those links every time an \textsf{MM} element is evolved; and \emph{offline}
-allows for a complete evolution session to termine before triggering the
-computation (based on diffing \autocite{Kehrer-Kelter-Taentzer:2011}, or using 
+details, and may happen in two ways: \textsf{on-the-fly} whenever an \textsf{MM} element is evolved; and \emph{offline}
+after a complete evolution session has terminated (based on diffing \autocite{Kehrer-Kelter-Taentzer:2011}, or using 
 operation-based approaches \parencite{J:Lippe-Oosterom:1992}).
 \MA{What else should be discussed here?}
 
@@ -28,7 +26,7 @@ we would have, among others, the following relations (with \textsf{Link}s noted
 as $\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 \begin{itemize}
 	\item For Step 1, we would only have one \textsf{Link} 
-	$\mathsf{<} \mathsf{??} ; \mathsf{TextArea} \mathsf{>}$ in \textsf{Canva}, 
+	$\mathsf{<} \mathsf{??} ; \mathsf{TextArea} \mathsf{>}$ in \textsf{Canvas}, \LC{the question marks?}
 	since the latter is the only class impacted by the \textsf{PushProperty}. We would
 	have two \textsf{Link}s in \textsf{TxtFSM}: 
 	
