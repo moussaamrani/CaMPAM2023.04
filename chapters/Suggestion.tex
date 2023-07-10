@@ -2,6 +2,7 @@
 \label{sec:Suggestion}
 
 \LC{Here, MM is linked to multiple VTs; this complicates matters, particularly regarding the 'several recommendations' below. Why not consider Suggestion as pertaining to one VT only, and thus, a MM change may be associated with multiple Suggestions, one per VT concerned.}
+\MA{More complex than that, let's discuss it!}
 
 Figure \ref{fig:Suggestion} depicts a \metamodel that captures the
 required elements for helping methodologists improve their designs.
@@ -17,7 +18,7 @@ we therefore discuss changes on \textsf{MM}'s packages, classes (e.g.
 A \textsf{Suggestion} is the core element of our approach, and contains three 
 parts:
 \begin{enumerate}
-    \item A \textsf{Change}, detailed in Figure \ref{fig:Change}, capturing the nature of
+    \item A change \textsf{Operator}, detailed in Figure \ref{fig:Operator}, capturing the nature of
 alterations operated on \textsf{MM}'s meta-elements; 
     \item A \textsf{Relation}, providing traceability links between \textsf{MM} and \textsf{VT}: for each meta-element in \textsf{MM} subject to a \textsf{Change}, a \textsf{Relation}
 identifies which meta-elements in \textsf{VT} may be affected;
@@ -25,10 +26,10 @@ identifies which meta-elements in \textsf{VT} may be affected;
 \end{enumerate}
 
 Note that a \textsf{Suggestion} may 
-associate \emph{no} \textsf{Recommendation}s, in case a \textsf{Change} has no
+associate \emph{no} \textsf{Recommendation}s, in case an \textsf{Operator} has no
 impact on \viewtypes; or \emph{several} \textsf{Recommendation}s for the same 
-\textsf{Change}, depending on the complexity of the \textsf{Change}, and how 
-many \viewtypes are concerned by the \textsf{Change}.
+\textsf{Operator}, depending on the \textsf{Operator}'s complexity, and how 
+many \viewtypes are concerned by the \textsf{Operator}.
 
 The rest of this Section details each part in a \textsf{Suggestion}; a summary
 is presented in Table \ref{tab:suggestions}.
