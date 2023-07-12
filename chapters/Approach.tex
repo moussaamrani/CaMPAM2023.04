@@ -20,9 +20,7 @@ session. This results in Table \ref{tab:suggestions}, where:
 	lists \textsf{Operator}s resulting in actual \textsf{Recommendation}, but all
 	others simply do not issue any (and thus, correspond to the \textsf{0} multiplicity
 	in $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in Figure 
-	\ref{fig:Suggestion}).
-	
-	\item We group \textsf{Operator}s into two groups corresponding to 
+	\ref{fig:Suggestion}). Note that we grouped \textsf{Operator}s into two groups corresponding to 
 	\textsf{Primitive}, then \textsf{Complex} ones but for space reasons, we do not
 	indicate this in the Table.
 	
@@ -60,62 +58,74 @@ The \textit{Move Property} operator triggers the suggestion to update the corres
 Extracting super class does not influence the effective set of features and therefore, triggers a minor suggestion for replacing some occurrences of the child class reference with the parent. The \textit{Flatten Hierarchy} moves all the features from the parent to the child classes and deletes the parent class. Therefore, this triggers a major suggestion for replacing all the references of the removed super class with the appropriate child class reference. Since the effective features of the child classes remain the same before and after fattening, we offer no suggestion for the child classes. The \textit{Extract Class} operator groups a set of features into a new delegate class and replaces their occurrences with a reference to the delegate class. The \textit{Inline Class} operator is the exact opposite of \textit{Extract Class}. Both triggers a major suggestion of adapting the location of any related feature referenced in the \viewtype.
 
 \begin{table*}[ht!]
-\caption{Suggestions per change operator. The Primitive and Complex operators are denoted respectively with P and C. \MA{Give a legend for the abbreviations in "Type" and "Severity" columns. Similarly, the "TYPE" values are never explained in the text (and should be part of the legend as well).}\HM{group all none suggestions}} \label{tab:suggestions}
+\caption{Suggestions per change operator.} 
+\label{tab:suggestions}
 \centering
-\begin{tabular}{|l|c|p{.33\linewidth}|p{.31\linewidth}|c|}
+\begin{tabular}{|p{.18\linewidth}|p{.28\linewidth}|p{.38\linewidth}|c|}
 \hline
-Operator & Type & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
+Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
 
 Create Package $(p)$&  
-\multirow{8}{*}{P} & 
 \multirow{8}{*}{\parbox{\linewidth}{The container of $x$ is referred in the \viewtype, where $x \in \{p, c, dt, e, r, or, a, l\}$}} &      
-\multirow{8}{*}{Suggest $ADD(x)$ in the \viewtypes} &
+\multirow{8}{*}{$ADD(x)$ in the \viewtypes} &
 \multirow{8}{*}{N} \\ \cline{1-1}
-Create Class $(c)$&  &    &      &             \\ \cline{1-1}
-Create Data Type $(dt)$&  &    &      &             \\ \cline{1-1}
-Create Enum $(e)$&    &  &      &             \\ \cline{1-1}
+Create Class $(c)$&  &    &                   \\ \cline{1-1}
+Create Data Type $(dt)$&  &    &                   \\ \cline{1-1}
+Create Enum $(e)$&    &  &                   \\ \cline{1-1}
 
-Create Reference ($r$)& &  &      &             \\ \cline{1-1}
-% \multirow{4}{*}{P} &    
+Create Reference ($r$)& &  &                   \\ \cline{1-1}
+%    
 % \multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
 % \multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
 % \multirow{4}{*}{N} \\ \cline{1-1}
-Create Opposite Ref. ($or$)&   &   &      &             \\ \cline{1-1}
-Create Attribute ($a$)&  &    &      &             \\ \cline{1-1}
-Create Literal ($l$)&    &  &      &             \\ \hline
+Create Opposite Ref. ($or$) \HM{IG}&   &   &                   \\ \cline{1-1}
+Create Attribute ($a$)&  &    &                   \\ \cline{1-1}
+Create Literal ($l$)&    &  &                   \\ \hline
 
-% Delete Package  & P &
+% Delete Package  & 
 % None & None. & N \\ \hline
 
-Delete Class ($c$)& \multirow{4}{*}{P} & 
+Delete Class ($c$)& 
 \multirow{4}{*}{\parbox{\linewidth}{$x$ is referenced in the \viewtype, where $x \in \{c, f, dt, e\}$}} &
-\multirow{4}{*}{Suggest $DEL(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
-Delete Feature ($f$) &     & &      &             \\ \cline{1-1}
-Delete Data Type ($dt$) &    &  &      &             \\ \cline{1-1}
-Delete Enum ($e$) &   &   &      &             \\ \hline
+\multirow{4}{*}{$DEL(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
+Delete Feature ($f$) &     & &                   \\ \cline{1-1}
+Delete Data Type ($dt$) &    &  &                   \\ \cline{1-1}
+Delete Enum ($e$) &   &   &                   \\ \hline
 
 %Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
 %Drop Class Abstract  &  & &  & \\ \hline
 
-Delete Opposite Ref. ($or$) & P &  \Viewtype refers the referencing class & Suggest referenced class and corresponding features not accessible & M            \\ \hline
-Merge Literal  ($l$)& P&  $l$ is referenced in \viewtype    & Suggest the $UP$dating $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
-Rename  & P& Old name $s$ is referred in the \viewtype  &  Suggest $UP$dating $s$ with $s^\prime$ where $s^\prime$ is the current name & M \\ \hline
-Change Package ($p$) & P& $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and $x$ was contained in $p$ & Suggest $MOVE$ of $x$ from $p$ to $p^\prime$, where $p^\prime$ is the current package & M \\ \hline
-Add Super Type ($t$) & P& $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & Suggest $ADD(f^*)$, where $f^*$ is the set of features contained in $t$ & N  \\ \hline
-Remove Super Type ($t$) & P& $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & Suggest $DEL(f^*)$, where $f^*$ is the set of features contained in $t$ & M \\ \hline
-%Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
+Delete Opposite Ref. \HM{IG} ($or$) &   \Viewtype refers the referencing class & referenced class and corresponding features not accessible & M            \\ \hline
+Merge Literal  ($l$)&   $l$ is referenced in \viewtype    & the $UP$dating $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
+
+Rename  &  Old name $s$ is referred in the \viewtype  &  $UP$dating $s$ with $s^\prime$ where $s^\prime$ is the current name & M \\ \hline
+
+Change Package ($p$) &  $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and $x$ was contained in $p$ & $MOVE$ of $x$ from $p$ to $p^\prime$, where $p^\prime$ is the current package & M \\ \hline
+
+Add Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $ADD(f^*)$, where $f^*$ is the set of features contained in $t$ & N  \\ \hline
+
+Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $DEL(f^*)$, where $f^*$ is the set of features contained in $t$ & M \\ \hline
+%Make Attr. Identiﬁer   &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
 %Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
 %Make Ref. Composite  & &      &      &             \\ \cline{1-1}
 %Switch Ref. Composite  & &      &      &             \\ \hline
 % Make Ref. Opposite  & P&  None\LC{Remove this and next line, see arguments Moussa in running text}    &   None   &             \\ \hline
 % Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
-Move feature ($f$) & C &  $f$ is referred in \viewtype  & Suggest $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes& M \\ \hline
-Push feature ($f$)  & C & $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_d$& Suggest $DEL(f)$ or $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_d$   & M \\ \hline
-%Pull Property   & C & None & None & I \\ \hline
-Extract Super Class ($c$) & C & $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & Suggest $UP$date $c$ with $c^\prime_c$, where $c^\prime_c\in c_c$ & N  \\ \hline
-Flatten Hierarchy (removing    & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  M           \\ \hline
-Extract Class ($c$) & C & Extracted features from the delegate class are referred in \viewtype & Suggest the moving of features to the delegate class from the original class & M \\ \hline
-Inline Class ($c$) & C & Delegate class is referenced in \viewtype & Suggest moving of features from delegate class to class that referenced the delegate class & M            \\ \hline
+\hline
+
+Move feature ($f$) &   $f$ is referred in \viewtype  & $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes& M \\ \hline
+
+Push feature ($f$)  &  $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_d$& $DEL(f)$ or $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_d$   & M \\ \hline
+%Pull Property   &  None & None & I \\ \hline
+
+Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $UP$date $c$ with $c^\prime_c$, where $c^\prime_c\in c_c$ & N  \\ \hline
+
+Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $MOVE$ all $f^\prime$ from $c$ to $c_c$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$ and $f^\prime\in f^*$  &  M           \\ \hline
+
+Extract Class ($c$) &  $f^\prime$ is referred in \viewtype, where $f^*$ is the set of features extracted into delegate class $c_{del}$ and $f^\prime\in f^*$ & 
+$MOVE$ $f^\prime$ form $c$ to $c_{del}$ & M \\ \hline
+
+Inline Class (deleting delegate class $c$) &  $c$ is referenced in \viewtype & $MOVE$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
 
 \end{tabular}
 \end{table*}
