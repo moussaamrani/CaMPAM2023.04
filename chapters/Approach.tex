@@ -7,6 +7,19 @@ detail Table \ref{tab:suggestions}, and explain the \emph{choices} operated by o
 when a MM element of this type is \emph{craeted}, do we suggest the \textsf{ADD}ition of ... in the \textsf{VT}? In other words,
 this Section details the "content" of the \textsf{Suggestion} MM!}
 
+As explained in Sec. \ref{sec:Suggestion:Change}, based on the how \viewtypes are affected we grouped the MM change \textsf{Operator}s into three severity categories: \textit{MAJOR}, \textit{MINOR} and \textit{IGNORE}. The following \textsf{Operator}s are categorised as \textsf{IGNORE}: \textit{Delete Package}, \textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, \textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite} and \textit{Pull Property}. These operators are excluded from Table~\ref{tab:suggestions}, which lists the chosen MM change \textsf{Operator}s and corresponding \textsf{Recommendation}s, since they don't result into any \textsf{Recommendation}s.
+
+
+
+% The following \textsf{Operator}s have severity \textsf{IGNORE}, and are 
+% therefore not included in Table~\ref{tab:suggestions} since they do result
+% in no \textsf{Recommendation}s: \textsf{Make/Drop Class Abstract}, 
+% \textsf{Make/Drop Attribute Identifier}, \textsf{Make/Switch Reference Composite},
+% and \textsf{Pull Property}.
+
+
+
+
 Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, and enumeration, we only notify the modeller about the addition of these entities. 
 According to the \metamodeling formalism proposed by \cite{herrmannsdoerfer_extensive_2011}, attributes and references, and literals, have composition relation with resp. classes and enumerations. Therefore, in the event of the creation of these entities, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
 
@@ -33,54 +46,51 @@ Extracting super class does not influence the effective set of features and ther
 \hline
 Operator & Type & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
 
-Create Package &  
-\multirow{4}{*}{P} & 
-\multirow{4}{*}{\parbox{\linewidth}{The corresponding container is referred in the \viewtype}} &      
-\multirow{4}{*}{Suggest the addition of the new entities} &
-\multirow{4}{*}{N} \\ \cline{1-1}
-Create Class &  &    &      &             \\ \cline{1-1}
-Create Data Type &  &    &      &             \\ \cline{1-1}
-Create Enum &    &  &      &             \\ \hline
+Create Package $(p)$&  
+\multirow{8}{*}{P} & 
+\multirow{8}{*}{\parbox{\linewidth}{The container of $x$ is referred in the \viewtype, where $x \in \{p, c, dt, e, r, or, a, l\}$}} &      
+\multirow{8}{*}{Suggest $ADD(x)$ in the \viewtypes} &
+\multirow{8}{*}{N} \\ \cline{1-1}
+Create Class $(c)$&  &    &      &             \\ \cline{1-1}
+Create Data Type $(dt)$&  &    &      &             \\ \cline{1-1}
+Create Enum $(e)$&    &  &      &             \\ \cline{1-1}
 
-Create Reference & \multirow{4}{*}{P} &    
-\multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
-\multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
-\multirow{4}{*}{N} \\ \cline{1-1}
-Create Opposite Ref. &   &   &      &             \\ \cline{1-1}
-Create Attribute &  &    &      &             \\ \cline{1-1}
-Create Literal &    &  &      &             \\ \hline
+Create Reference ($r$)& &  &      &             \\ \cline{1-1}
+% \multirow{4}{*}{P} &    
+% \multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
+% \multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
+% \multirow{4}{*}{N} \\ \cline{1-1}
+Create Opposite Ref. ($or$)&   &   &      &             \\ \cline{1-1}
+Create Attribute ($a$)&  &    &      &             \\ \cline{1-1}
+Create Literal ($l$)&    &  &      &             \\ \hline
 
-Delete Package  & P &
-None & None. & N \\ \hline
+% Delete Package  & P &
+% None & None. & N \\ \hline
 
-Delete Class & \multirow{4}{*}{P} & 
-\multirow{4}{*}{\parbox{\linewidth}{Entity or corresponding feature referenced by \viewtype}} &
-\multirow{4}{*}{Suggest the deletion of the corresponding entity} & \multirow{4}{*}{M}           \\ \cline{1-1}
-Delete Feature  &     & &      &             \\ \cline{1-1}
-Delete Data Type  &    &  &      &             \\ \cline{1-1}
-Delete Enum  &   &   &      &             \\ \hline
+Delete Class ($c$)& \multirow{4}{*}{P} & 
+\multirow{4}{*}{\parbox{\linewidth}{$x$ is referenced in the \viewtype, where $x \in \{c, f, dt, e\}$}} &
+\multirow{4}{*}{Suggest $DEL(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
+Delete Feature ($f$) &     & &      &             \\ \cline{1-1}
+Delete Data Type ($dt$) &    &  &      &             \\ \cline{1-1}
+Delete Enum ($e$) &   &   &      &             \\ \hline
 
 %Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
 %Drop Class Abstract  &  & &  & \\ \hline
 
-Delete Opposite Ref.  & P &  \Viewtype refers the referencing class & Suggest referenced class and corresponding features not accessible & M            \\ \hline
-Merge Literal  & P&  Merged literal referenced by \viewtype    & Suggest the replacing literal  & M            \\ \hline
-Rename  & P& Old name referred in the \viewtype  &  Suggest the old name and the corresponding new name  & M \\ \hline
-Change Package  & P& Corresponding entity referred in \viewtype & Suggest changing of the package & M \\ \hline
-Add Super Type  & P& Child types are referred in \viewtype & Suggest addition of inherited features for all child types & N  
-% (does ST has property?) yes.       
-\\ \hline
-Remove Super Type  & P& Features inherited from removed super type are referred in \viewtype & Suggest removal of features that were previously inherited & M 
-% (super type is empty?) no.     
-\\ \hline
+Delete Opposite Ref. ($or$) & P &  \Viewtype refers the referencing class & Suggest referenced class and corresponding features not accessible & M            \\ \hline
+Merge Literal  ($l$)& P&  $l$ is referenced in \viewtype    & Suggest the $UP$dating $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
+Rename  & P& Old name $s$ is referred in the \viewtype  &  Suggest $UP$dating $s$ with $s^\prime$ where $s^\prime$ is the current name & M \\ \hline
+Change Package ($p$) & P& $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and $x$ was contained in $p$ & Suggest $MOVE$ of $x$ from $p$ to $p^\prime$, where $p^\prime$ is the current package & M \\ \hline
+Add Super Type ($t$) & P& $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & Suggest $ADD(f^*)$, where $f^*$ is the set of features contained in $t$ & N  \\ \hline
+Remove Super Type ($t$) & P& $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & Suggest $DEL(f^*)$, where $f^*$ is the set of features contained in $t$ & M \\ \hline
 %Make Attr. Identiﬁer   & \multirow{4}{*}{P} &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
 %Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
 %Make Ref. Composite  & &      &      &             \\ \cline{1-1}
 %Switch Ref. Composite  & &      &      &             \\ \hline
-Make Ref. Opposite  & P&  None\LC{Remove this and next line, see arguments Moussa in running text}    &   None   &             \\ \hline
-Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
-Move Property  & C &  Corresponding property referred in \viewtype  & Suggest to move the property from the source to the destination & M \\ \hline
-Push Property   & C & Super class referred in \viewtype  & Suggest removal of features from super class & M \\ \hline
+% Make Ref. Opposite  & P&  None\LC{Remove this and next line, see arguments Moussa in running text}    &   None   &             \\ \hline
+% Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
+Move feature ($f$) & C &  $f$ is referred in \viewtype  & Suggest $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes& M \\ \hline
+Push feature ($f$)  & C & $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_d$& Suggest $DEL(f)$ or $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_d$   & M \\ \hline
 %Pull Property   & C & None & None & I \\ \hline
 Extract Super Class  & C & Child classes referred in \viewtype  & Suggest possible replacement of child classes with newly created super class & N  \\ \hline
 Flatten Hierarchy   & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  M           \\ \hline
