@@ -1,22 +1,42 @@
-\section{Approach} 
+\section{Suggestions for \viewtype co-evolution} 
 \label{sec:Approach}
 
-\LC{TODO: talk about domain-specific approach / refinements to approach, considering state charts }
-\MA{The description of the MM for \textsf{Suggestion} has been lifted up on \S \ref{sec:Suggestion}. This Section should now
-detail Table \ref{tab:suggestions}, and explain the \emph{choices} operated by our \textsf{Recommendation}s: \textbf{\emph{Why}}, 
-when a MM element of this type is \emph{craeted}, do we suggest the \textsf{ADD}ition of ... in the \textsf{VT}? In other words,
-this Section details the "content" of the \textsf{Suggestion} MM!}
+\MA{I changed the Section's title from ``Approach'', which IMO does not fit anymore.
+Feel free though to improve that!}
 
-As explained in Sec. \ref{sec:Suggestion:Change}, based on the how \viewtypes are affected we grouped the MM change \textsf{Operator}s into three severity categories: \textit{MAJOR}, \textit{MINOR} and \textit{IGNORE}. The following \textsf{Operator}s are categorised as \textsf{IGNORE}: \textit{Delete Package}, \textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, \textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite} and \textit{Pull Property}. These operators are excluded from Table~\ref{tab:suggestions}, which lists the chosen MM change \textsf{Operator}s and corresponding \textsf{Recommendation}s, since they don't result into any \textsf{Recommendation}s.
-
-
-
-% The following \textsf{Operator}s have severity \textsf{IGNORE}, and are 
-% therefore not included in Table~\ref{tab:suggestions} since they do result
-% in no \textsf{Recommendation}s: \textsf{Make/Drop Class Abstract}, 
-% \textsf{Make/Drop Attribute Identifier}, \textsf{Make/Switch Reference Composite},
-% and \textsf{Pull Property}.
-
+While the previous section captured in the \textsf{Suggestion} metamodel how we
+envision recommendations for co-evolving \viewtypes should look like, we detail
+in this section \textsf{Suggestion}'s ``content'', i.e. which \textsf{Recommendation}s
+exactly would be issued for each \textsf{Operator} change detected in an evolution
+session. This results in Table \ref{tab:suggestions}, where:
+\begin{itemize}
+	\item Column \textsl{Operator} lists all \textsf{Operator}s considered in Figure
+	\ref{fig:Operator}. Note however that the following \textsf{Operator}s, which 
+	associated with severity \textsf{IGNORE}, are excluded from our Table, since 
+	they do not result in any \textsf{Recommendation}: \textit{Delete Package}, 
+	\textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, 
+	\textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite}
+	and \textit{Pull Property}. In other words, Table \ref{tab:suggestions} only
+	lists \textsf{Operator}s resulting in actual \textsf{Recommendation}, but all
+	others simply do not issue any (and thus, correspond to the \textsf{0} multiplicity
+	in $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in Figure 
+	\ref{fig:Suggestion}).
+	
+	\item We group \textsf{Operator}s into two groups corresponding to 
+	\textsf{Primitive}, then \textsf{Complex} ones but for space reasons, we do not
+	indicate this in the Table.
+	
+	\item The \textsl{Condition} column corresponds to constraints that are captured
+	either by how the \textsf{Operator} is defined (typically, which \textsf{container}
+	is involved), or by information captured by traceability \textsf{Link}s (typically,
+	an element is referenced in a \viewtype). Sometimes, information coming from \textsf{MM},
+	the metamodel under evolution, may bring other conditions that can be statically
+	computed (typically, which sub- or super-classes). 
+	
+	\item The \textsl{Suggestion} column details, using the actions of Figure 
+	\ref{fig:Recommendation}, which \textsf{Recommendation}s we offer, and which
+	elements in the \viewtype they are applied to.
+\end{itemize}
 
 
 
