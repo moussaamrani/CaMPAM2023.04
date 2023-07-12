@@ -112,10 +112,10 @@ Remove Super Type ($t$) & P& $t_c$ is referred in \viewtype, where $t_c$ is a ch
 Move feature ($f$) & C &  $f$ is referred in \viewtype  & Suggest $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes& M \\ \hline
 Push feature ($f$)  & C & $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_d$& Suggest $DEL(f)$ or $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_d$   & M \\ \hline
 %Pull Property   & C & None & None & I \\ \hline
-Extract Super Class  & C & Child classes referred in \viewtype  & Suggest possible replacement of child classes with newly created super class & N  \\ \hline
-Flatten Hierarchy   & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  M           \\ \hline
-Extract Class   & C & Extracted features from the delegate class are referred in \viewtype & Suggest the moving of features to the delegate class from the original class & M \\ \hline
-Inline Class   & C & Delegate class is referenced in \viewtype & Suggest moving of features from delegate class to class that referenced the delegate class & M            \\ \hline
+Extract Super Class ($c$) & C & $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & Suggest $UP$date $c$ with $c^\prime_c$, where $c^\prime_c\in c_c$ & N  \\ \hline
+Flatten Hierarchy (removing    & C & Removed super class is referenced in \viewtype &   Suggest removal of super class and replace all of its occurrences with appropriate child class   &  M           \\ \hline
+Extract Class ($c$) & C & Extracted features from the delegate class are referred in \viewtype & Suggest the moving of features to the delegate class from the original class & M \\ \hline
+Inline Class ($c$) & C & Delegate class is referenced in \viewtype & Suggest moving of features from delegate class to class that referenced the delegate class & M            \\ \hline
 
 \end{tabular}
 \end{table*}
