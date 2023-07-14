@@ -1,5 +1,9 @@
-\section{Suggesting Changes In View(s Types)}
+\section{Conceptual Model for \Viewtype Co-evolution}
+
+% \section{Suggesting Changes for Views and View Types}
 \label{sec:Suggestion}
+
+\HM{as per suggestion from Loek, updated the title of this section}
 
 Figure \ref{fig:Suggestion} depicts a \metamodel that captures the
 required elements for helping methodologists improve their \viewtype designs,
@@ -13,29 +17,27 @@ we therefore discuss changes on \textsf{MM}'s packages, classes (e.g.
 \textsf{FSM} or \textsf{State} in our example) and their structural features
 (such as the attribute \textsf{name} or the reference \textsf{src}).
 
-A \textsf{Suggestion} is the core element of our approach, and contains three 
-parts:
-\begin{enumerate}
-    \item A change \textsf{Operator}, detailed in Figure \ref{fig:Operator}, capturing the nature of
+A \textsf{Suggestion} is the core element of our approach, and contains four 
+parts: (1) a change \textsf{Operator}, detailed in Figure \ref{fig:Operator}, capturing the nature of
 alterations operated on \textsf{MM}'s meta-elements; 
-    \item A \textsf{Relation}, providing traceability links between \textsf{MM} 
+    (2) a \textsf{Relation}, providing traceability links between \textsf{MM} 
 		and \textsf{VT}: for each meta-element in \textsf{MM} subject to a 
 		change by an \textsf{Operator}, a \textsf{Relation} identifies which 
 		meta-elements in \textsf{VT} may be affected;
-    \item A \textsf{Recommendation}, detailing possible actions a methodologist 
-		may perform to realign \textsf{VT} after a change. 
-		\item Some \textsf{Condition}s providing additional informations on the
+    (3) a \textsf{Recommendation}, detailing possible actions a methodologist 
+		may perform to realign \textsf{VT} after a change;
+		 and (4) some \textsf{Condition}s providing additional informations on the
 		applicability of \textsf{Operator}s, as well as domain-specific knowledge.
 		\MA{For now, I still don't see where these would be helpful in our example.
 		We may still discuss that in general in the Discussion Section, but in that
 		case, we should remove it from the \textsf{Suggestion} metamodel!}
-\end{enumerate}
+%\end{enumerate}
 
 Note that a \textsf{Suggestion} may 
-associate \emph{no} \textsf{Recommendation}s, in case an \textsf{Operator} has no
+have \emph{no} associated \textsf{Recommendation}s, in case an \textsf{Operator} has no
 impact on \viewtypes; or \emph{several} \textsf{Recommendation}s for the same 
-\textsf{Operator}, depending on the \textsf{Operator}'s complexity, and how 
-many \viewtypes are concerned by the \textsf{Operator}.
+\textsf{Operator}, depending on the latter's complexity, and how 
+many \viewtypes are affected by the \textsf{Operator}.
 
 The rest of this Section details each part in a \textsf{Suggestion}; a summary
 is presented in Table \ref{tab:suggestions}.

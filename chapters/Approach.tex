@@ -1,39 +1,35 @@
 \section{Suggestions for \viewtype co-evolution} 
 \label{sec:Approach}
 
-\MA{I changed the Section's title from ``Approach'', which IMO does not fit anymore.
-Feel free though to improve that!}
+%\MA{I changed the Section's title from ``Approach'', which IMO does not fit anymore. Feel free though to improve that!}\LC{New title doesn't quite fit, viz.~title of preceding section. Perhaps we change preceding section's title to 'Conceptual Model for Viewtype Co-Evolution'?}
 
-While the previous section captured in the \textsf{Suggestion} metamodel how we
-envision recommendations for co-evolving \viewtypes should look like, we detail
-in this section \textsf{Suggestion}'s ``content'', i.e. which \textsf{Recommendation}s
-exactly would be issued for each \textsf{Operator} change detected in an evolution
-session. This results in Table \ref{tab:suggestions}, where:
+While the \textsf{Suggestion} \metamodel captures how we
+conceptualise recommendations for co-evolving \viewtypes, we detail
+in this section \textsf{Suggestion}'s ``content'', i.e. which exact \textsf{Recommendation}s
+will be issued for each change \textsf{Operator} detected in an evolution
+session. This results in Table~\ref{tab:suggestions}, where:
 \begin{itemize}
-	\item Column \textsl{Operator} lists all \textsf{Operator}s considered in Figure
-	\ref{fig:Operator}. Note however that the following \textsf{Operator}s, which 
+	\item Column \textsl{Operator} lists all \textsf{Operator}s considered in Figure~\ref{fig:Operator}. 
+    However, the following \textsf{Operator}s, which are
 	associated with severity \textsf{IGNORE}, are excluded from our Table, since 
-	they do not result in any \textsf{Recommendation}: \textit{Delete Package}, 
+	they do not result in any \textsf{Recommendation}: atomic operators \textit{Delete Package}, 
 	\textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, 
 	\textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite}
-	and \textit{Pull Property}. In other words, Table \ref{tab:suggestions} only
+	and complex operator \textit{Pull Property}. In other words, Table~\ref{tab:suggestions} only
 	lists \textsf{Operator}s resulting in actual \textsf{Recommendation}, but all
-	others simply do not issue any (and thus, correspond to the \textsf{0} multiplicity
-	in $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in Figure 
-	\ref{fig:Suggestion}). Note that we grouped \textsf{Operator}s into two groups corresponding to 
-	\textsf{Primitive}, then \textsf{Complex} ones but for space reasons, we do not
-	indicate this in the Table.
+	others simply do not issue any and thus, correspond to the \textsf{0} multiplicity
+	in $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in Figure~\ref{fig:Suggestion}.
 	
 	\item The \textsl{Condition} column corresponds to constraints that are captured
 	either by how the \textsf{Operator} is defined (typically, which \textsf{container}
 	is involved), or by information captured by traceability \textsf{Link}s (typically,
 	an element is referenced in a \viewtype). Sometimes, information coming from \textsf{MM},
-	the metamodel under evolution, may bring other conditions that can be statically
+	the \metamodel under evolution, may bring other conditions that can be statically
 	computed (typically, which sub- or super-classes). 
 	
-	\item The \textsl{Suggestion} column details, using the actions of Figure 
-	\ref{fig:Recommendation}, which \textsf{Recommendation}s we offer, and which
-	elements in the \viewtype they are applied to.
+	\item The \textsl{Suggestion} column details, using the actions of Figure~\ref{fig:Recommendation}, which \textsf{Recommendation}s we offer, and which elements in the \viewtype they are applied to.
+
+    \item We divided the table into two parts where the first part lists the \textsf{Primitive} operators and the rest contains the \textsf{Complex} ones. To keep the table relatively less crowded, we do not indicate this in the table.
 \end{itemize}
 
 
@@ -61,7 +57,7 @@ Extracting super class does not influence the effective set of features and ther
 \caption{Suggestions per change operator.} 
 \label{tab:suggestions}
 \centering
-\begin{tabular}{|p{.18\linewidth}|p{.28\linewidth}|p{.38\linewidth}|c|}
+\begin{tabular}{|p{.16\linewidth}|p{.30\linewidth}|p{.4\linewidth}|c|}
 \hline
 Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
 
@@ -78,7 +74,7 @@ Create Reference ($r$)& &  &                   \\ \cline{1-1}
 % \multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
 % \multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
 % \multirow{4}{*}{N} \\ \cline{1-1}
-Create Opposite Ref. ($or$) \HM{IG}&   &   &                   \\ \cline{1-1}
+Create Opposite Ref. ($or$) &   &   &                   \\ \cline{1-1}
 Create Attribute ($a$)&  &    &                   \\ \cline{1-1}
 Create Literal ($l$)&    &  &                   \\ \hline
 
@@ -95,12 +91,13 @@ Delete Enum ($e$) &   &   &                   \\ \hline
 %Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
 %Drop Class Abstract  &  & &  & \\ \hline
 
-Delete Opposite Ref. \HM{IG} ($or$) &   \Viewtype refers the referencing class & referenced class and corresponding features not accessible & M            \\ \hline
-Merge Literal  ($l$)&   $l$ is referenced in \viewtype    & the $UP$dating $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
+Delete Opposite Ref. ($or$) & $f^*$ is referred in \viewtype through referencing type ($r_s$), where $f^*$ is the set of features available via $or$ & $MOVE$ $f^\prime\in f^*$ from $r_s$ to $or$ & M            \\ \hline
 
-Rename  &  Old name $s$ is referred in the \viewtype  &  $UP$dating $s$ with $s^\prime$ where $s^\prime$ is the current name & M \\ \hline
+Merge Literal  ($l$)&   $l$ is referenced in \viewtype & $UP$date $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
 
-Change Package ($p$) &  $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and $x$ was contained in $p$ & $MOVE$ of $x$ from $p$ to $p^\prime$, where $p^\prime$ is the current package & M \\ \hline
+Rename  &  Old name $s$ is referred in the \viewtype  &  $UP$dating $s$ with $s_c$ where $s_c$ is the current name & M \\ \hline
+
+Change Package ($p_o$) &  $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and old package $p_o$ contained $x$ & $MOVE$ of $x$ from $p_o$ to $p_c$, where $p_c$ is the current package & M \\ \hline
 
 Add Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $ADD(f^*)$, where $f^*$ is the set of features contained in $t$ & N  \\ \hline
 
@@ -111,19 +108,19 @@ Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a chil
 %Switch Ref. Composite  & &      &      &             \\ \hline
 % Make Ref. Opposite  & P&  None\LC{Remove this and next line, see arguments Moussa in running text}    &   None   &             \\ \hline
 % Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
-\hline
+%\hline
 
 Move feature ($f$) &   $f$ is referred in \viewtype  & $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes& M \\ \hline
 
-Push feature ($f$)  &  $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_d$& $DEL(f)$ or $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_d$   & M \\ \hline
+Push feature ($f$)  &  $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_c$ & $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_c$   & M \\ \hline
 %Pull Property   &  None & None & I \\ \hline
 
-Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $UP$date $c$ with $c^\prime_c$, where $c^\prime_c\in c_c$ & N  \\ \hline
+Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $UP$date $c^\prime_c$ with  $c$, where $c^\prime_c\in c_c$ & N  \\ \hline
 
-Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $MOVE$ all $f^\prime$ from $c$ to $c_c$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$ and $f^\prime\in f^*$  &  M           \\ \hline
+Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $MOVE$ $f^\prime$ from $c$ to $c_c$ for all $f^\prime\in f^*$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$  &  M           \\ \hline
 
 Extract Class ($c$) &  $f^\prime$ is referred in \viewtype, where $f^*$ is the set of features extracted into delegate class $c_{del}$ and $f^\prime\in f^*$ & 
-$MOVE$ $f^\prime$ form $c$ to $c_{del}$ & M \\ \hline
+$MOVE$ $f^\prime$ from $c$ to $c_{del}$ for all $f^\prime$ & M \\ \hline
 
 Inline Class (deleting delegate class $c$) &  $c$ is referenced in \viewtype & $MOVE$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
 
