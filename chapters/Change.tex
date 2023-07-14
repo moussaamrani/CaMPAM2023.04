@@ -6,7 +6,8 @@
     \includegraphics[width=\columnwidth]{images/Suggestion.pdf}
     %\includegraphics[width=\columnwidth]{images/SuggestionWithCondition.pdf}
     \caption{A \textsf{Suggestion} holds for a single \textsf{Change} linked to 
-		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s \HM{add condition element?}.}
+		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s 
+		\HM{add condition element?}\MA{Version WITH \textsf{Condition} is commented in file: switch if needed}.}
     \label{fig:Suggestion}
 \end{figure}
 
@@ -34,14 +35,6 @@ effect on the corresponding \viewtypes; \textsf{Operator}s that can break the
 relationship between \textsf{MM} and its \viewtypes are categorised as \textsf{MAJOR}; 
 the rest of the \textsf{Operator}s are \textsf{MINOR}, since they are not 
 breaking but can enrich the \viewtypes with additional information.
-%\LC{Idea I've applied to table, to save space/cognitive load on table: dropped the 'I' operator rows from the table completely; instead adding next sentence here:} 
-%\MA{AGREED: It's in Fig. 5, but has no additional meaning anywhere else.}
-\LC{TODO Hossain adjust b/o table changes to be made} \HM{moved ignore list to Sec.\ref{sec:Approach}}
-% The following \textsf{Operator}s have severity \textsf{IGNORE}, and are 
-% therefore not included in Table~\ref{tab:suggestions} since they do result
-% in no \textsf{Recommendation}s: \textsf{Make/Drop Class Abstract}, 
-% \textsf{Make/Drop Attribute Identifier}, \textsf{Make/Switch Reference Composite},
-% and \textsf{Pull Property}.
 
 \begin{figure}[t]
     \centering
@@ -50,7 +43,7 @@ breaking but can enrich the \viewtypes with additional information.
     \label{fig:Operator}
 \end{figure}
 
-The evolution steps of Figure \ref{fig:FSM} make use of different \textsf{Operator}s.
+Back to our example, the evolution steps of Figure \ref{fig:FSM} make use of different \textsf{Operator}s.
 \begin{itemize}
 	\item In Step 1 (depicted from Figure \ref{fig:FSM:Init} to \ref{fig:FSM:Relevant}),
 	the following sequence of \textsf{Operator}s is applied:
@@ -74,7 +67,8 @@ The evolution steps of Figure \ref{fig:FSM} make use of different \textsf{Operat
 	a new class hieararchy under \textsf{Expression}. However, this sequence may
 	start with the following:
 	$$\langle \mathsf{Delete}^3 \cdot \mathsf{Create}^2 \cdot \ldots \rangle$$
-	The initial \textsf{Delete}s undo the three \textsf{Create} operations of Step 2
+	The initial \textsf{Delete}s undo the three \textsf{Create} \textsf{Operators}s 
+	of Step 2
 	(thus, referring to the same \textsf{element}s and \textsf{container}); and
 	the two following \textsf{Create}s create the new \textsf{Expression} class
 	(with the default package as a \textsf{container}) and the \textsf{guard}

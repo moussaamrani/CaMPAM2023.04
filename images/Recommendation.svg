@@ -203,24 +203,21 @@
                 <path d="M275 75 L286 75 L286 86 L275 86 L275 75 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath58">
-                <path d="M203 75 L214 75 L214 86 L203 86 L203 75 Z"/>
+                <path d="M387 39 L469 39 L469 54 L387 54 L387 39 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath59">
-                <path d="M388 39 L468 39 L468 54 L388 54 L388 39 Z"/>
-            </clipPath>
-            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath60">
                 <path d="M462 31 L472 31 L472 40 L462 40 L462 31 Z"/>
             </clipPath>
-            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath61">
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath60">
                 <path d="M484 59 L531 59 L531 74 L484 74 L484 59 Z"/>
             </clipPath>
-            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath62">
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath61">
                 <path d="M541 60 L550 60 L550 70 L541 70 L541 60 Z"/>
             </clipPath>
-            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath63">
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath62">
                 <path d="M549 59 L597 59 L597 74 L549 74 L549 59 Z"/>
             </clipPath>
-            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath64">
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath63">
                 <path d="M531 60 L540 60 L540 70 L531 70 L531 60 Z"/>
             </clipPath>
         </defs>
@@ -290,20 +287,22 @@
             <rect x="471" y="11" clip-path="url(#clipPath49)" fill="rgb(131,122,133)" width="171" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
             <rect x="472" y="12" clip-path="url(#clipPath49)" fill="rgb(131,122,133)" width="171" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
             <rect x="470" y="10" clip-path="url(#clipPath50)" fill="url(#linearGradient7)" width="171" rx="4" ry="4" height="51" stroke="none"/>
-            <rect x="470" y="10" clip-path="url(#clipPath50)" fill="none" width="170" rx="4" ry="4" height="50" stroke="rgb(239,41,41)"/>
-            <image stroke="rgb(239,41,41)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(239,41,41)" preserveAspectRatio="none" height="16" font-style="italic" x="502" y="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
-            <text x="521" y="27" clip-path="url(#clipPath52)" fill="rgb(239,41,41)" font-style="italic" stroke="none" xml:space="preserve">VT::NamedElement</text>
-            <image stroke="rgb(239,41,41)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(239,41,41)" preserveAspectRatio="none" font-weight="bold" height="16" x="475" y="38" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:actuate="onLoad"/>
+            <rect x="470" y="10" clip-path="url(#clipPath50)" fill="none" width="170" rx="4" ry="4" height="50" stroke="black"/>
+            <image stroke="black" width="16" xlink:show="embed" xlink:type="simple" fill="black" preserveAspectRatio="none" height="16" font-style="italic" x="502" y="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
+            <text x="521" y="27" clip-path="url(#clipPath52)" fill="black" font-style="italic" stroke="none" xml:space="preserve">VT::NamedElement</text>
+            <image stroke="black" width="16" xlink:show="embed" xlink:type="simple" fill="black" preserveAspectRatio="none" font-weight="bold" height="16" x="475" y="38" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:actuate="onLoad"/>
             <text x="494" y="50" clip-path="url(#clipPath54)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">name : EString</text>
-            <line clip-path="url(#clipPath55)" fill="none" x1="471" x2="640" y1="36" y2="36" stroke="rgb(239,41,41)"/>
+            <line clip-path="url(#clipPath55)" fill="none" x1="471" x2="640" y1="36" y2="36" stroke="black"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="265" x2="265" y1="130" y2="95" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="265" x2="280" y1="95" y2="95" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="280" x2="280" y1="95" y2="76" stroke="rgb(136,136,136)"/>
             <polygon fill="white" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="none"/>
             <polygon fill="none" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="rgb(136,136,136)"/>
-            <line clip-path="url(#clipPath56)" fill="none" x1="208" x2="208" y1="130" y2="76" stroke="rgb(136,136,136)"/>
-            <polygon fill="white" clip-path="url(#clipPath58)" points=" 208 76 212 84 204 84" stroke="none"/>
-            <polygon fill="none" clip-path="url(#clipPath58)" points=" 208 76 212 84 204 84" stroke="rgb(136,136,136)"/>
+            <line clip-path="url(#clipPath56)" fill="none" x1="180" x2="180" y1="130" y2="95" stroke="rgb(136,136,136)"/>
+            <line clip-path="url(#clipPath56)" fill="none" x1="180" x2="280" y1="95" y2="95" stroke="rgb(136,136,136)"/>
+            <line clip-path="url(#clipPath56)" fill="none" x1="280" x2="280" y1="95" y2="76" stroke="rgb(136,136,136)"/>
+            <polygon fill="white" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="none"/>
+            <polygon fill="none" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="131" x2="131" y1="130" y2="95" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="131" x2="280" y1="95" y2="95" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="280" x2="280" y1="95" y2="76" stroke="rgb(136,136,136)"/>
@@ -315,19 +314,19 @@
             <polygon fill="white" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="none"/>
             <polygon fill="none" clip-path="url(#clipPath57)" points=" 280 76 284 84 276 84" stroke="rgb(136,136,136)"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="371" x2="470" y1="35" y2="35" stroke="black"/>
-            <text fill="black" x="389" xml:space="preserve" y="51" clip-path="url(#clipPath59)" stroke="none">[0..1] container</text>
-            <line clip-path="url(#clipPath60)" fill="none" x1="463" x2="470" y1="38" y2="35" stroke="black"/>
-            <line clip-path="url(#clipPath60)" fill="none" x1="470" x2="463" y1="35" y2="32" stroke="black"/>
+            <text x="388" y="51" clip-path="url(#clipPath58)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">[1..1] container</text>
+            <line clip-path="url(#clipPath59)" fill="none" x1="463" x2="470" y1="38" y2="35" stroke="black"/>
+            <line clip-path="url(#clipPath59)" fill="none" x1="470" x2="463" y1="35" y2="32" stroke="black"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="463" x2="545" y1="170" y2="170" stroke="black"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="545" x2="545" y1="170" y2="61" stroke="black"/>
-            <text x="485" y="71" clip-path="url(#clipPath61)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">[1..1] src</text>
-            <line clip-path="url(#clipPath62)" fill="none" x1="548" x2="545" y1="68" y2="61" stroke="black"/>
-            <line clip-path="url(#clipPath62)" fill="none" x1="545" x2="542" y1="61" y2="68" stroke="black"/>
+            <text x="485" y="71" clip-path="url(#clipPath60)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">[1..1] src</text>
+            <line clip-path="url(#clipPath61)" fill="none" x1="548" x2="545" y1="68" y2="61" stroke="black"/>
+            <line clip-path="url(#clipPath61)" fill="none" x1="545" x2="542" y1="61" y2="68" stroke="black"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="463" x2="535" y1="170" y2="170" stroke="black"/>
             <line clip-path="url(#clipPath56)" fill="none" x1="535" x2="535" y1="170" y2="61" stroke="black"/>
-            <text x="550" y="71" clip-path="url(#clipPath63)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">[1..1] tgt</text>
-            <line clip-path="url(#clipPath64)" fill="none" x1="538" x2="535" y1="68" y2="61" stroke="black"/>
-            <line clip-path="url(#clipPath64)" fill="none" x1="535" x2="532" y1="61" y2="68" stroke="black"/>
+            <text x="550" y="71" clip-path="url(#clipPath62)" fill="black" stroke="none" font-weight="bold" xml:space="preserve">[1..1] tgt</text>
+            <line clip-path="url(#clipPath63)" fill="none" x1="538" x2="535" y1="68" y2="61" stroke="black"/>
+            <line clip-path="url(#clipPath63)" fill="none" x1="535" x2="532" y1="61" y2="68" stroke="black"/>
         </g>
     </g>
 </svg>
