@@ -11,24 +11,26 @@
     \label{fig:Suggestion}
 \end{figure}
 
-\textsf{Operator}s are split into two categories:
+\textsf{Operator}s, as shown in Figure~\ref{fig:Operator}, are split into two categories:
 \textsf{Primitive} ones operate a single change in \textsf{MM}; while
 \textsf{Complex} ones combine several \textsf{Primitive} \textsf{Operator}s
 to perform a meaningful change. 
 Each \textsf{Operator} may target \emph{any} instantiable \metamodel element, 
-thus referring to the meta-class \textsf{NamedElement}, and also often
-indicate the \textsf{container} of this \textsf{NamedElement}.
+thus referring to the meta-class \textsf{NamedElement} and its container, which has same type.
 
-Since \viewtypes are structurally \metamodels, we reviewed the literature to
-identify relevant change \textsf{Operator}s for \metamodels and 
-\metamodel{}-model co-evolution. 
-We therefore integrate all 27 \textsf{Primitive} and seven of the 34 
-\textsf{Complex} \textsf{Operator}s in the catalogue proposed by 
-\textcite{herrmannsdoerfer_extensive_2011}.
-Those were selected because according to \textcite{khelladi_detecting_2015}, 
-they constitute 72\% of all complex changes appearing in a large case study. 
+We identified the MM change \textsf{Operator}s based on the work of Herrmannsdoerfer et al.~\cite{herrmannsdoerfer_extensive_2011} who presented a list of 27 primitive and 34 complex operators. In this work, we choose all of the primitive and 7 complex operators, which according to Khelladi et al.~\cite{khelladi_detecting_2015} constitute 72\% of all complex changes appearing in a large case study. 
 
-\textsf{Operator}s are enriched with a \emph{severity}: \textsf{MAJOR}, 
+% HM commented
+% Since \viewtypes are structurally \metamodels, we reviewed the literature to
+% identify relevant change \textsf{Operator}s for \metamodels and 
+% \metamodel{}-model co-evolution. 
+% We therefore integrate all 27 \textsf{Primitive} and seven of the 34 
+% \textsf{Complex} \textsf{Operator}s in the catalogue proposed by 
+% \textcite{herrmannsdoerfer_extensive_2011}.
+% Those were selected because according to \textcite{khelladi_detecting_2015}, 
+% they constitute 72\% of all complex changes appearing in a large case study. 
+
+\textsf{Operator}s are enriched with \emph{severity}: \textsf{MAJOR}, 
 \textsf{MINOR} and \textsf{IGNORE}. 
 When applied to a \metamodel, the \textsf{Operator}s in \textsf{IGNORE} have no 
 effect on the corresponding \viewtypes; \textsf{Operator}s that can break the 
