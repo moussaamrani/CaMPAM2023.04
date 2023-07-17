@@ -77,10 +77,10 @@ Second, by adding a rudimentary representation for guards that may prevent
 triggering a \textsf{Transition} when its guard evaluates to \texttt{false}. 
 For this purpose, three new attributes are \emph{created} in \textsf{Transition}, allowing to capture
 simple expressions over \textsf{var}iables, using boolean and numeric \textsf{value}s
-(e.g. \textsf{v = 10} or \textsf{k or l}). After this step, \textsf{VT\_FSM}'s
+(e.g., \textsf{v = 10} or \textsf{k or l}). After this step, \textsf{VT\_FSM}'s
 models may still be valid w.r.t.~the evolved \metamodel (assuming the lack of 
 guard is interpreted as a trivial \textsf{true} guard),
-but \viewtypes still need to reflect this new information by \emph{ADD}ing new 
+but \viewtypes still need \HM{is this a "need" or a possibility?} to reflect this new information by \emph{ADD}ing new 
 entities in appropriate places.
 
 In a final evolution step, the methodologist, confident with the implemented
