@@ -45,7 +45,7 @@ This is different in projective approaches where, in addition to the views, an u
 
 For projective view-based environments there are different ways of constructing the underlying model.
 An important differentiation is between \emph{essential} and \emph{pragmatic} construction approaches \autocite{atkinson_fundamental_2015}.
-With an essential SUM there is a single model, which contains the complete system description and is free of any internal redundancies \autocite{atkinson_orthographic_2010}.
+With an essential SUM \MA{Abbreviation never introduced before} there is a single model, which contains the complete system description and is free of any internal redundancies \autocite{atkinson_orthographic_2010}.
 While it may be difficult to construct a meta-model for this, especially in domain-spanning system development, synchronisation between the views is reduced to writing any changes made on them back to the single underlying model.
 This is different for pragmatic approaches where the underlying model consists of multiple submodels, which allows re-using existing meta-models, e.g., from model-based tools, but requires explicit consistency specifications between the underlying meta-models \autocite{klare_enabling_2021}.
 While our approach considers only view types defined on a single meta-model, it is agnostic to the construction of the underlying model and could be extended to view types depending on multiple meta-models in the future to fully support the pragmatic approach as well.
@@ -66,7 +66,7 @@ One framework for constructing pragmatic SUMs, here called virtual SUMs (V-SUMs)
 
 For the process of constructing the view-based development environment, \textcite{atkinson_orthographic_2010} identified two involved roles.
 The first role, the \emph{methodologist}, is responsible for creating the view-based environment, including the underlying model and the view types.
-In addition, they define consistency specifications for the underlying model, if necessary, and rules how changes on views are propagated back to the underlying model.
+In addition, they define consistency specifications for the underlying model, if necessary, and rules for how changes on views are propagated back to the underlying model.
 The second role, the \emph{developer}, uses the environment created by the methodologist to develop the actual system.
 For this, the developer creates views on the system to inspect its properties and performs changes on them, which are then applied to the underlying model.
 
