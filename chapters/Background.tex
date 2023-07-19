@@ -20,12 +20,12 @@ Finally, in~\cref{sec:MetaModelEvolution}, we explain how we break down \metamod
 
 The main challenges for view-based development is keeping the views on the models of the system consistent.
 For our approach, we will focus on \emph{projective} approaches for this.
-In contrast to \emph{synthetic} approaches, where direct connections between the views are used to keep them consistent, projective approaches use an additional underlying model, which is the source of all presented information \cite{atkinson_fundamental_2015}.
+In contrast to \emph{synthetic} approaches, where direct connections between the views are used to keep them consistent, projective approaches use an additional underlying model, which is the source of all presented information \autocite{atkinson_fundamental_2015}.
 Views in projective approaches are transient, i.e., not persistent, and generated dynamically from the underlying model whenever they are required \autocite{atkinson_orthographic_2010}.
 With projective views, the user is only allowed to interact with the system through the views, while the underlying model is hidden.
 In particular, when a user wants to make changes to the system, the changes need to be applied to (editable) views first and are then propagated to the underlying model.
 The relationship between views, \viewtypes, models and \metamodels in projective approaches is shown in~\cref{fig:view_concept}.
-The ISO-42010 standard \cite{ISO42010} also contains a definition of the \emph{view} concept, as well as of synthetic and projective approaches, but in a broader sense for software architecture and software architecture description languages.
+The ISO-42010 standard \autocite{ISO42010} also contains a definition of the \emph{view} concept, as well as of synthetic and projective approaches, but in a broader sense for software architecture and software architecture description languages.
 
 \begin{comment}
 There exist \emph{synthetic} and \emph{projective} approaches to view-based modeling \autocite{atkinson_fundamental_2015}.
@@ -45,7 +45,7 @@ This is different in projective approaches where, in addition to the views, an u
 
 For projective view-based environments there are different ways of constructing the underlying model.
 An important differentiation is between \emph{essential} and \emph{pragmatic} construction approaches \autocite{atkinson_fundamental_2015}.
-With an essential SUM \MA{Abbreviation never introduced before} there is a single model, which contains the complete system description and is free of any internal redundancies \autocite{atkinson_orthographic_2010}.
+With an essential SUM (Single Underlying Model) there is a single model, which contains the complete system description and is free of any internal redundancies \autocite{atkinson_orthographic_2010}.
 While it may be difficult to construct a meta-model for this, especially in domain-spanning system development, synchronisation between the views is reduced to writing any changes made on them back to the single underlying model.
 This is different for pragmatic approaches where the underlying model consists of multiple submodels, which allows re-using existing meta-models, e.g., from model-based tools, but requires explicit consistency specifications between the underlying meta-models \autocite{klare_enabling_2021}.
 While our approach considers only view types defined on a single meta-model, it is agnostic to the construction of the underlying model and could be extended to view types depending on multiple meta-models in the future to fully support the pragmatic approach as well.
@@ -144,7 +144,7 @@ In addition to providing a list of \metamodel evolution operators, \textcite{her
 For our approach, we will use the most important evolution operators, according to an industry study of \textcite{khelladi_detecting_2015} and explained in \cref{sec:Suggestion:Change}, to characterize the performed evolution steps and analyze their impact on dependent view types.
 %\LC{'a subset' sounds weak; can we characterize it better?}
 
-While \textcite{herrmannsdoerfer_extensive_2011} already describe that the complex changes can be built from atomic changes, \cite{khelladi_change_2018} provide an approach to reconstruct complex changes from a sequence of atomic changes.
+While \textcite{herrmannsdoerfer_extensive_2011} already describe that the complex changes can be built from atomic changes, \textcite{khelladi_change_2018} provide an approach to reconstruct complex changes from a sequence of atomic changes.
 Their approach can handle overlapping, incomplete and hidden complex changes, as well as dependencies between them, and can be instantiated for arbitrary sets of complex changes.
-Since we do not expect developers to describe the evolution steps performed on a \metamodel manually, we rely on the analysis from \cite{khelladi_change_2018} to extract the complex changes from a sequence of atomic changes.
+Since we do not expect developers to describe the evolution steps performed on a \metamodel manually, we rely on the analysis from \textcite{khelladi_change_2018} to extract the complex changes from a sequence of atomic changes.
 The sequence of atomic changes can either be recorded while the \metamodel is edited in a suitable development environment or derived from the difference between the \metamodel before and after the evolution process \autocite{wittler_derivation_2021}.

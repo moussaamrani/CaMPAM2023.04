@@ -23,7 +23,8 @@ We do not explicitly consider scenarios where a \viewtype to be evolved depends 
 %That is, we do not consider evolution scenarios where first the \viewtype is changed and then the underlying \metamodel should be co-evolved; we consider that while conceptually evolution may initially be considered at the \viewtype level, it makes more sense to then consider what needs to change at the \metamodel level to accommodate this, before considering what changes this might trigger on the \viewtype level. 
 
 We offer an approach for co-evolving \viewtypes based on \metamodel changes, in which the so-called \textit{methodologist} \cite{atkinson_orthographic_2010}, i.e.~the language engineer responsible for the \viewtype, is supported by offering them recommendations and considerations to take into account, given specific \metamodel changes and the \viewtype changes that these might require. We emphasize that our approach is a manual one --- given the breadth of potential \metamodel changes and \viewtypes-\metamodel dependencies (directly, or through view generation transformations), it is impossible to determine, without human input, what changes, if any, need to be made to a \viewtype.
-Our approach is first a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps, but we also describe and show how it can be specialized with domain-specific suggestions for specific application domains or implementation language domains, exemplifying \MA{Are we actually doing this? For now, IMO I don't think so...} this for \LC{TODO once domains settled}.
+
+Our approach is first a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps, but we also describe and show how it can be specialized with domain-specific suggestions for specific application domains or implementation language domains, exemplifying \MA{Are we actually doing this? For now, IMO I don't think so...}\LC{we discussed doing this, but I agree it's not currently there... decided in meeting July 19th to only discuss briefly in future work.} this for \LC{TODO once domains settled}.
 
 Our work offers the following contributions:
 \begin{itemize}
@@ -32,10 +33,9 @@ Our work offers the following contributions:
 		as well as implementation language domains. \MA{Again, this is perhaps the main missing thing in the paper!...}
     \item The application of the former to the domains of \LC{TODO: once domains settled}, leading to a concrete, partially generic and partially domain-specific lists of suggestions per \metamodel evolution step.
 \end{itemize}
-\LC{TODO: overview of approach and contributions}
 
 The paper starts by covering background information on view-based development and
-\metamodel evolution in Section \ref{sec:Background}. \autoref{sec:Example} describes
+\metamodel evolution in Section \ref{sec:Background}. Section~\ref{sec:Example} describes
 a typical scenario for \metamodel/\viewtype co-evolution on a simple example. Then,
 Section \ref{sec:Suggestion} explains how \viewtype suggestions are structured, given
 change operators on a \metamodel under evolution; these suggestions are then 
