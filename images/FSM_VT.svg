@@ -48,10 +48,10 @@
                 <path d="M14 53 L136 53 L136 71 L14 71 L14 53 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
-                <path d="M14 69 L110 69 L110 87 L14 87 L14 69 Z"/>
+                <path d="M14 69 L109 69 L109 87 L14 87 L14 69 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath10">
-                <path d="M14 69 L112 69 L112 87 L14 87 L14 69 Z"/>
+                <path d="M14 69 L111 69 L111 87 L14 87 L14 69 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath11">
                 <path d="M10 35 L156 35 L156 91 L10 91 L10 35 Z"/>
@@ -69,10 +69,10 @@
                 <path d="M268 14 L315 14 L315 32 L268 32 L268 14 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath16">
-                <path d="M239 37 L335 37 L335 55 L239 55 L239 37 Z"/>
+                <path d="M239 37 L334 37 L334 55 L239 55 L239 37 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath17">
-                <path d="M239 37 L337 37 L337 55 L239 55 L239 37 Z"/>
+                <path d="M239 37 L336 37 L336 55 L239 55 L239 37 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath18">
                 <path d="M235 35 L346 35 L346 61 L235 61 L235 35 Z"/>
@@ -90,10 +90,10 @@
                 <path d="M467 14 L541 14 L541 32 L467 32 L467 14 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath23">
-                <path d="M449 37 L545 37 L545 55 L449 55 L449 37 Z"/>
+                <path d="M449 37 L544 37 L544 55 L449 55 L449 37 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath24">
-                <path d="M449 37 L547 37 L547 55 L449 55 L449 37 Z"/>
+                <path d="M449 37 L546 37 L546 55 L449 55 L449 37 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath25">
                 <path d="M445 35 L561 35 L561 61 L445 61 L445 35 Z"/>
@@ -162,12 +162,12 @@
             <rect x="10" y="10" clip-path="url(#clipPath2)" fill="none" width="145" rx="4" ry="4" height="80"/>
             <image x="54" y="15" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVR4XqWQ0QoB&#13;&#10;QRSG941sEhJ5F1HaViRCpKwoN25cUFI8khuvYvbq8IuaOuaftr34mmm+ztdpAhEJ&#13;&#10;8qAesqIeLouC+PAGTHp34g2c56EasoGngeM0lKd5fDDpl9/9fcLTwGFSlNsplqsD&#13;&#10;eBrYj0tqbRt4GtgNy2rIBp4G1v0K/QN4GljGVUm2K0k2/4GngVlUU2vbwNPAqFtX&#13;&#10;QzbwNDDoNOgfwNNAr92UqOUGngay8gIKdwdeFkAbDAAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
             <text x="73" xml:space="preserve" y="27" clip-path="url(#clipPath4)" stroke="none">VT_FSM</text>
-            <image x="15" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
-            <text x="34" xml:space="preserve" y="50" clip-path="url(#clipPath6)" font-weight="bold" stroke="none">nbStates : EInt</text>
-            <image x="15" y="54" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
-            <text x="34" xml:space="preserve" y="66" clip-path="url(#clipPath8)" font-weight="bold" stroke="none">nbTransitions : EInt</text>
-            <image x="15" y="70" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
-            <text x="34" xml:space="preserve" y="82" clip-path="url(#clipPath10)" font-weight="bold" stroke="none">name : EString</text>
+            <image x="15" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="34" xml:space="preserve" y="50" clip-path="url(#clipPath6)" stroke="none">nbStates : EInt</text>
+            <image x="15" y="54" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="34" xml:space="preserve" y="66" clip-path="url(#clipPath8)" stroke="none">nbTransitions : EInt</text>
+            <image x="15" y="70" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="34" xml:space="preserve" y="82" clip-path="url(#clipPath10)" stroke="none">name : EString</text>
             <line y2="36" fill="none" x1="11" clip-path="url(#clipPath11)" x2="155" y1="36"/>
             <rect x="236" y="11" clip-path="url(#clipPath12)" fill="rgb(131,122,133)" width="111" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
             <rect x="237" y="12" clip-path="url(#clipPath12)" fill="rgb(131,122,133)" width="111" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
@@ -175,8 +175,8 @@
             <rect x="235" y="10" clip-path="url(#clipPath13)" fill="none" width="110" rx="4" ry="4" height="50" stroke="rgb(125,125,125)"/>
             <image stroke="rgb(125,125,125)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(125,125,125)" preserveAspectRatio="none" height="16" font-style="italic" x="269" y="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
             <text font-style="italic" x="288" xml:space="preserve" y="27" clip-path="url(#clipPath15)" stroke="none">State</text>
-            <image x="240" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
-            <text x="259" xml:space="preserve" y="50" clip-path="url(#clipPath17)" font-weight="bold" stroke="none">name : EString</text>
+            <image x="240" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="259" xml:space="preserve" y="50" clip-path="url(#clipPath17)" stroke="none">name : EString</text>
             <line clip-path="url(#clipPath18)" fill="none" x1="236" x2="345" y1="36" y2="36" stroke="rgb(125,125,125)"/>
             <rect x="446" y="11" clip-path="url(#clipPath19)" fill="rgb(131,122,133)" width="116" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
             <rect x="447" y="12" clip-path="url(#clipPath19)" fill="rgb(131,122,133)" width="116" rx="4" opacity="0.255" ry="4" height="51" stroke="none"/>
@@ -184,8 +184,8 @@
             <rect x="445" y="10" clip-path="url(#clipPath20)" fill="none" width="115" rx="4" ry="4" height="50"/>
             <image x="468" y="15" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVR4XqWQ0QoB&#13;&#10;QRSG941sEhJ5F1HaViRCpKwoN25cUFI8khuvYvbq8IuaOuaftr34mmm+ztdpAhEJ&#13;&#10;8qAesqIeLouC+PAGTHp34g2c56EasoGngeM0lKd5fDDpl9/9fcLTwGFSlNsplqsD&#13;&#10;eBrYj0tqbRt4GtgNy2rIBp4G1v0K/QN4GljGVUm2K0k2/4GngVlUU2vbwNPAqFtX&#13;&#10;QzbwNDDoNOgfwNNAr92UqOUGngay8gIKdwdeFkAbDAAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
             <text x="487" xml:space="preserve" y="27" clip-path="url(#clipPath22)" stroke="none">Transition</text>
-            <image x="450" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed" font-weight="bold"/>
-            <text x="469" xml:space="preserve" y="50" clip-path="url(#clipPath24)" font-weight="bold" stroke="none">name : EString</text>
+            <image x="450" y="38" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAa0lEQVR4XmNgGAUY&#13;&#10;YG6N/n9CGF0PCphaYfj/x8+LODFIHl0PCugqMsXQhIxB8uh6UEBtjuX/7z+ugfGP&#13;&#10;n1AMYwNpkDy6HhRQlGb7PyvJHicGyaProS2QtC8j30aQZooMAIGBNQDmBYoMIQQA&#13;&#10;VHKRZGFCvOoAAAAASUVORK5CYII=" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
+            <text x="469" xml:space="preserve" y="50" clip-path="url(#clipPath24)" stroke="none">name : EString</text>
             <line y2="36" fill="none" x1="446" clip-path="url(#clipPath25)" x2="560" y1="36"/>
             <rect x="211" y="66" clip-path="url(#clipPath26)" fill="rgb(131,122,133)" width="56" rx="4" opacity="0.255" ry="4" height="39" stroke="none"/>
             <rect x="212" y="67" clip-path="url(#clipPath26)" fill="rgb(131,122,133)" width="56" rx="4" opacity="0.255" ry="4" height="39" stroke="none"/>

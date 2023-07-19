@@ -20,15 +20,15 @@ Finally, in~\cref{sec:MetaModelEvolution}, we explain how we break down \metamod
 
 The main challenges for view-based development is keeping the views on the models of the system consistent.
 For our approach, we will focus on \emph{projective} approaches for this.
-In contrast to \emph{synthetic} approaches, where direct connections between the views are used to keep them consistent, projective approaches use an additional underlying model, which is the source of all presented information \autocite{atkinson_fundamental_2015}.
-Views in projective approaches are transient, i.e., not persistent, and generated dynamically from the underlying model whenever they are required \autocite{atkinson_orthographic_2010}.
+In contrast to \emph{synthetic} approaches, where direct connections between the views are used to keep them consistent, projective approaches use an additional underlying model, which is the source of all presented information \cite{atkinson_fundamental_2015}.
+Views in projective approaches are transient, i.e., not persistent, and generated dynamically from the underlying model whenever they are required \cite{atkinson_orthographic_2010}.
 With projective views, the user is only allowed to interact with the system through the views, while the underlying model is hidden.
 In particular, when a user wants to make changes to the system, the changes need to be applied to (editable) views first and are then propagated to the underlying model.
 The relationship between views, \viewtypes, models and \metamodels in projective approaches is shown in~\cref{fig:view_concept}.
-The ISO-42010 standard \autocite{ISO42010} also contains a definition of the \emph{view} concept, as well as of synthetic and projective approaches, but in a broader sense for software architecture and software architecture description languages.
+The ISO-42010 standard \cite{ISO42010} also contains a definition of the \emph{view} concept, as well as of synthetic and projective approaches, but in a broader sense for software architecture and software architecture description languages.
 
 \begin{comment}
-There exist \emph{synthetic} and \emph{projective} approaches to view-based modeling \autocite{atkinson_fundamental_2015}.
+There exist \emph{synthetic} and \emph{projective} approaches to view-based modeling \cite{atkinson_fundamental_2015}.
 In the former approaches, the system is represented by the union of all views.
 For that purpose, changes must be propagated between the views to ensure the system description is consistent.
 This is different in projective approaches where, in addition to the views, an underlying model of the system exists, which is the source of all information.    
@@ -39,15 +39,15 @@ This is different in projective approaches where, in addition to the views, an u
         \includegraphics{images/view-terminology.tikz}
     \end{center}
 
-    \caption{Visualization of the view terminology for projective approaches \autocite{klare_enabling_2021}.}
+    \caption{Visualization of the view terminology for projective approaches \cite{klare_enabling_2021}.}
     \label{fig:view_concept}
 \end{figure}
 
 For projective view-based environments there are different ways of constructing the underlying model.
-An important differentiation is between \emph{essential} and \emph{pragmatic} construction approaches \autocite{atkinson_fundamental_2015}.
-With an essential SUM (Single Underlying Model) there is a single model, which contains the complete system description and is free of any internal redundancies \autocite{atkinson_orthographic_2010}.
+An important differentiation is between \emph{essential} and \emph{pragmatic} construction approaches \cite{atkinson_fundamental_2015}.
+With an essential SUM (Single Underlying Model) there is a single model, which contains the complete system description and is free of any internal redundancies \cite{atkinson_orthographic_2010}.
 While it may be difficult to construct a meta-model for this, especially in domain-spanning system development, synchronisation between the views is reduced to writing any changes made on them back to the single underlying model.
-This is different for pragmatic approaches where the underlying model consists of multiple submodels, which allows re-using existing meta-models, e.g., from model-based tools, but requires explicit consistency specifications between the underlying meta-models \autocite{klare_enabling_2021}.
+This is different for pragmatic approaches where the underlying model consists of multiple submodels, which allows re-using existing meta-models, e.g., from model-based tools, but requires explicit consistency specifications between the underlying meta-models \cite{klare_enabling_2021}.
 While our approach considers only view types defined on a single meta-model, it is agnostic to the construction of the underlying model and could be extended to view types depending on multiple meta-models in the future to fully support the pragmatic approach as well.
 
 \begin{comment}
@@ -73,7 +73,7 @@ For this, the developer creates views on the system to inspect its properties an
 \subsection{View Generation}
 \label{sec:ViewGeneration}
 
-Since the content of projective views is derived from the underlying model, the methodologist must define a \emph{view generation transformation (VGT)} for each view type, which dynamically creates a view from the model instances when required \autocite{tunjic_synchronization_2015}.
+Since the content of projective views is derived from the underlying model, the methodologist must define a \emph{view generation transformation (VGT)} for each view type, which dynamically creates a view from the model instances when required \cite{tunjic_synchronization_2015}.
 % For pragmatic SUMs, the VGTs must be able to combine models from multiple \metamodels, since the content of a view can be scattered over different internal \metamodels.
 %\LC{but we do not consider such a scenario in this paper; remove sentence? Perhaps move reference to Section 1 where this is mentioned.}
 For users to make changes to the system, views in general must be editable, which requires at least partially bidirectional VGTs.
@@ -85,11 +85,11 @@ VGTs can be defined using common model transformation languages, as well as gene
 For our approach, we do not assume a specific language to be used, but we require that the elements of the view types can be traced back to the meta-model elements they represent.
 
 \begin{comment}
-For the definition of the VGTs, common model transformation languages, such as QVT \cite{omg_qvt} or ATL \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \autocite{foster_combinators_2007}.
+For the definition of the VGTs, common model transformation languages, such as QVT \cite{omg_qvt} or ATL \cite{eclipse_atl}, can be used, as well as formal bidirectional model transformation frameworks, such as the \emph{lenses} framework \cite{foster_combinators_2007}.
 % \MA{I would have expected a short discussion on OCL beyond the obvious limitation (of handling only one MM).}
 The query part of the constraint language OCL \cite{omg_ocl} can also be used for the generation of simple views.
 However, because it does not support deriving new model elements from existing ones and is limited to a single source \metamodel, it is not sufficient for our envisioned scenario.
-Another approach for the definition of VGTs is \emph{ModelJoin} \autocite{burger_model-join_2016}, which is an operator-based model query language.
+Another approach for the definition of VGTs is \emph{ModelJoin} \cite{burger_model-join_2016}, which is an operator-based model query language.
 ModelJoin also supports the derivation of a view type based on a query.
 %\LC{Missing a conclusion here/why the paragaph is here. What are we assuming in our approach / our example scenario, any specific approach for VGT definition? Do we need to discuss all the options in this paragraph?}
 
@@ -137,7 +137,7 @@ In combination they are able to describe any difference between two \metamodels 
 
 In order to define more meaningful change types for the purpose of analyzing \metamodel evolution, \textcite{herrmannsdoerfer_extensive_2011} define a catalogue of 61 \metamodel evolution operators.
 %Instead of claiming that this list is complete for all possible \metamodel differences,
-They state that they ``consider [the catalogue] complete for practical application'' \autocite{herrmannsdoerfer_extensive_2011}.
+They state that they ``consider [the catalogue] complete for practical application'' \cite{herrmannsdoerfer_extensive_2011}.
 Their catalogue is split into primitive operators, such as \emph{Create Class}, and complex operators, such as \emph{Move Property} or \emph{Extract Super Class}.
 In contrast to the atomic change types, these operators represent meaningful evolution steps on which further analyses and automated co-evolution support can be built.
 In addition to providing a list of \metamodel evolution operators, \textcite{herrmannsdoerfer_extensive_2011} discuss the impact of the described evolution steps on the models adhering to the evolved \metamodels.
@@ -147,4 +147,4 @@ For our approach, we will use the most important evolution operators, according 
 While \textcite{herrmannsdoerfer_extensive_2011} already describe that the complex changes can be built from atomic changes, \textcite{khelladi_change_2018} provide an approach to reconstruct complex changes from a sequence of atomic changes.
 Their approach can handle overlapping, incomplete and hidden complex changes, as well as dependencies between them, and can be instantiated for arbitrary sets of complex changes.
 Since we do not expect developers to describe the evolution steps performed on a \metamodel manually, we rely on the analysis from \textcite{khelladi_change_2018} to extract the complex changes from a sequence of atomic changes.
-The sequence of atomic changes can either be recorded while the \metamodel is edited in a suitable development environment or derived from the difference between the \metamodel before and after the evolution process \autocite{wittler_derivation_2021}.
+The sequence of atomic changes can either be recorded while the \metamodel is edited in a suitable development environment or derived from the difference between the \metamodel before and after the evolution process \cite{wittler_derivation_2021}.

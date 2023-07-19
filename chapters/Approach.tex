@@ -1,8 +1,6 @@
 \section{Suggestions for \viewtype co-evolution} 
 \label{sec:Approach}
 
-%\MA{I changed the Section's title from ``Approach'', which IMO does not fit anymore. Feel free though to improve that!}\LC{New title doesn't quite fit, viz.~title of preceding section. Perhaps we change preceding section's title to 'Conceptual Model for Viewtype Co-Evolution'?}
-
 While the \textsf{Suggestion} \metamodel captures how we
 conceptualise recommendations for co-evolving \viewtypes, we detail
 in this section \textsf{Suggestion}'s ``content'', i.e. which exact \textsf{Recommendation}s
@@ -52,47 +50,47 @@ Extracting super class does not influence the effective set of features and ther
 \hline
 Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
 
-Create Package $(p)$&  
-\multirow{8}{*}{\parbox{\linewidth}{The container of $x$ is referred in the \viewtype, where $x \in \{p, c, dt, e, r, or, a, l\}$}} &      
-\multirow{8}{*}{$ADD(x)$ in the \viewtypes} &
+\textsf{Create} \textsf{PKG} $(p)$&  
+\multirow{8}{*}{\parbox{\linewidth}{$x$'s container is referred in the \viewtype (with $x \in \{p, c, dt, e, r, opp, a, l\})$}} &      
+\multirow{8}{*}{$\mathsf{ADD}(x)$ in the \viewtypes} &
 \multirow{8}{*}{N} \\ \cline{1-1}
-Create Class $(c)$&  &    &                   \\ \cline{1-1}
-Create Data Type $(dt)$&  &    &                   \\ \cline{1-1}
-Create Enum $(e)$&    &  &                   \\ \cline{1-1}
+\textsf{Create} \textsf{CLASS} $(c)$&  &    &                   \\ \cline{1-1}
+\textsf{Create} Data Type $(dt)$&  &    &                   \\ \cline{1-1}
+\textsf{Create} \textsf{ENUM} $(e)$&    &  &                   \\ \cline{1-1}
 
-Create Reference ($r$)& &  &                   \\ \cline{1-1}
+\textsf{Create} \textsf{REF} ($r$)& &  &                   \\ \cline{1-1}
 %    
 % \multirow{4}{*}{\parbox{\linewidth}{Containers (i.e., package, class) to which the entity is added are referenced from the \viewtype}} &      
 % \multirow{4}{*}{\parbox{\linewidth}{Suggest the addition of the new entities in the \viewtype}} &
 % \multirow{4}{*}{N} \\ \cline{1-1}
-Create Opposite Ref. ($or$) &   &   &                   \\ \cline{1-1}
-Create Attribute ($a$)&  &    &                   \\ \cline{1-1}
-Create Literal ($l$)&    &  &                   \\ \hline
+\textsf{Create} Opposite \textsf{REF} ($opp$) &   &   &                   \\ \cline{1-1}
+\textsf{Create} \textsf{ATT} ($a$)&  &    &                   \\ \cline{1-1}
+\textsf{Create} \textsf{LIT} ($l$)&    &  &                   \\ \hline
 
 % Delete Package  & 
 % None & None. & N \\ \hline
 
-Delete Class ($c$)& 
+\textsf{Delete} \textsf{CLASS} ($c$)& 
 \multirow{4}{*}{\parbox{\linewidth}{$x$ is referenced in the \viewtype, where $x \in \{c, f, dt, e\}$}} &
-\multirow{4}{*}{$DEL(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
-Delete Feature ($f$) &     & &                   \\ \cline{1-1}
-Delete Data Type ($dt$) &    &  &                   \\ \cline{1-1}
-Delete Enum ($e$) &   &   &                   \\ \hline
+\multirow{4}{*}{$\mathsf{DEL}(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
+\textsf{Delete} Feature ($f$) &     & &                   \\ \cline{1-1}
+\textsf{Delete} Data Type ($dt$) &    &  &                   \\ \cline{1-1}
+\textsf{Delete} \textsf{ENUM} ($e$) &   &   &                   \\ \hline
 
 %Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
 %Drop Class Abstract  &  & &  & \\ \hline
 
-Delete Opposite Ref. ($or$) & $f^*$ is referred in \viewtype through referencing type ($r_s$), where $f^*$ is the set of features available via $or$ & $MOVE$ $f^\prime\in f^*$ from accessing through $r_s$ to directly through $or$ & M            \\ \hline
+\textsf{Delete} Opposite \textsf{REF} ($opp$) & Set $f^*$ of available features through $opp$ is referred in \viewtype through referencing type ($r_s$) & $\mathsf{MOVE}$ all $f$ in $f^*$ accessing through $r_s$ directly through $opp$ & M            \\ \hline
 
-Merge Literal  ($l$)&   $l$ is referenced in \viewtype & $UP$date $l$ with $l^\prime$, where $l$ and $l^\prime$ are contained in the same \textit{Enum} & M            \\ \hline
+Merge Literal  ($l$)&   $l$ is referenced in \viewtype & $\mathsf{UP}$date $l$ with $l^\prime$, with $l$, $l^\prime$ contained in the same \textsf{ENUM} & M            \\ \hline
 
-Rename  &  Old name $s$ is referred in the \viewtype \LK{with identity we do not have to match names, right?}  &  $UP$dating $s$ with $s_c$ where $s_c$ is the current name & M \\ \hline
+\textsf{Rename} &  \textsf{previous} is referred in the \viewtype &  $\mathsf{UP}$dating \textsf{previous} with \textsf{new} & M \\ \hline
 
-Change Package ($p_o$) &  $x$ is referred in \viewtype, where $x\in\{p, t, dt, e, c\}$ and package $p_o$ contained $x$ & $MOVE$ of $x$ from $p_o$ to $p_c$, where $p_c$ is the current package & M \\ \hline
+\textsf{ChangePackage} ($p_o$) &  A meta-element $x$ (\textsf{PKG}, \textsf{CLASS}, etc.), contained in \textsf{previous} is referred in \viewtype & $\mathsf{MOVE}$ $x$ from \textsf{previous} to \textsf{new} & M \\ \hline
 
-Add Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $ADD(f^\prime)$, where $f^*$ is the set of features contained in $t$ and $f^\prime\in f^*$& N  \\ \hline
+Add Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $\mathsf{ADD}(f^\prime)$, where $f^*$ is the set of features contained in $t$ and $f^\prime\in f^*$& N  \\ \hline
 
-Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $DEL(f^\prime)$, where $f^*$ is the set of features contained in $t$ and $f^\prime\in f^*$& M \\ \hline
+Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $\mathsf{DEL}(f^\prime)$, where $f^*$ is the set of features contained in $t$ and $f^\prime\in f^*$& M \\ \hline
 %Make Attr. Identiﬁer   &  \multirow{4}{*}{None}    &  \multirow{4}{*}{None}    & \multirow{4}{*}{I}            \\ \cline{1-1}
 %Drop Attr. Identiﬁer  & &      &      &     \\ \cline{1-1}
 %Make Ref. Composite  & &      &      &             \\ \cline{1-1}
@@ -101,19 +99,19 @@ Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a chil
 % Drop Ref. Opposite  & P&   None   &    None  &             \\ \hline
 %\hline
 
-Move feature ($f$) &   $f$ is referred in \viewtype  & $MOVE$ $f$ from $c_s$ to $c_d$, where $c_s$ and $c_d$ are previous and current container classes respectively & M \\ \hline
+\textsf{MoveFeature} ($f$) &   $f$ referred in \viewtype  & $\mathsf{MOVE}$ $f$ from \textsf{container} to \textsf{targetClass} & M \\ \hline
 
-Push feature ($f$)  &  $f$ is referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_c$ & $MOVE$ $f$ from $c_s$ to $c^\prime$, where $c^\prime\in c_c$   & M \\ \hline
+\textsf{PushFeature} ($f$)  &  $f$ referred in \viewtype using a reference of $c_s$, where $c_s$ is a super class from which $f$ was pushed to all its child classes $c_c$ & $\mathsf{MOVE}$ $f$ from \textsf{container} to all child classes of \textsf{targetClass} & M \\ \hline
 %Pull Property   &  None & None & I \\ \hline
 
-Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $UP$date $c^\prime_c$ with  $c$, where $c^\prime_c\in c_c$ & N  \\ \hline
+Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $\mathsf{UP}$date $c^\prime_c$ with  $c$, where $c^\prime_c\in c_c$ & N  \\ \hline
 
-Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $MOVE$ $f^\prime$ from $c$ to $c_c$ for all $f^\prime\in f^*$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$  &  M           \\ \hline
+Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_c$ for all $f^\prime\in f^*$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$  &  M           \\ \hline
 
 Extract Class ($c$) &  $f^\prime$ is referred in \viewtype, where $f^*$ is the set of features extracted into delegate class $c_{del}$ and $f^\prime\in f^*$ & 
-$MOVE$ $f^\prime$ from $c$ to $c_{del}$ for all $f^\prime$ & M \\ \hline
+$\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_{del}$ for all $f^\prime$ & M \\ \hline
 
-Inline Class (deleting delegate class $c$) &  $c$ is referenced in \viewtype & $MOVE$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
+Inline Class (deleting delegate class $c$) &  $c$ is referenced in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
 
 \end{tabular}
 \end{table*}
