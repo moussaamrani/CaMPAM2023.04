@@ -1,20 +1,21 @@
 \section{Conceptual Model for \Viewtype Co-evolution}
 \label{sec:Suggestion}
 
-Figure \ref{fig:Suggestion} depicts a \metamodel that captures the
-required elements for helping methodologists improve their \viewtype designs,
-by suggesting possible ways to co-evolve \viewtypes.
+\cref{fig:Suggestion} depicts a \metamodel capturing the
+required elements for helping methodologists improve their \viewtypes,
+by suggesting possible ways to co-evolve these.
 In the following, we assume that a methodologist is working on a \metamodel
 under evolution \textsf{MM}, that is linked to a set $\mathsf{VT}$ of viewtypes
-(i.e. $\mathsf{VT} = (\mathsf{VT}_\mathsf{i})_{\mathsf{i}\in [1..n]}$). Note that in the discussion above, when we discuss
-\textsf{MM}'s (meta-)elements, we consider \textsf{MM} as a \emph{model}
+(i.e., $\mathsf{VT} = (\mathsf{VT}_\mathsf{i})_{\mathsf{i}\in [1..n]}$). Note that,
+% in the discussion above, when we discuss\textsf{MM}'s (meta-)elements, 
+we consider \textsf{MM} as a \emph{model}
 conforming to a particular meta-\metamodel (such as \textsc{Mof} \cite{TR:OMG-MOF:2016}):
-we therefore discuss changes on \textsf{MM}'s packages, classes (e.g. 
+we therefore discuss changes on \textsf{MM}'s packages, classes (e.g., 
 \textsf{FSM} or \textsf{State} in our example) and their structural features
-(such as the attribute \textsf{name} or the reference \textsf{src}).
+(i.e., the attribute \textsf{name} or the reference \textsf{src}).
 
 A \textsf{Suggestion} is the core element of our approach, and contains four 
-parts: (1) a change \textsf{Operator}, detailed in Figure \ref{fig:Operator}, 
+parts: (1) a change \textsf{Operator}, detailed in \cref{fig:Operator}, 
 capturing the nature of alterations performed on \textsf{MM}'s meta-elements; 
 (2) a \textsf{Relation}, providing traceability links between \textsf{MM} 
 and \textsf{VT}: for each meta-element in \textsf{MM} subject to a 
@@ -31,9 +32,10 @@ Note that a \textsf{Suggestion} may
 have \emph{no} associated \textsf{Recommendation}s, in case an \textsf{Operator} has no
 impact on \textsf{VT}; or \emph{several} \textsf{Recommendation}s for the same 
 \textsf{Operator}, depending on its complexity, and how many \viewtypes are 
-affected by the \textsf{Operator}.
+impacted by the \textsf{Operator}. 
+% \TW{The operator does not directly affect \viewtypes---probably change to impacted?} \HM{ok}
 
-The rest of this Section details each part of the \textsf{Suggestion}. We discuss the actual suggestions in Section~\ref{sec:Approach} and present the corresponding summary in Table~\ref{tab:suggestions}.
+The rest of this Section details each part of the \textsf{Suggestion}. We discuss the actual suggestions in \cref{sec:Approach} and present the corresponding summary in \cref{tab:suggestions}.
 
 
 
@@ -43,30 +45,30 @@ The rest of this Section details each part of the \textsf{Suggestion}. We discus
 \input{chapters/Conditions}
 
 
-\HM{Some comments we should decide on:
-\begin{enumerate}
-	\item Re-layout some of the figures to avoid overlapping text, lines, or if 
-	too crowded. In the figures there are some text in bold (edge label) and some 
-	are not. This could be useful in the context of Eclipse, but probably not here?
-	Streamline these? 
-  \item We are mixing lots of different font styles. I think we should decide max 3 (preferably 2) font styles. I suggest normal, italics and monospace or textsf.
-	\item While referencing or citing I see a mixing of latex 'ref' or 'cite' and enhanced ones with different package like 'textcite' or 'autoref'. We should decide on one style.
-\end{enumerate}
-}
-\MA{Using the same numbering as above:
-\begin{enumerate}
-	\item Did the best I could: let me know if something still needs 
-	further corrections
-	\item Using three fonts is very classic in the MDE community: \emph{emphasised}
-	text is, well, for emphasising something in the text; and \textsf{sans serif (sf)}
-	is for referring to (meta-)model elements. I suggest to leave it the way it is.
-	\item Normally, ``ref'' and ``cite'' play different
-	roles: the former is for \emph{internal} reference of sections, tables, figs, etc.;
-	the latter for bibliographic references. In our case, for bibs, we are using
-	biber, which offers advanced capabilities: you can actually inline-cite the authors
-	with ``textcite'' (so that a text like ``We expand the result of Schwarzenegger
-	and Newman [2] ...'' follows the actual style by, e.g. citing no more than 
-	three authors before \emph{et al.}). I reviewed all ``cite'' in the document and
-	corrected all mentions to the appropriate LaTeX command. ``autoref'' should be
-	safe. 
-\end{enumerate}}
+% \HM{Some comments we should decide on:
+% \begin{enumerate}
+% 	\item Re-layout some of the figures to avoid overlapping text, lines, or if 
+% 	too crowded. In the figures there are some text in bold (edge label) and some 
+% 	are not. This could be useful in the context of Eclipse, but probably not here?
+% 	Streamline these? 
+%   \item We are mixing lots of different font styles. I think we should decide max 3 (preferably 2) font styles. I suggest normal, italics and monospace or textsf.
+% 	\item While referencing or citing I see a mixing of latex 'ref' or 'cite' and enhanced ones with different package like 'textcite' or 'autoref'. We should decide on one style.
+% \end{enumerate}
+% }
+% \MA{Using the same numbering as above:
+% \begin{enumerate}
+% 	\item Did the best I could: let me know if something still needs 
+% 	further corrections
+% 	\item Using three fonts is very classic in the MDE community: \emph{emphasised}
+% 	text is, well, for emphasising something in the text; and \textsf{sans serif (sf)}
+% 	is for referring to (meta-)model elements. I suggest to leave it the way it is.
+% 	\item Normally, ``ref'' and ``cite'' play different
+% 	roles: the former is for \emph{internal} reference of sections, tables, figs, etc.;
+% 	the latter for bibliographic references. In our case, for bibs, we are using
+% 	biber, which offers advanced capabilities: you can actually inline-cite the authors
+% 	with ``textcite'' (so that a text like ``We expand the result of Schwarzenegger
+% 	and Newman [2] ...'' follows the actual style by, e.g., citing no more than 
+% 	three authors before \emph{et al.}). I reviewed all ``cite'' in the document and
+% 	corrected all mentions to the appropriate LaTeX command. ``autoref'' should be
+% 	safe. 
+% \end{enumerate}}

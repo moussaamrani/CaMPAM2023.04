@@ -2,21 +2,23 @@
 \label{sec:Suggestion:Relation}
 
 The \textsf{Relation} part provides traceability links between \textsf{MM}
-elements that are \textsf{changed}, and all \viewtype elements that are 
-\textsf{impacted} by that change. One \textsf{MM} element
+all the corresponding \textsf{changed} and \textsf{impacted} elements.
+% elements that are \textsf{changed}, and all \viewtype elements that are 
+% \textsf{impacted} by that change. 
+One \textsf{MM} element change
 may impact several elements in the same \viewtype, but may also potentially
 impact several \viewtypes. We only require so-called \emph{links}; richer
-data structures for traceability may be used \autocite{Batot-Cabot-Gerard:2021}.
+data structures for traceability may be used \cite{Batot-Cabot-Gerard:2021}.
 
 The way these traceability links are computed are left as implementation
 details, and may happen in two ways: \emph{on-the-fly} whenever an \textsf{MM} element is evolved; and \emph{offline}
-after a complete evolution session has terminated (based on diffing \autocite{Kehrer-Kelter-Taentzer:2011}, or using 
-operation-based approaches \parencite{J:Lippe-Oosterom:1992}).
+after a complete evolution session has terminated (based on diffing \cite{Kehrer-Kelter-Taentzer:2011}, or using 
+operation-based approaches \cite{J:Lippe-Oosterom:1992}).
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth]{Relation.pdf}
-    \caption{Capturing \textsf{Relation}s between \textsf{MM} elements and \textsf{VT} elements.}
+    \caption{\textsf{Relation}s between \textsf{MM} elements and \textsf{VT} elements.}
     \label{fig:Relation}
 \end{figure}
 

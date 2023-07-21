@@ -6,18 +6,19 @@
      \includegraphics[width=\columnwidth]{images/Suggestion.pdf}
     %\includegraphics[width=\columnwidth]{images/SuggestionWithCondition.pdf}
     \caption{A \textsf{Suggestion} holds for a single \textsf{Change} linked to 
-		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s}
+		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s and \textsf{Condition}s} 
 		\label{fig:Suggestion}
 \end{figure}
 
-\textsf{Operator}s, as shown in Figure~\ref{fig:Operator}, are split into two categories:
+\textsf{Operator}s, shown in \cref{fig:Operator}, are split into two categories:
 \textsf{Primitive} ones operate a single change in \textsf{MM}; while
 \textsf{Complex} ones combine several \textsf{Primitive} \textsf{Operator}s
 to perform a meaningful change. 
 Each \textsf{Operator} may target \emph{any} instantiable \metamodel element, 
-thus referring to the meta-class \textsf{NamedElement} and its container, which has same type.
+thus referring to the meta-class \textsf{NamedElement} and its container, which has the same type.
 
 We identified the MM change \textsf{Operator}s based on the work of \textcite{herrmannsdoerfer_extensive_2011} who presented a list of 27 primitive and 34 complex operators. In this work, we choose all of the primitive and 7 complex operators, which according to \textcite{khelladi_detecting_2015} constitute 72\% of all complex changes appearing in a large case study. 
+% \TW{Hossian, please update with the correct values from the table} \HM{this is the correct count. table contains less and the rational explained in 1st bullet point at \cref{sec:Approach}}
 
 % HM commented
 % Since \viewtypes are structurally \metamodels, we reviewed the literature to
@@ -44,9 +45,9 @@ breaking but can enrich the \viewtypes with additional information.
     \label{fig:Operator}
 \end{figure}
 
-Back to our example, the evolution steps of Figure \ref{fig:FSM} make use of different \textsf{Operator}s.
+Back to our example, the evolution steps of \cref{fig:FSM} make use of different \textsf{Operator}s.
 \begin{itemize}
-	\item In Step 1 (depicted from Figure \ref{fig:FSM:Init} to \ref{fig:FSM:Relevant}),
+	\item In Step 1 (depicted from \cref{fig:FSM:Init} to \cref{fig:FSM:Relevant}),
 	the following sequence of \textsf{Operator}s is applied:
 	$$\langle \mathsf{PushProperty} \cdot \mathsf{Rename} \cdot \mathsf{Rename} \rangle$$
 	First, \textsf{PushProperty} pushes down $\mathsf{Named} \squaredots \mathsf{name}$
@@ -55,14 +56,14 @@ Back to our example, the evolution steps of Figure \ref{fig:FSM} make use of dif
 	into each subclass (namely, \textsf{FSM}, \textsf{State} and \textsf{Transition});
 	then \textsf{Rename} is applied to the \textsf{ATT}ribute \textsf{element} 
 	\textsf{name}, located respectively in \textsf{container}s $\mathsf{FSM}$ and 
-	$\mathsf{Transition}$, thus obtaining the result of Figure \ref{fig:FSM:Relevant}.
+	$\mathsf{Transition}$, thus obtaining the result of \cref{fig:FSM:Relevant}.
 	
 	\item Step 2 only consists of the following \textsf{Operator} sequence:
 	$$\langle \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \rangle$$
 	where three of these \textsf{Operator}s add a new \textsf{ATT}ribute \textsf{element}
 	in \textsf{container} \textsf{Transition}, and the last one adds a new 
 	\textsf{LIT}eral \textsf{element} in the \textsf{container} enumeration \textsf{Kind},
-	resulting in the situation of \autoref{fig:FSM:Guard}.
+	resulting in the situation of \cref{fig:FSM:Guard}.
 	
 	\item Step 3 requires a longer sequence of \textsf{Operator}s, since it creates
 	a new class hieararchy under \textsf{Expression}. However, this sequence may

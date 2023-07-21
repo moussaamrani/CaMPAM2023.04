@@ -4,10 +4,9 @@
 The approach sketched in this paper aims at recommending possible changes 
 for realigning \viewtypes, when changes are observed, or detected on a 
 \metamodel. Our approach assumes that \metamodel changes are expressed
-as a set, or a sequence or change \textsf{Operator}s: we therefore build
+as a set, or a sequence of change \textsf{Operator}s: we therefore build
 on existing approaches for detecting and classifying evolution changes
-(cf. \cite{herrmannsdoerfer_extensive_2011,khelladi_detecting_2015} and 
-\S \ref{sec:MetaModelEvolution}).
+(cf. \cite{herrmannsdoerfer_extensive_2011,khelladi_detecting_2015} and  \cref{sec:MetaModelEvolution}).
 
 Our work fits into the general topic of \metamodel{} -- \metamodel co-evolution,
 but with specific restrictions. First, although \viewtypes are structurally 
@@ -18,9 +17,9 @@ the original \metamodel{}(s) may be lost (i.e. irrelevant for the view), other
 may be presented differently (simplified, aggregated, etc.). Therefore, our
 \textsf{Suggestion}s closely follow what an \textsf{Operator} describes on
 the evolved \metamodel, but translates this evolution into \emph{all} impacted
-elements of \emph{all} \viewtypes, as described in Table \ref{tab:suggestions}.
+elements of \emph{all} \viewtypes, as described in \cref{tab:suggestions}.
 This is possible thanks to the traceability \textsf{Relation} 
-(cf. Fig. \ref{fig:Relation}) that traces which \viewtype elements are impacted
+(cf. \cref{fig:Relation}) that traces which \viewtype elements are impacted
 by a change.
 Extending our approach to plain \metamodels, instead of \viewtypes, may partially
 work depending on the nature of the co-evolved \metamodels depending on how
@@ -30,7 +29,7 @@ Second, in our vision of (projective) view-based development, views are generate
 from models using View Generation Transformations (VGTs). As we have pointed in our
 example, a natural extension point, which may sometimes be equally important,
 is to \emph{also} provide \textsf{Suggestion}s at the VGT level to help 
-methodologist correct how information is represented (from models to to the views),
+methodologist correct how information is represented (from models to the views),
 but also how edits in views may translate back into the various models specifying
 the system. We briefly sketched in our example how simple cases for the first 
 direction may be addressed; the reverse direction is more complicated and requires
@@ -38,7 +37,7 @@ further research.
 
 Third, evolving a \metamodel and its associated \viewtypes naturally requires to
 co-evolve the underlying model(s) and view(s). We would simply reuse existing 
-techniques and tools for \metamodel/model co-evolution (as discussed in \S \ref{sec:RW}),
+techniques and tools for \metamodel/model co-evolution (as discussed in \cref{sec:RW}),
 from which, in our approach, views would be automatically generated using VGTs.
 
 %\textbf{Limitations:} \textbf{\textsl{All these items are now coverdd in the discussion above}}

@@ -110,16 +110,18 @@
   }
 % ====================================================
 
+\usepackage[normalem]{ulem}
+
 \begin{document}
 
 \title{Co-Evolving \MetaModels and \ViewTypes\\ in View-Based Development\\
-\thanks{This publication is part of the project DIGITAL TWIN (with project number P18-03) of the research programme TTW Perspective which is (partly) financed by the Dutch Research Council (NWO). This work was supported by funding from the topic Engineering Secure Systems of the Helmholtz Association (HGF) and by KASTEL Security Research Labs.}
+\thanks{This publication is part of the project DIGITAL TWIN (with project number P18-03) of the research programme TTW Perspective which is (partly) financed by the Dutch Research Council (NWO). This work was supported by funding from the topic Engineering Secure Systems of the Helmholtz Association (HGF) and by KASTEL Security Research Labs. This work was supported by "Kerninformatik am KIT (KiKIT)" funded by the Helmholtz Association (HGF).}
 }
 
 
 \author{
 \IEEEauthorblockN{Hossain Muhammad Muctadir\IEEEauthorrefmark{1}\orcidlink{
-0000-0002-2090-4766}, Lars König\IEEEauthorrefmark{2}\orcidlink{0000-0002-1751-1291}, Thomas Weber\IEEEauthorrefmark{2}\orcidlink{0009-0001-5775-2225}, Moussa Amrani\IEEEauthorrefmark{3}\orcidlink{0000-0002-6987-1037}, Loek Cleophas\IEEEauthorrefmark{1},\IEEEauthorrefmark{4}\orcidlink{0000-0002-7221-3676}}
+0000-0002-2090-4766}, Lars König\IEEEauthorrefmark{2}\orcidlink{0000-0002-1751-1291}, Thomas Weber\IEEEauthorrefmark{2}\orcidlink{0009-0001-5775-2225}, Moussa Amrani\IEEEauthorrefmark{3}\orcidlink{0000-0002-6987-1037}, Loek Cleophas\IEEEauthorrefmark{1}\textsuperscript{,}\IEEEauthorrefmark{4}\orcidlink{0000-0002-7221-3676}}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}\textit{Department of Mathematics and Computer Science},
 \textit{Eindhoven University of Technology (TU/e)}\\
 Eindhoven, The Netherlands \\
@@ -159,6 +161,7 @@ Stellenbosch, South Africa}
 %\LC{should title not have 'Projective' after 'in'?}
 %\LK{We could do that, although meta-model-view-type co-evolution really doesn't make sense with synthetic views, as there we only have views and no underlying models.}
 \input{chapters/Abstract}
+% \TW{Changed the comma from author affiliation from Loek from , to \textsuperscript{,}}
 \input{chapters/Introduction}
 \input{chapters/Background}
 \input{chapters/Example}
@@ -168,7 +171,7 @@ Stellenbosch, South Africa}
 \input{chapters/RW}
 \input{chapters/Discussion}
 \input{chapters/Conclusion}
-\LC{TODO for References: add DOIs where available; consistify}
+% \LC{TODO for References: add DOIs where available; consistify}\HM{done}
 % \bibliographystyle{IEEEtran}
 \printbibliography
 \end{document}

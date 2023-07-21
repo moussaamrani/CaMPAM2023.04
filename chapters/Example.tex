@@ -39,13 +39,13 @@ evolution steps on a popular \textsc{Dsl}, the Finite State Machine (\textsf{FSM
 Note that we simplify the \metamodels and corresponding \viewtypes, to focus 
 the discussion only on the parts relevant to co-evolution. 
 
-A methodologist starts with the simple version depicted in Figure \ref{fig:FSM:Init}:
+A methodologist starts with the simple version depicted in \cref{fig:FSM:Init}:
 an \textsf{FSM} consists of \textsf{State}s and \textsf{Transition}s. Each class
 inherits a \textsf{name} that denotes the \textsf{FSM}'s title, the \textsf{State}'s
 name, and the \textsf{Transition}'s trigger. Moreover, \textsf{INITIAL} \textsf{State}s
 are distinguished from \textsf{REGULAR} ones to indicate where computations start.
 From this initial version, the methodologist defines a \viewtype \textsf{VT\_FSM}
-that has two characteristics (cf. \autoref{fig:VT}). First, it captures \textsf{Transition}s \emph{inside},
+that has two characteristics (cf. \cref{fig:VT}). First, it captures \textsf{Transition}s \emph{inside},
 or as part of, \textsf{State}s, to help compute e.g. the set of outgoing 
 \textsf{Transition}s from a given \textsf{State}. Second, it represents the various
 \textsf{kind}s of \textsf{State}s as a hierarchy, instead of an enumeration,
@@ -61,7 +61,7 @@ four \textsf{State}s and six \textsf{Transition}s.
 In a first evolution step, the methodologist refines the \textsf{FSM} metamodel,
 after noticing that the inherited \textsf{name}s actually play different roles,
 by  \emph{pushing down} the \textsf{name} attribute and \emph{renaming} it where
-appropriate (other irrelevant details are omitted from \autoref{fig:FSM:Relevant}). 
+appropriate (other irrelevant details are omitted from \cref{fig:FSM:Relevant}). 
 This evolution step does not impact the \viewtypes, but rather the way information
 in views is computed: for example, the \textsf{name} of a \textsf{Transition} in
 \textsf{VT\_FSM} can no longer be computer using \texttt{t.name} (where 
@@ -71,7 +71,7 @@ into \textsf{VT\_FSM} to avoid further confusion and keep a direct link with
 \textsf{FSM}'s meta-elements.
 
 In a second evolution step, the methodologist wants to extend \textsf{FSM}'s 
-behaviour in two ways, leading to the version depicted in \autoref{fig:FSM:Guard}. First, by adding \textsf{FINAL} \textsf{State}s,
+behaviour in two ways, leading to the version depicted in \cref{fig:FSM:Guard}. First, by adding \textsf{FINAL} \textsf{State}s,
 resulting in \emph{creating} the enumeration literal \textsf{FINAL}.
 Second, by adding a rudimentary representation for guards that may prevent 
 triggering a \textsf{Transition} when its guard evaluates to \texttt{false}. 
@@ -85,9 +85,9 @@ but \viewtypes likely have to reflect this new information by \emph{ADD}ing new 
 In a final evolution step, the methodologist, confident with the implemented
 execution engine, specifies a fully-fledged \textsf{Expression} model,
 allowing a \textsf{Transition} to possess a \textsf{guard}, thus \emph{deleting}
-the extra attributes added in the previous step. \autoref{fig:FSM:Expression} depicts the resulting \metamodel.
+the extra attributes added in the previous step. \cref{fig:FSM:Expression} depicts the resulting \metamodel.
 
-% \HM{I think it might be useful to mention the operators from Table \ref{tab:suggestions} applied to the MM at each step and later connect this with the suggestions?}
+% \HM{I think it might be useful to mention the operators from Table \cref{tab:suggestions} applied to the MM at each step and later connect this with the suggestions?}
 
 \begin{figure}
     \centering
@@ -104,6 +104,6 @@ the extra attributes added in the previous step. \autoref{fig:FSM:Expression} de
       \caption{A textual view of an \textsf{FSM} model named \textsf{Simple FSM} with 4 \textsf{States} and 6 \textsf{Transitions} (details omitted).}
       \label{fig:VT:TM}
     \end{subfigure}
-    \caption{Two \viewtypes, and associated views depicted the \textsf{Simple FSM} model.}
+    \caption{\Viewtype, and associated view depicted the \textsf{Simple FSM} model.}
     \label{fig:VT}
 \end{figure}
