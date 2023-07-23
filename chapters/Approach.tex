@@ -1,50 +1,53 @@
 \section{Suggestions for \viewtype co-evolution} 
 \label{sec:Approach}
 
-While the \textsf{Suggestion} \metamodel captures how we
-conceptualise recommendations for co-evolving \viewtypes, we detail
-in this section \textsf{Suggestion}'s ``content'', i.e. which exact \textsf{Recommendation}s
+The \textsf{Suggestion} \metamodel captures how we
+conceptualise recommendations for co-evolving \viewtypes. Here, we detail the \textsf{Suggestion}s, i.e. which exact \textsf{Recommendation}s
 will be issued for each change \textsf{Operator} detected in an evolution
 session. This results in \cref{tab:suggestions}, where:
 \begin{itemize}
-	\item Column \textsl{Operator} lists all \textsf{Operator}s considered in \cref{fig:Operator}. 
-    However, the following \textsf{Operator}s, which are
-	associated with severity \textsf{IGNORE}, are excluded from our Table, since 
-	they do not result in any \textsf{Recommendation}: atomic operators \textit{Delete Package}, 
+	\item Column \textsl{Operator} lists the \textsf{Operator}s considered in \cref{fig:Operator}. Note that we exclude \textsf{Operator}s which are
+	associated with severity \textsf{IGNORE}, as 
+	these do not result in any \textsf{Recommendation}. In other words, these correspond to the \textsf{0} multiplicity
+	of $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in \cref{fig:Suggestion}. These ignored operators are the primitive 
+ % \LK{replaced ``atomic'' with ``primitive''} 
+ operators \textit{Delete Package}, 
 	\textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, 
 	\textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite}
-	and complex operator \textit{Pull Feature}. In other words, \cref{tab:suggestions} only
-	lists \textsf{Operator}s resulting in actual \textsf{Recommendation}, but all
-	others simply do not issue any and thus, correspond to the \textsf{0} multiplicity
-	of $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in \cref{fig:Suggestion}.
+	and complex operator \textit{Pull Feature}. %In other words, %\cref{tab:suggestions} only
+	%lists \textsf{Operator}s resulting in actual \textsf{Recommendation}, but all others
+% simply do not issue any recommendations and thus, 
 	
 	\item The \textsl{Condition} column corresponds to constraints that are captured
 	either by how the \textsf{Operator} is defined (typically, which \textsf{container}
 	is involved), or by information captured by traceability \textsf{Link}s (typically,
 	an element is referenced in a \viewtype). Sometimes, information coming from \textsf{MM},
 	the \metamodel under evolution, may bring other conditions that can be statically
-	computed (typically, which sub- or super-classes). 
+	computed (typically, which sub- or super-classes are involved).%\LC{' are involved'? A verb is missing here certainly.}). 
 	
-	\item The \textsl{Suggestion} column details, using the actions of \cref{fig:Recommendation}, which \textsf{Recommendation}s we offer, and which elements in the \viewtype they are applied to.
-
-    \item We divided the table into two blocks where the first lists the \textsf{Primitive} operators and the rest contains the \textsf{Complex} ones.
-		To keep the table less crowded, we do not indicate this in the table.
+	\item The \textsl{Suggestion} column details which \textsf{Recommendation} actions (see \cref{fig:Recommendation}) we offer, and which elements in the \viewtype they are applied to.
 \end{itemize}
+We divided the table into two blocks where the first lists the \textsf{Primitive} operators and the rest contains the \textsf{Complex} ones.
+%		To keep the table less crowded, we do not indicate this in the table.
 
-Prior to discussing the suggestions, we briefly focus on the \textsf{IGNORE}d operators. The deletion of a package is possible iff it is empty and therefore, this operation can be safely ignored. The \textit{Make Class Abstract} and \textit{Drop Class Abstract} are about making an existing class abstract and vice versa. As these operations only changes the abstraction without modifying the effective list of features, they can be ignored in the context of \viewtype co-evolution. The \textit{Make Attribute Identified} and \textit{Drop Attribute Identifier} operators adds or removes a constraint that ensures the uniqueness of the attribute values. The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for a reference. Since, these are instance level constraints, they do not influence the \viewtype and therefore, can be ignored. The \textit{Pull Up} operator can be applied iff the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.
+Prior to discussing the suggestions, we briefly focus on the \textsf{IGNORE}d operators. The deletion of a package is possible iff it is empty and therefore, this operation can be safely ignored. The \textit{Make Class Abstract} and \textit{Drop Class Abstract} are about making an existing class abstract and vice versa. \LK{But if the class is abstract in the meta-model and still not abstract in the view type, how do I propagate new instances of the class from the view to the model?} As these operations only changes the abstraction without modifying the effective list of features, they can be ignored in the context of \viewtype co-evolution. The \textit{Make Attribute Identifier} and \textit{Drop Attribute Identifier} operators add or remove a constraint that ensures the uniqueness of the attribute values. \LK{Same here, how are unconstrained changes on a view propagated to the models?} The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for a reference. Since these are instance level constraints, they do not influence the \viewtype and therefore, can be ignored. The \textit{Pull Feature}
+% \LC{It's called \textit{Pull Feature} in the 1st bullet above; which term is correct?} \HM{fixed}
+operator can be applied if and only if the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.\LC{This paragraph seems to exclusively explain in a lot of detail what the first bullet point above already stated---that these 9 atomic and 1 complex operators are ignorable/ignored/not listed, and explaining them a bit. Either cut down, or give the explanations in the 1st bullet above, 'cuz currently having both that bullet and this long paragraph feels quite dragged out, repetitive.}\HM{the bullet point only presents the list. I added this paragraph to add some explanation.}\LC{Yes, I did see that difference, but my point is that the paragraph plus bullet point jointly have repetition and use up too much space, and this could be substantially reduced by integrating them.}
 
-Among the primitive operations the creation of various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, attribute, reference, literal, and enumeration, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
+Among the primitive operations the ones creating various entities are of minor severity as they do not influence the existing relation between the \metamodel and corresponding \viewtypes. For the creation of package, class, data type, attribute, reference, literal, and enumeration, we first identify the \viewtypes that reference the corresponding container (i.e., class or enumeration) and suggest the addition of the new entities for these \viewtypes.
 
-Deletion of class, feature, data type, and enumeration can have major effect if these entities are referred from one or more related \viewtypes as the partial representation relation with the corresponding \metamodel no longer holds. Therefore, we suggest the removal of these also from the \viewtypes. The deletion of an opposite reference removes access to the features of the referenced entity from the referencing one. The corresponding suggestion is to access these features directly through the referenced entity from the \viewtype. \textit{Merge Literal} removes a literal and replaces its occurrence with another one. Therefore, applying this operation triggers the suggestion to replace the deleted literal with an existing one from the same enumeration. \textit{Rename} and \textit{Change Package} operators generate suggestions to do the same (i.e., renaming and changing package location) on the related \viewtypes.
+Deletion of class, feature, data type, and enumeration can have a major effect if these entities are referred from one or more related \viewtypes as the partial representation relation with the corresponding \metamodel no longer holds. Therefore, we suggest the removal of these also from the \viewtypes. The deletion of an opposite reference removes access to the features of the referenced entity from the referencing one. The corresponding suggestion is to access these features directly through the referenced entity from the \viewtype. \textit{Merge Literal} removes a literal and replaces its occurrence with another one. Therefore, applying this operation triggers the suggestion to replace the deleted literal with an existing one from the same enumeration. \textit{Rename} and \textit{Change Package} operators generate suggestions to do the same (i.e., renaming and changing package location) on the related \viewtypes.
 
-The \textit{Add Super Type} and \textit{Remove Super Type} operators adds and removes inherited features from an existing class. Accordingly, the corresponding suggestion suggests the addition or removal of inherited features wherever the child class is referenced in the \viewtype. Although the suggestion for the former is of minor severity, the removal of features can break the \viewtype and hence, is classified as major.
+The \textit{Add Super Type} and \textit{Remove Super Type} operators add and remove inherited features from an existing class. Accordingly, the corresponding suggestion suggests the addition or removal of inherited features wherever the child class is referenced in the \viewtype. Although the suggestion for the former is of minor severity, the removal of features can break the \viewtype and hence, is classified as major.
 
 The \textit{Move Property} operator triggers the suggestion to update the corresponding location in the \viewtype. Pushing a feature down in the hierarchy removes it from the super class and therefore, it needs to be removed from the \viewtype wherever it is referred using a reference of the super class.
 
-Extracting super class does not influence the effective set of features and therefore, triggers a minor suggestion for replacing some occurrences of the child class reference with the parent. The \textit{Flatten Hierarchy} moves all the features from the parent to the child classes and deletes the parent class. Therefore, this triggers a major suggestion for replacing all the references of the removed super class with the appropriate child class reference. Since the effective features of the child classes remain the same before and after fattening, we offer no suggestion for the child classes. The \textit{Extract Class} operator groups a set of features into a new delegate class and replaces their occurrences with a reference to the delegate class. The \textit{Inline Class} operator is the exact opposite of \textit{Extract Class}. Both trigger a major suggestion of adapting the location of any related feature referenced in the \viewtype.
+Extracting super class does not influence the effective set of features and therefore, triggers a minor suggestion for replacing some occurrences of the child class reference with the parent. The \textit{Flatten Hierarchy} moves all the features from the parent to the child classes and deletes the parent class. Therefore, this triggers a major suggestion for replacing all the references of the removed super class with the appropriate child class reference. Since the effective features of the child classes remain the same before and after flattening, we offer no suggestion for the child classes. The \textit{Extract Class} operator groups a set of features into a new delegate class and replaces their occurrences with a reference to the delegate class. The \textit{Inline Class} operator is the exact opposite of \textit{Extract Class}. Both trigger a major suggestion of adapting the location of any related feature referenced in the \viewtype.
 
 \begin{table*}[ht!]
-\caption{Suggestions per change operator.} 
+\caption{Suggestions per change operator. Operators with Minor(N) and Major(M) severity are listed here excluding the ignorable ones as explained in \cref{sec:Approach}.
+% \LK{Please add a description for the severity classes also in the caption. Besides that, is there a difference between being ``referred'' and ``referenced'' in the view type?}\HM{changed with referred}
+} 
 \label{tab:suggestions}
 \centering
 \begin{tabular}{|p{.16\linewidth}|p{.30\linewidth}|p{.4\linewidth}|c|}
@@ -72,7 +75,7 @@ Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hlin
 % None & None. & N \\ \hline
 
 \textsf{Delete} \textsf{CLASS} ($c$)& 
-\multirow{4}{*}{\parbox{\linewidth}{$x$ is referenced in the \viewtype, where $x \in \{c, f, dt, e\}$}} &
+\multirow{4}{*}{\parbox{\linewidth}{$x$ is referred in the \viewtype, where $x \in \{c, f, dt, e\}$}} &
 \multirow{4}{*}{$\mathsf{DEL}(x)$ from \viewtype} & \multirow{4}{*}{M}           \\ \cline{1-1}
 \textsf{Delete} Feature ($f$) &     & &                   \\ \cline{1-1}
 \textsf{Delete} Data Type ($dt$) &    &  &                   \\ \cline{1-1}
@@ -83,7 +86,7 @@ Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hlin
 
 \textsf{Delete} Opposite \textsf{REF} ($opp$) & Set $f^*$ of available features through $opp$ is referred in \viewtype through referencing type ($r_s$) & $\mathsf{MOVE}$ all $f$ in $f^*$ accessing through $r_s$ directly through $opp$ & M            \\ \hline
 
-Merge Literal  ($l$)&   $l$ is referenced in \viewtype & $\mathsf{UP}$date $l$ with $l^\prime$, with $l$, $l^\prime$ contained in the same \textsf{ENUM} & M            \\ \hline
+Merge Literal  ($l$)&   $l$ is referred in \viewtype & $\mathsf{UP}$date $l$ with $l^\prime$, with $l$, $l^\prime$ contained in the same \textsf{ENUM} & M            \\ \hline
 
 \textsf{Rename} &  \textsf{previous} is referred in the \viewtype &  $\mathsf{UP}$dating \textsf{previous} with \textsf{new} & M \\ \hline
 
@@ -106,12 +109,12 @@ Remove Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a chil
 
 Extract Super Class ($c$) &  $c_c$ is referred in \viewtype, where $c_c$ is the set of child classes of $c$ & $\mathsf{UP}$date $c^\prime_c$ with  $c$, where $c^\prime_c\in c_c$ & N  \\ \hline
 
-Flatten Hierarchy (removing super class $c$)  &  $c$ is referenced in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_c$ for all $f^\prime\in f^*$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$  &  M           \\ \hline
+Flatten Hierarchy (removing super class $c$)  &  $c$ is referred in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_c$ for all $f^\prime\in f^*$, where $c_c$ is a child class of $c$ and $f^*$ is the set of features of $c$  &  M           \\ \hline
 
 Extract Class ($c$) &  $f^\prime$ is referred in \viewtype, where $f^*$ is the set of features extracted into delegate class $c_{del}$ and $f^\prime\in f^*$ & 
 $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_{del}$ for all $f^\prime$ & M \\ \hline
 
-Inline Class (deleting delegate class $c$) &  $c$ is referenced in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
+Inline Class (deleting delegate class $c$) &  $c$ is referred in \viewtype & $\mathsf{MOVE}$ $f^\prime$ from $c$ to $c_{ref}$ where $f^*$ is the set of features from $c$ and $f^\prime\in f^*$ and $c_{ref}$ is a class referencing $c$ & M            \\ \hline
 
 \end{tabular}
 \end{table*}

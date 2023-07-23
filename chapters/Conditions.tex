@@ -1,8 +1,7 @@
-\subsection{Conditions}
+\subsection{Condition}
 \label{sec:Conditions}
-
 \textsf{Condition}s can enrich a \textsf{Suggestion} with domain knowledge to 
-specify constraints about the context, in which the \textsf{Suggestion}s 
+specify constraints about the context, in which the \textsf{Suggestion}'s 
 \textsf{Recommendation} is valid. A \textsf{Condition} can specify constraints 
 about elements of the \metamodel, its instance, the \viewtype \metamodel, and 
 its instance. 
@@ -12,11 +11,12 @@ in \cref{fig:Suggestion}.
 A \textsf{Condition} for our example could be the \viewtype that 
 only displays the basic \textsf{FSM} depicted in \cref{fig:FSM:Init}. 
 The \textsf{Recommendation} for the \textsf{Suggestion} to the refactoring that 
-adds guards would be to not include the \metamodel changes into the \viewtype as
-it only displays the basic \textsf{FSM}. \textsf{Conditions} may also form a 
+adds guards would be to not include the \metamodel changes into the \viewtype if the latter's purpose is only to display the basic \textsf{FSM}.
+% \LC{Thomas, I rephrased preceding sentence. Please see if you agree?}\TW{I agree} 
+\textsf{Conditions} may also form a 
 domain specific hierarchy for the refinement of \textsf{Suggestion}s. A refined 
 \textsf{Condition} could include the basic \textsf{FSM} \viewtype and additionally
-the condition, that it is a legacy \viewtype. Because legacy \viewtypes are used
+the condition, that it is a legacy \viewtype.\LC{The meaning of 'legacy \viewtype' needs introduction here or beforehand.} Because legacy \viewtypes are used
 by other tools, they cannot be modified. With this additional constraint, the 
 \textsf{Recommendation} and thus the \textsf{Suggestion} can be refined to not 
 include any \metamodel change into the \viewtype as it would break its legacy 

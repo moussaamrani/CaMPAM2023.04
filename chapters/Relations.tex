@@ -1,4 +1,4 @@
-\subsection{Relations}
+\subsection{Relation}
 \label{sec:Suggestion:Relation}
 
 The \textsf{Relation} part provides traceability links between \textsf{MM}
@@ -12,8 +12,8 @@ data structures for traceability may be used \cite{Batot-Cabot-Gerard:2021}.
 
 The way these traceability links are computed are left as implementation
 details, and may happen in two ways: \emph{on-the-fly} whenever an \textsf{MM} element is evolved; and \emph{offline}
-after a complete evolution session has terminated (based on diffing \cite{Kehrer-Kelter-Taentzer:2011}, or using 
-operation-based approaches \cite{J:Lippe-Oosterom:1992}).
+after a complete evolution session has terminated---either based on diffing \cite{Kehrer-Kelter-Taentzer:2011}, or using 
+operation-based approaches \cite{J:Lippe-Oosterom:1992}.
 
 \begin{figure}[t]
     \centering
@@ -23,8 +23,8 @@ operation-based approaches \cite{J:Lippe-Oosterom:1992}).
 \end{figure}
 
 In the \textsf{FSM} example associated to the \textsf{VT\_FSM},
-we would have, among others, the following relations (with \textsf{Link}s noted 
-as $\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
+we would have, among others, the following relations (with \textsf{Link}s denoted 
+as e.g.~$\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 \begin{itemize}
 	\item Since computing the \textsf{name}s in \textsf{VT\_FSM} requires access
 	to $\mathsf{Named \squaredots name}$, the following \textsf{Link}s would be
@@ -38,11 +38,11 @@ as $\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 	\textsf{Link}s: 
 	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{State} \mathsf{>}$;
 	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Initial} \mathsf{>}$;
-	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Regular} \mathsf{>}$.
+	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Regular} \mathsf{>}$.\LC{Also one for Final states?}
 	Depending on the precision of the traceability analysis, the following may
 	eventually be produced as well: 
 	$\mathsf{<} \mathsf{Kind \squaredots REGULAR} ; \mathsf{Regular} \mathsf{>}$ and
-	$\mathsf{<} \mathsf{Kind \squaredots INITIAL} ; \mathsf{Initial} \mathsf{>}$.
+	$\mathsf{<} \mathsf{Kind \squaredots INITIAL} ; \mathsf{Initial} \mathsf{>}$.\LC{Again, for FINAL too?}
 	
 
 

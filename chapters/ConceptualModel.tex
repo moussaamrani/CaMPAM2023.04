@@ -2,11 +2,11 @@
 \label{sec:Suggestion}
 
 \cref{fig:Suggestion} depicts a \metamodel capturing the
-required elements for helping methodologists improve their \viewtypes,
-by suggesting possible ways to co-evolve these.
+required elements for helping methodologists ensure their \viewtypes become consistent again after \metamodel evolution,
+by suggesting possible ways to co-evolve them.
 In the following, we assume that a methodologist is working on a \metamodel
 under evolution \textsf{MM}, that is linked to a set $\mathsf{VT}$ of viewtypes
-(i.e., $\mathsf{VT} = (\mathsf{VT}_\mathsf{i})_{\mathsf{i}\in [1..n]}$). Note that,
+(i.e., $\mathsf{VT} = (\mathsf{VT}_\mathsf{i})_{\mathsf{i}\in [1..n]}$). Note that
 % in the discussion above, when we discuss\textsf{MM}'s (meta-)elements, 
 we consider \textsf{MM} as a \emph{model}
 conforming to a particular meta-\metamodel (such as \textsc{Mof} \cite{TR:OMG-MOF:2016}):
@@ -24,18 +24,20 @@ meta-elements in \textsf{VT} may be affected;
 (3) a \textsf{Recommendation}, detailing possible actions a methodologist 
 may perform to realign \textsf{VT} after a change; and 
 (4) some \textsf{Condition}s providing additional information on the applicability
-of \textsf{Operator}s, which can be extended or enriched with domain knowledge 
+of \textsf{Operator}s \LK{What is the applicability of operators here, since operators capture the changes on the MM? Should this be the applicability of the suggestion/recommendation?}\LC{I think the answer is 'Yes'}, which can be extended or enriched with domain knowledge 
 for generating more specific suggestions.
 
 
 Note that a \textsf{Suggestion} may 
 have \emph{no} associated \textsf{Recommendation}s, in case an \textsf{Operator} has no
 impact on \textsf{VT}; or \emph{several} \textsf{Recommendation}s for the same 
-\textsf{Operator}, depending on its complexity, and how many \viewtypes are 
+\textsf{Operator}, depending on its complexity \LK{But this would only work if all recommendations have the same conditions, right?}\LC{I agree}, and how many \viewtypes are 
 impacted by the \textsf{Operator}. 
 % \TW{The operator does not directly affect \viewtypes---probably change to impacted?} \HM{ok}
 
-The rest of this Section details each part of the \textsf{Suggestion}. We discuss the actual suggestions in \cref{sec:Approach} and present the corresponding summary in \cref{tab:suggestions}.
+The rest of this Section details each part of the \textsf{Suggestion}.
+%\LK{The titles of the subsections are currently inconsistent: \emph{Change} should probably be \emph{Recommendation(s)} and we should agree on either singular or plural for the four subsection titles.}\LC{Fixing; singular, and also changing A.-subsection to \textit{Operator}; not to \textit{Recommendation}, as that's C.-subsection}
+We discuss the actual suggestions in \cref{sec:Approach} and present the corresponding summary in \cref{tab:suggestions}.
 
 
 

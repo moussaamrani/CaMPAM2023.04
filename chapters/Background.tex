@@ -129,8 +129,9 @@ For us to provide meaningful suggestions or even automate certain co-evolution s
 %\LC{Next two sentences need improving. 'On the other hand' but no 'On the one hand' is odd. Also, the word 'meaningful' carries a lot of weight here. Do you mean to say that add, delete, update are not meaningful?}
 However, defining a set of semantically meaningful evolution steps, which at the same time is complete in the sense that every difference between two \metamodels can be constructed from it, is neither realistic nor necessarily useful.
 As a solution for this, we distinguish between \emph{atomic} \metamodel change types, which jointly can completely cover any evolution process, and \emph{complex} changes, which consist of a coherent list of interrelated atomic changes about which one has additional semantic knowledge.
-\LC{TODO: think about phrasing of complex changes a bit more.}
-\LK{Does ``semantic knowledge'' make sense in order to connect it with other places in our paper where we talk about ``semantically meaningful''?}
+%\LC{TODO: think about phrasing of complex changes a bit more.}
+%\LK{Does ``semantic knowledge'' make sense in order to connect it with other places in our paper where we talk about ``semantically meaningful''?}\LC{I think so? Why not? But am open to suggestions to change phrasing.}
+%\LK{Ah, sorry, I should've made this clearer, I added the ``semantic'' before ``knowledge''.}
 % provide more semantically meaningful information.
 %\LK{How can we specify ``more semantic information'' better?}
 
@@ -142,9 +143,9 @@ In order to define more meaningful change types for the purpose of analyzing \me
 %Instead of claiming that this list is complete for all possible \metamodel differences,
 They state that they ``consider [the catalogue] complete for practical application'' \cite{herrmannsdoerfer_extensive_2011}.
 Their catalogue is split into primitive operators, such as \emph{Create Class}, and complex operators, such as \emph{Move Property} or \emph{Extract Super Class}.
-In contrast to the atomic change types, these operators represent semantically meaningful evolution steps on which further analyses and automated co-evolution support can be built.
+In contrast to the atomic change types, these operators\LC{'atomic change types' == 'primitive operators' and hence 'these operators' refers to 'complex operators? I find the phrasing a bit ambiguous here, due to sudden re-appearance of 'atomic change types' vs. 'primitive operators' sentence before}\LK{No, ``these operators'' should refer to both primitive and complex operators, since I disagree that atomic change type (e.g., create element) and primitive operators (e.g., create class) are the same concept, although they are on a similar level of granularity.}\LC{I'm still not clear on the difference, and in any case think that difference is not clear in the paper as-is either. Do you mean to say that atomic change \textit{types} are generic (e.g. your mentioned create element), and the primitive operators like create class concretize them?} represent semantically meaningful evolution steps on which further analyses and automated co-evolution support can be built.
 In addition to providing a list of \metamodel evolution operators, \textcite{herrmannsdoerfer_extensive_2011} discuss the impact of the described evolution steps on the models adhering to the evolved \metamodels.
-For our approach, we will use the most important evolution operators, according to an industry study of \textcite{khelladi_detecting_2015} and explained in \cref{sec:Suggestion:Change}, to characterize the performed evolution steps and analyze their impact on dependent view types.
+For our approach, we will characterize the performed evolution steps and analyze their impact on dependent view types by using the most important evolution operators, according to an industry study of \textcite{khelladi_detecting_2015} and as explained in \cref{sec:Suggestion:Operator}.
 %\LC{'a subset' sounds weak; can we characterize it better?}
 
 While \textcite{herrmannsdoerfer_extensive_2011} already describe that the complex changes can be built from atomic changes, \textcite{khelladi_change_2018} provide an approach to reconstruct complex changes from a sequence of atomic changes.

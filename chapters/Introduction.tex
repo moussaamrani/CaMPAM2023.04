@@ -15,27 +15,27 @@ the information shown in a view and how it is presented.
 While for established, general purpose (modeling) languages (e.g., Java, UML, SysML, Simulink), evolution is typically infrequent, for Domain-Specific Languages developed in-house in industrial settings, this may not be the case: there, evolution will typically be more frequent as languages are developed and adapted over time, with increasing insight or to reflect increasing use and capabilities.
 Since languages evolve, so do their \metamodels. This is well-known from the literature and industrial practice \cite{durisic_evolution_2014}. Yet as a result of this, \viewtypes depending on such languages and \metamodels need to evolve along with the evolution of the underlying \metamodels. Regardless of the frequency of \metamodel evolution, any view-based framework should support such evolution and hence \metamodel/\viewtype co-evolution, in order for the various views to stay consistent with the models. 
 
-In this paper, we focus on such \metamodel/\viewtype co-evolution which as far as we know has not been considered in the literature before---unlike co-evolution of concrete models (or views) with changes in their \metamodel (or \viewtype)
-(known as \metamodel/model co-evolution).
+In this paper, we focus on such \metamodel/\viewtype co-evolution which as far as we know has not been considered in the literature before---unlike co-evolution of concrete models (views) with changes in their \metamodel (\viewtype)---known as \metamodel/model co-evolution.
 %\LC{You are probably right. I was thinking about \metamodel-model co-evolution, and viewtypes as metamodels}\LK{Is co-evolution of view types and views researched? I would have thought it would be enough to change the view type and re-generate the views with the new view type.}
 We focus our attention on \metamodel/\viewtype co-evolution where first the \metamodel is changed, then the \viewtype, since the latter is conceptually typically a \metamodel derived from the former. % (via operations such as filtering, selection, and others). \LK{Should we still mentioned concrete operators? I'm not sure we're actually using them anymore.}
-We do not explicitly consider scenarios where a \viewtype to be evolved depends on multiple \metamodels, although our approach remains applicable by merging the required \metamodels into one. %as multiple \metamodels can be integrated into one. \LK{Suggestion: ``[...] although our approach remains applicable by merging the required \metamodels into one.'', since merging multiple \metamodels comes with certain drawbacks.}
+We do not consider scenarios where a \viewtype depends on multiple \metamodels, although our approach remains applicable by merging the required \metamodels into one. %as multiple \metamodels can be integrated into one. \LK{Suggestion: ``[...] although our approach remains applicable by merging the required \metamodels into one.'', since merging multiple \metamodels comes with certain drawbacks.}
 %That is, we do not consider evolution scenarios where first the \viewtype is changed and then the underlying \metamodel should be co-evolved; we consider that while conceptually evolution may initially be considered at the \viewtype level, it makes more sense to then consider what needs to change at the \metamodel level to accommodate this, before considering what changes this might trigger on the \viewtype level. 
 
 We offer an approach for co-evolving \viewtypes based on \metamodel changes, in which the so-called \textit{methodologist} \cite{atkinson_orthographic_2010}, i.e.~the language engineer responsible for the \viewtype, is supported by offering them recommendations and considerations to take into account, given specific \metamodel changes and the \viewtype changes that these might require. We emphasize that our approach is a manual one --- given the breadth of potential \metamodel changes and \viewtypes-\metamodel dependencies (directly, or through view generation transformations), it is impossible to determine, without human input, what changes, if any, need to be made to a \viewtype.
 
-Our approach is first a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps, but we also describe and show how it can be specialized with domain-specific suggestions for specific application domains or implementation language domains, exemplifying \MA{Are we actually doing this? For now, IMO I don't think so...}\LC{we discussed doing this, but I agree it's not currently there... decided in meeting July 19th to only discuss briefly in future work.} this for \LC{TODO once domains settled}.
+Our approach is a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps. Whether and how it is possible and makes sense to also consider domain-specific suggestions for specific application domains or implementation language domains, is a topic for future research. \LC{I've rewritten the preceding to deflect specialization of suggestions to future work; what do you think?}
 
-Our work offers the following contributions:
+Our work offers:\LC{thoughts on this welcome}
 \begin{itemize}
-    \item An approach to offer domain-independent suggestions for the most important \metamodel evolution steps.
-    \item \sout{A means of extending this approach to specific application domains, 
-		as well as implementation language domains.} 
-    \item \sout{The application of the former to the domains of \LC{TODO: once domains settled}, leading to a concrete, partially generic and partially domain-specific lists of suggestions per \metamodel evolution step.}
+    \item an approach to offer domain-independent suggestions for the most important \metamodel evolution steps;
+    \item the application of such suggestions to an example domain, namely that of \metamodels and \viewtypes for finite state machines;
+    \item and a conceptual model for the \viewtype co-evolution suggestions offered by our approach.
+%    \item \sout{A means of extending this approach to specific application domains, 
+%		as well as implementation language domains.} 
+%    \item \sout{The application of the former to the domains of \LC{TODO: once domains settled}, leading to a concrete, partially generic and partially domain-specific lists of suggestions per \metamodel evolution step.}
 \end{itemize}
 
 The paper starts by covering background information on view-based development and
 \metamodel evolution in \cref{sec:Background}. \cref{sec:Example} describes
 a typical scenario for \metamodel/\viewtype co-evolution on a simple example. Then, \cref{sec:Suggestion} explains how \viewtype suggestions are structured, given
-change operators on a \metamodel under evolution; these suggestions are then 
-detailed discussed in \cref{sec:Approach}. We present Related Work in  \cref{sec:RW}, and discuss strengths and limitations of our approach in \cref{sec:Discussion} before concluding in \cref{sec:Conclusion}.
+change operators on a \metamodel under evolution; these suggestions are then discussed in detail in \cref{sec:Approach}. We present Related Work in \cref{sec:RW}, and discuss strengths and limitations of our approach in \cref{sec:Discussion} before concluding in \cref{sec:Conclusion}.

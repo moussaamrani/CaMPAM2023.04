@@ -20,7 +20,7 @@
     \begin{subfigure}[b]{0.45\textwidth}
 			\centering
       \includegraphics[width=\textwidth]{FSM2.pdf}
-      \caption{\textbf{Step 2:} Adding rudimentary guards and \textsf{FINAL}.}
+      \caption{\textbf{Step 2:} Adding rudimentary guards and \textsf{FINAL}. \LK{\textsf{FINAL} is not yet included in the image.}}
       \label{fig:FSM:Guard}
     \end{subfigure}
     \hfill 
@@ -30,7 +30,7 @@
       \caption{\textbf{Step 3:} Specifying a fully-fledged \textsf{Expression} for \textsf{guard}s.}
       \label{fig:FSM:Expression}
     \end{subfigure}
-    \caption{Three evolution steps for the \textsf{FSM} \metamodel}
+    \caption{Three evolution steps for the \textsf{FSM} \metamodel. Note that details, such as the state kind, are omitted in subfigure b.}%\LC{Well, they aren't part of that MM yet, right? State kind only gets introduced in Step 2 so Subfigure c, right?}\LK{But they are already in subfigure a and the text mentions that some details are omitted in subfigure b.}}
     \label{fig:FSM}
 \end{figure*}
 
@@ -86,6 +86,7 @@ In a final evolution step, the methodologist, confident with the implemented
 execution engine, specifies a fully-fledged \textsf{Expression} model,
 allowing a \textsf{Transition} to possess a \textsf{guard}, thus \emph{deleting}
 the extra attributes added in the previous step. \cref{fig:FSM:Expression} depicts the resulting \metamodel.
+\LK{How does this relate to the view type?}
 
 % \HM{I think it might be useful to mention the operators from Table \cref{tab:suggestions} applied to the MM at each step and later connect this with the suggestions?}
 
@@ -94,7 +95,7 @@ the extra attributes added in the previous step. \cref{fig:FSM:Expression} depic
     \begin{subfigure}[b]{\columnwidth}
 			\centering
       \includegraphics[width=\columnwidth]{FSM_VT.pdf}
-      \caption{A \viewtype for \textsf{FSM}, with \textsf{Transition} \emph{inside} \textsf{State}s.}
+      \caption{A \viewtype for \textsf{FSM}, with \textsf{Transition} \emph{inside} \textsf{State}s.\LC{Similar comment to LK's on Figure 2 caption: Final subclass of State should be added?}}
       \label{fig:VT:VMM}
     \end{subfigure}
     \hfill

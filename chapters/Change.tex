@@ -1,23 +1,24 @@
-\subsection{Change}
-\label{sec:Suggestion:Change}
+\subsection{Operator}
+\label{sec:Suggestion:Operator}
 
 \begin{figure}[t]
     \centering
      \includegraphics[width=\columnwidth]{images/Suggestion.pdf}
     %\includegraphics[width=\columnwidth]{images/SuggestionWithCondition.pdf}
-    \caption{A \textsf{Suggestion} holds for a single \textsf{Change} linked to 
+    \caption{A \textsf{Suggestion} holds for a single \textsf{Operator}%\LC{Operator \textit{instance}, I reckon?}\LK{In the diagram we show the classes, but an instance of a suggestion would therefore contain an instance of an operator, right?}
+    linked to 
 		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s and \textsf{Condition}s} 
 		\label{fig:Suggestion}
 \end{figure}
 
 \textsf{Operator}s, shown in \cref{fig:Operator}, are split into two categories:
 \textsf{Primitive} ones operate a single change in \textsf{MM}; while
-\textsf{Complex} ones combine several \textsf{Primitive} \textsf{Operator}s
-to perform a meaningful change. 
+\textsf{Complex} ones combine several \textsf{Primitive} \textsf{Operator}s.
+%to perform a meaningful change. \LK{I would argue that also primitive operators describe meaningful changes, as we can give suggestions for them.}
 Each \textsf{Operator} may target \emph{any} instantiable \metamodel element, 
 thus referring to the meta-class \textsf{NamedElement} and its container, which has the same type.
 
-We identified the MM change \textsf{Operator}s based on the work of \textcite{herrmannsdoerfer_extensive_2011} who presented a list of 27 primitive and 34 complex operators. In this work, we choose all of the primitive and 7 complex operators, which according to \textcite{khelladi_detecting_2015} constitute 72\% of all complex changes appearing in a large case study. 
+We identified the MM change \textsf{Operator}s based on the work of \textcite{herrmannsdoerfer_extensive_2011} who presented a list of 27 primitive and 34 complex operators. In this work, we choose all of the primitive and 7 complex operators, which according to \textcite{khelladi_detecting_2015} constitute 72\% of all complex changes appearing in a large case study.
 % \TW{Hossian, please update with the correct values from the table} \HM{this is the correct count. table contains less and the rational explained in 1st bullet point at \cref{sec:Approach}}
 
 % HM commented
@@ -58,8 +59,9 @@ Back to our example, the evolution steps of \cref{fig:FSM} make use of different
 	\textsf{name}, located respectively in \textsf{container}s $\mathsf{FSM}$ and 
 	$\mathsf{Transition}$, thus obtaining the result of \cref{fig:FSM:Relevant}.
 	
-	\item Step 2 only consists of the following \textsf{Operator} sequence:
+	\item Step 2 only consists of the following \textsf{Operator} sequence:\footnote{Here and going forward, for brevity, we abstract from the type of element created or deleted, e.g.~using \textsf{Create} instead of \textsf{Create Attribute} etc.}
 	$$\langle \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \rangle$$
+    % \LK{\textsf{Create} and \textsf{Delete} are not listed by Herrmannsdoerfer as evolution operators. The primitive operators are, e.g., \textsf{Create Class} or \textsf{Delete Class}.}\LC{Good point; I've added a footnote above}
 	where three of these \textsf{Operator}s add a new \textsf{ATT}ribute \textsf{element}
 	in \textsf{container} \textsf{Transition}, and the last one adds a new 
 	\textsf{LIT}eral \textsf{element} in the \textsf{container} enumeration \textsf{Kind},
@@ -79,5 +81,5 @@ Back to our example, the evolution steps of \cref{fig:FSM} make use of different
 With these examples, we immediately notice that some \textsf{Operator}s
 in a change sequence may depend on previous ones (e.g. \textsf{Rename}
 in Step 1 should only be performed after \textsf{PushProperty}); while others
-may freely commute (e.g. the \textsf{Create} in Step 2 may be performed in any 
+may freely commute (e.g. the \textsf{Create}s in Step 2 may be performed in any 
 order).

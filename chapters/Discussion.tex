@@ -2,7 +2,7 @@
 \label{sec:Discussion}
 
 The approach sketched in this paper aims at recommending possible changes 
-for realigning \viewtypes, when changes are observed, or detected on a 
+for realigning \viewtypes when changes are observed or detected on a 
 \metamodel. Our approach assumes that \metamodel changes are expressed
 as a set, or a sequence of change \textsf{Operator}s: we therefore build
 on existing approaches for detecting and classifying evolution changes
@@ -10,8 +10,9 @@ on existing approaches for detecting and classifying evolution changes
 
 Our work fits into the general topic of \metamodel{} -- \metamodel co-evolution,
 but with specific restrictions. First, although \viewtypes are structurally 
-plain metamodels, they achieve the specific intent of capturing the relevant
-information presented through a system's view. As such, \viewtypes can
+plain \metamodels, they serve the specific purpose of showing the system from a certain perspective.
+%they achieve the specific intent of capturing the relevant information presented through a system's view.
+As such, \viewtypes can
 be seen as abstractions of the underlying \metamodel{}(s): information from
 the original \metamodel{}(s) may be lost (i.e. irrelevant for the view), other
 may be presented differently (simplified, aggregated, etc.). Therefore, our
@@ -25,10 +26,10 @@ Extending our approach to plain \metamodels, instead of \viewtypes, may partiall
 work depending on the nature of the co-evolved \metamodels depending on how
 both \metamodels are related, but they are certainly not directly generalisable.
 
-Second, in our vision of (projective) view-based development, views are generated
-from models using View Generation Transformations (VGTs). As we have pointed in our
+Second, in our view on (projective) view-based development, views are generated
+from models using View Generation Transformations (VGTs). As we have pointed out in our
 example, a natural extension point, which may sometimes be equally important,
-is to \emph{also} provide \textsf{Suggestion}s at the VGT level to help 
+is to \emph{also} provide \textsf{Suggestion}s at the VGT level to help the
 methodologist correct how information is represented (from models to the views),
 but also how edits in views may translate back into the various models specifying
 the system. We briefly sketched in our example how simple cases for the first 
@@ -36,7 +37,9 @@ direction may be addressed; the reverse direction is more complicated and requir
 further research.
 
 Third, evolving a \metamodel and its associated \viewtypes naturally requires to
-co-evolve the underlying model(s) and view(s). We would simply reuse existing 
+co-evolve the corresponding 
+% underlying\LC{'underlying' is the wronge word imo; it's instances, I would not say those are underlying, rather, the meta-level underlies the instance-level, not the other way around. 'instantiating'?}\LK{I think this is ``underlying'' in the sense that views are generated from underlying models (as in \emph{single underlying model}).}\HM{changed with corresponding} 
+model(s) and view(s). We would simply reuse existing 
 techniques and tools for \metamodel/model co-evolution (as discussed in \cref{sec:RW}),
 from which, in our approach, views would be automatically generated using VGTs.
 
