@@ -22,7 +22,7 @@ operation-based approaches \cite{J:Lippe-Oosterom:1992}.
     \label{fig:Relation}
 \end{figure}
 
-In the \textsf{FSM} example associated to the \textsf{VT\_FSM},
+In the \textsf{FSM} example associated to the initial \textsf{VT\_FSM} of \cref{fig:VT:VMM},
 we would have, among others, the following relations (with \textsf{Link}s denoted 
 as e.g.~$\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 \begin{itemize}
@@ -38,11 +38,13 @@ as e.g.~$\mathsf{<} \mathsf{changed} ; \mathsf{impacted} \mathsf{>}$):
 	\textsf{Link}s: 
 	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{State} \mathsf{>}$;
 	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Initial} \mathsf{>}$;
-	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Regular} \mathsf{>}$.\LC{Also one for Final states?}
+	$\mathsf{<} \mathsf{State \squaredots kind} ; \mathsf{Regular} \mathsf{>}$.
 	Depending on the precision of the traceability analysis, the following may
 	eventually be produced as well: 
 	$\mathsf{<} \mathsf{Kind \squaredots REGULAR} ; \mathsf{Regular} \mathsf{>}$ and
-	$\mathsf{<} \mathsf{Kind \squaredots INITIAL} ; \mathsf{Initial} \mathsf{>}$.\LC{Again, for FINAL too?}
+	$\mathsf{<} \mathsf{Kind \squaredots INITIAL} ; \mathsf{Initial} \mathsf{>}$.
+	\LC{Again, for FINAL too?}\MA{The \textsf{Link}s are established on the initial version, \emph{\textbf{before} the evolution step. 
+	The next bullet (``After Step 2''!!!) explicitly says what you want to put here, which is a wrong place to do so.}}
 	
 
 

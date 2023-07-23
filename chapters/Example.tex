@@ -20,7 +20,7 @@
     \begin{subfigure}[b]{0.45\textwidth}
 			\centering
       \includegraphics[width=\textwidth]{FSM2.pdf}
-      \caption{\textbf{Step 2:} Adding rudimentary guards and \textsf{FINAL}. \LK{\textsf{FINAL} is not yet included in the image.}}
+      \caption{\textbf{Step 2:} Adding rudimentary guards and \textsf{FINAL}.}
       \label{fig:FSM:Guard}
     \end{subfigure}
     \hfill 
@@ -80,13 +80,19 @@ simple expressions over \textsf{var}iables, using boolean and numeric \textsf{va
 (e.g., \textsf{v = 10} or \textsf{k or l}). After this step, \textsf{VT\_FSM}'s
 models may still be valid w.r.t.~the evolved \metamodel (assuming the lack of 
 guard is interpreted as a trivial \textsf{true} guard),
-but \viewtypes likely have to reflect this new information by \emph{ADD}ing new entities in appropriate places.
+but \viewtypes likely have to reflect this new information by \emph{ADD}ing new 
+entities in appropriate places (extending the class hierarchy
+with a new subclass \textsf{Final}; and adding new attributes for representing 
+expressions).
 
 In a final evolution step, the methodologist, confident with the implemented
 execution engine, specifies a fully-fledged \textsf{Expression} model,
 allowing a \textsf{Transition} to possess a \textsf{guard}, thus \emph{deleting}
-the extra attributes added in the previous step. \cref{fig:FSM:Expression} depicts the resulting \metamodel.
-\LK{How does this relate to the view type?}
+the extra attributes added in the previous step. \cref{fig:FSM:Expression} depicts
+the resulting \metamodel. Here again, \textsf{VT\_FSM} would likely have to 
+choose which information in an \emph{Expression} need to be reflected.
+\LK{How does this relate to the view type?}\MA{Added more info: since again, we 
+never had a proper example other than just reflecting the MM, we cannot say much here.}
 
 % \HM{I think it might be useful to mention the operators from Table \cref{tab:suggestions} applied to the MM at each step and later connect this with the suggestions?}
 
@@ -95,7 +101,10 @@ the extra attributes added in the previous step. \cref{fig:FSM:Expression} depic
     \begin{subfigure}[b]{\columnwidth}
 			\centering
       \includegraphics[width=\columnwidth]{FSM_VT.pdf}
-      \caption{A \viewtype for \textsf{FSM}, with \textsf{Transition} \emph{inside} \textsf{State}s.\LC{Similar comment to LK's on Figure 2 caption: Final subclass of State should be added?}}
+      \caption{A \viewtype for \textsf{FSM}, with \textsf{Transition} \emph{inside} \textsf{State}s.
+			\LC{Similar comment to LK's on Figure 2 caption: Final subclass of State should be added?}
+			\MA{This \viewtype is supposed to be associated with the initial MM. Its 
+			co-evolutions are only described in the text, not represented. Again, since the example is cosmetic and only mimic the MM, we cannot say much more!}}
       \label{fig:VT:VMM}
     \end{subfigure}
     \hfill
