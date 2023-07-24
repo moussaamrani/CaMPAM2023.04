@@ -16,8 +16,8 @@ adds guards would be to not include the \metamodel changes into the \viewtype if
 \textsf{Conditions} may also form a 
 domain specific hierarchy for the refinement of \textsf{Suggestion}s. A refined 
 \textsf{Condition} could include the basic \textsf{FSM} \viewtype and additionally
-the condition, that it is a legacy \viewtype.\LC{The meaning of 'legacy \viewtype' needs introduction here or beforehand.} Because legacy \viewtypes are used
-by other tools, they cannot be modified. With this additional constraint, the 
+the condition, that it is a legacy \viewtype, i.e., that there are external dependencies on it: %\LC{The meaning of 'legacy \viewtype' needs introduction here or beforehand.}\LK{We could add something like ``, i.e., that there are external dependencies on it'', but isn't that pretty much the same as the following sentence?}
+they are used by other tools and hence cannot just be modified. With this additional constraint, the 
 \textsf{Recommendation} and thus the \textsf{Suggestion} can be refined to not 
 include any \metamodel change into the \viewtype as it would break its legacy 
 property.

@@ -6,7 +6,11 @@ conceptualise recommendations for co-evolving \viewtypes. Here, we detail the \t
 will be issued for each change \textsf{Operator} detected in an evolution
 session. This results in \cref{tab:suggestions}, where:
 \begin{itemize}
-	\item Column \textsl{Operator} lists the \textsf{Operator}s considered in \cref{fig:Operator}. Note that we exclude \textsf{Operator}s which are associated with severity \textsf{IGNORE}, as these do not result in any \textsf{Recommendation}. In other words, these correspond to the \textsf{0} multiplicity of $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in \cref{fig:Suggestion}. \textit{Delete Package} is ignored as this operation is possible iff the corresponding package is empty. The \textit{Make Class Abstract} and \textit{Drop Class Abstract} are about making an existing class abstract and vice versa. \LK{But if the class is abstract in the meta-model and still not abstract in the view type, how do I propagate new instances of the class from the view to the model?} \HM{I think it does not make sense VT accessing a feature through an abstract class in the MM. Because view -> model change propagation is not possible then.} As these operations only changes the abstraction without modifying the effective list of features, they can be ignored in the context of \viewtype co-evolution. The \textit{Make Attribute Identifier} and \textit{Drop Attribute Identifier} operators add or remove a constraint that ensures the uniqueness of the attribute values. \LK{Same here, how are unconstrained changes on a view propagated to the models?}\HM{i think these are instance level constraints and not tackaled in this paper?} The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for a reference. Since these are instance level constraints, they do not influence the \viewtype and therefore, can be ignored. The \textit{Pull Feature} operator can be applied if and only if the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.
+	\item Column \textsl{Operator} lists the \textsf{Operator}s considered in \cref{fig:Operator}. Note that we exclude \textsf{Operator}s which are associated with severity \textsf{IGNORE}, as these do not result in any \textsf{Recommendation}. In other words, these correspond to the \textsf{0} multiplicity of $\mathsf{Suggestion} \squaredots \mathsf{recommendations}$ in \cref{fig:Suggestion}. \textit{Delete Package} is ignored as this operation is possible iff the corresponding package is empty. The \textit{Drop Class Abstract} is about changing an abstract class to a concrete one. 
+ % \LK{But if the class is abstract in the meta-model and still not abstract in the view type, how do I propagate new instances of the class from the view to the model?} \HM{I think it does not make sense VT accessing a feature through an abstract class in the MM. Because view -> model change propagation is not possible then.} 
+ As this operation only changes the abstraction without modifying the effective list of features, it can be ignored in the context of \viewtype co-evolution. The \textit{Make Attribute Identifier} and \textit{Drop Attribute Identifier} operators add or remove a constraint that ensures the uniqueness of the attribute values. 
+ % \LK{Same here, how are unconstrained changes on a view propagated to the models?}\HM{i think these are instance level constraints and not tackaled in this paper?}\LK{Yes and no, for editable view types, part of the definition is also how changes are propagated back to the models. So I think it would make sense to at least think about that view types may need to be adapted in order to reflect the editability of certain parts.} 
+    The \textit{Make Reference Composite} and \textit{Drop Reference Composite} adds or removes the containment restriction for a reference. Since these are instance level constraints, they do not influence the \viewtype and therefore, we decided to ignore them. The \textit{Pull Feature} operator can be applied if and only if the corresponding feature is present in all the child classes. Since the feature is still accessible via inheritance, this does not trigger any suggestion for the related \viewtypes.
  
     % These ignored operators are the primitive operators \textit{Delete Package}, \textit{Make/Drop Class Abstract}, \textit{Make/Drop Attribute Identifier}, \textit{Make/Switch Reference Composite}, \textit{Make/Switch Reference Opposite} and complex operator \textit{Pull Feature}. 
  
@@ -29,7 +33,7 @@ Among the primitive operations the ones creating various entities are of minor s
 
 Deletion of class, feature, data type, and enumeration can have a major effect if these entities are referred from one or more related \viewtypes as the partial representation relation with the corresponding \metamodel no longer holds. Therefore, we suggest the removal of these also from the \viewtypes. The deletion of an opposite reference removes access to the features of the referenced entity from the referencing one. The corresponding suggestion is to access these features directly through the referenced entity from the \viewtype. \textit{Merge Literal} removes a literal and replaces its occurrence with another one. Therefore, applying this operation triggers the suggestion to replace the deleted literal with an existing one from the same enumeration. \textit{Rename} and \textit{Change Package} operators generate suggestions to do the same (i.e., renaming and changing package location) on the related \viewtypes.
 
-The \textit{Add Super Type} and \textit{Remove Super Type} operators add and remove inherited features from an existing class. Accordingly, the corresponding suggestion suggests the addition or removal of inherited features wherever the child class is referenced in the \viewtype. Although the suggestion for the former is of minor severity, the removal of features can break the \viewtype and hence, is classified as major.
+The \textit{Make Class Abstract} operation generates a suggestion iff corresponding \metamodel class is instantiated via a transformation initiated by the modification of a class instance in an editable view. In this case, the suggestion is make the \viewtype class abstract as well, otherwise propagating changes from views to models becomes impossible. The \textit{Add Super Type} and \textit{Remove Super Type} operators add and remove inherited features from an existing class. Accordingly, the corresponding suggestion suggests the addition or removal of inherited features wherever the child class is referenced in the \viewtype. Although the suggestion for the former is of minor severity, the removal of features can break the \viewtype and hence, is classified as major.
 
 The \textit{Move Property} operator triggers the suggestion to update the corresponding location in the \viewtype. Pushing a feature down in the hierarchy removes it from the super class and therefore, it needs to be removed from the \viewtype wherever it is referred using a reference of the super class.
 
@@ -41,7 +45,7 @@ Extracting super class does not influence the effective set of features and ther
 } 
 \label{tab:suggestions}
 \centering
-\begin{tabular}{|p{.16\linewidth}|p{.30\linewidth}|p{.4\linewidth}|c|}
+\begin{tabular}{|p{.16\linewidth}|p{.35\linewidth}|p{.35\linewidth}|c|}
 \hline
 Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hline
 
@@ -72,7 +76,6 @@ Operator & Condition to offer suggestion & Suggestion & Severity \\ \hline \hlin
 \textsf{Delete} Data Type ($dt$) &    &  &                   \\ \cline{1-1}
 \textsf{Delete} \textsf{ENUM} ($e$) &   &   &                   \\ \hline
 
-%Make Class Abstract  & \multirow{2}{*}{P} & \multirow{2}{*}{None}     & \multirow{2}{*}{None}     & \multirow{2}{*}{I} \\ \cline{1-1}
 %Drop Class Abstract  &  & &  & \\ \hline
 
 \textsf{Delete} Opposite \textsf{REF} ($opp$) & Set $f^*$ of available features through $opp$ is referred in \viewtype through referencing type ($r_s$) & $\mathsf{MOVE}$ all $f$ in $f^*$ accessing through $r_s$ directly through $opp$ & M            \\ \hline
@@ -82,6 +85,8 @@ Merge Literal  ($l$)&   $l$ is referred in \viewtype & $\mathsf{UP}$date $l$ wit
 \textsf{Rename} &  \textsf{previous} is referred in the \viewtype &  $\mathsf{UP}$dating \textsf{previous} with \textsf{new} & M \\ \hline
 
 \textsf{ChangePackage} ($p_o$) &  A meta-element $x$ (\textsf{PKG}, \textsf{CLASS}, etc.), contained in \textsf{previous} is referred in \viewtype & $\mathsf{MOVE}$ $x$ from \textsf{previous} to \textsf{new} & M \\ \hline
+
+Make \textsf{CLASS} Abstract ($c$) & instance of $c_v$ is transformed to instantiate $c$, where $c_v$ is a class in an editable \viewtype & Make $c_v$ abstract & M \\ \hline
 
 Add Super Type ($t$) &  $t_c$ is referred in \viewtype, where $t_c$ is a child type of $t$ & $\mathsf{ADD}(f^\prime)$, where $f^*$ is the set of features contained in $t$ and $f^\prime\in f^*$& N  \\ \hline
 

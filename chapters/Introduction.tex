@@ -23,24 +23,25 @@ We do not consider scenarios where a \viewtype depends on multiple \metamodels, 
 
 We offer an approach for co-evolving \viewtypes based on \metamodel changes, in which the so-called \textit{methodologist} \cite{atkinson_orthographic_2010}, i.e.~the language engineer responsible for the \viewtype, is supported by offering them recommendations and considerations to take into account, given specific \metamodel changes and the \viewtype changes that these might require. We emphasize that our approach is a manual one --- given the breadth of potential \metamodel changes and \viewtypes-\metamodel dependencies (directly, or through view generation transformations), it is impossible to determine, without human input, what changes, if any, need to be made to a \viewtype.
 
-Our approach is a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps. Whether and how it is possible and makes sense to also consider domain-specific suggestions for specific application domains or implementation language domains, is a topic for future research. \LC{I've rewritten the preceding to deflect specialization of suggestions to future work; what do you think?}
-
-Our work offers:\LC{thoughts on this welcome}
+Our approach is a generic one, offering domain-independent suggestions for the most important \metamodel evolution steps. Whether and how it is possible and makes sense to also consider domain-specific suggestions for specific application domains or implementation language domains, is a topic for future research. %\LC{I've rewritten the preceding to deflect specialization of suggestions to future work; what do you think?}
+Our work offers:%\LC{thoughts on this welcome}
 \begin{itemize}
-    \item an approach to offer domain-independent suggestions for the most important \metamodel evolution steps;
-    \item the application of such suggestions to an example domain, namely that of \metamodels and \viewtypes for finite state machines;
-    \item and a conceptual model for the \viewtype co-evolution suggestions offered by our approach.
+    \item an \textit{approach} and a \textit{conceptual model} for \metamodel-\viewtype co-evolution;
+    \item a \textit{catalog} of suggestions for the most important evolution operators; and
+    \item an \textit{illustration} on a simple, yet representative example.
 %    \item \sout{A means of extending this approach to specific application domains, 
 %		as well as implementation language domains.} 
 %    \item \sout{The application of the former to the domains of \LC{TODO: once domains settled}, leading to a concrete, partially generic and partially domain-specific lists of suggestions per \metamodel evolution step.}
 \end{itemize}
-\MA{I would list the following: 
-(i) an \emph{approach} and a \emph{conceptual model} for VT/MM co-evolution; 
-(ii) a \emph{catalog} [maybe another word?] of suggestions for the key [or ``most important'' as already phrased] evolution
-operators; 
-(iii) an \emph{illustration} on a simple, yet representative example [without naming it]}
+%\MA{I would list the following: 
+%(i) an \emph{approach} and a \emph{conceptual model} for VT/MM co-evolution; 
+%(ii) a \emph{catalog} [maybe another word?] of suggestions for the key [or ``most important'' as already phrased] evolution
+%operators; 
+%(iii) an \emph{illustration} on a simple, yet representative example [without naming it]}
 
 The paper starts by covering background information on view-based development and
-\metamodel evolution in \cref{sec:Background}. \cref{sec:Example} describes
-a typical scenario for \metamodel/\viewtype co-evolution on a simple example. Then, \cref{sec:Suggestion} explains how \viewtype suggestions are structured, given
+\metamodel evolution in \cref{sec:Background}. \cref{sec:Example} illustrates \metamodel/\viewtype co-evolution using a simple example.
+% describes
+% a typical scenario for \metamodel/\viewtype co-evolution on a simple example. 
+Then, \cref{sec:Suggestion} explains how \viewtype suggestions are structured, given
 change operators on a \metamodel under evolution; these suggestions are then discussed in detail in \cref{sec:Approach}. We present Related Work in \cref{sec:RW}, and discuss strengths and limitations of our approach in \cref{sec:Discussion} before concluding in \cref{sec:Conclusion}.

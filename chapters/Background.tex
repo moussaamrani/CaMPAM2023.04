@@ -6,10 +6,10 @@
 %\LC{No, it does not seem to solve this? E.g.~right below these comments, there's a 'section II-A' currently---not 'Section II-A'}
 %\LK[Yes, what I meant is you can simply set the `capitalise` option for the cleveref package.]
 
-In this section, we explain the necessary concepts on which our approach builds.
-First, in~\cref{sec:ViewBasedDevelopment}, we cover different solution strategies to view-based development, and briefly introduce the development process in view-based environments.
+In this section, we explain the key concepts on which our approach builds.
+In~\cref{sec:ViewBasedDevelopment}, we cover different solution strategies to view-based development, and briefly introduce the development process in view-based environments.
 \Cref{sec:ViewGeneration} explains how views are generated, and the impact of view generation languages on our approach.
-Finally, in~\cref{sec:MetaModelEvolution}, we explain how \metamodel evolution can be broken down into semantically meaningful steps and how these steps can be detected a posteriori.
+Finally, in~\cref{sec:MetaModelEvolution}, we explain how \metamodel evolution can be broken down into \LK{} a sequence of individual steps describing the evolution process and how these steps can be detected a posteriori.
 
 % \MA{Does it make sense to split the Section into two: (i) Views; (ii) View Generation (or something similar)}
 
@@ -125,40 +125,46 @@ Following \textcite{burger_model-join_2016}, we assume this is a reasonable set 
 
 In order to reason about \metamodel evolution, a description of the difference between a \metamodel before and after an evolution process is required.
 For analyzing this difference, a common representation of the difference is a list of smaller changes or evolution steps.
-For us to provide meaningful suggestions or even automate certain co-evolution steps, the description of the evolution steps should contain semantic information about the kind of change that is represented by it.
+For us to provide \LK{} helpful suggestions or even automate certain co-evolution steps, the description of the evolution steps should contain semantic information about the kind of change that is represented by it.
 %\LC{Next two sentences need improving. 'On the other hand' but no 'On the one hand' is odd. Also, the word 'meaningful' carries a lot of weight here. Do you mean to say that add, delete, update are not meaningful?}
-However, defining a set of semantically meaningful evolution steps, which at the same time is complete in the sense that every difference between two \metamodels can be constructed from it, is neither realistic nor necessarily useful.
+\LK{}
+However, defining a set of evolution step types or operators, which can be used to build further analyses on them, but at the same time are complete in the sense that every difference between two \metamodels can be constructed from it, is neither realistic nor necessarily useful.
 As a solution for this, we distinguish between \emph{atomic} \metamodel change 
-types, which jointly can completely cover any evolution process, and 
-\emph{complex} changes, which consist of a coherent list of interrelated atomic changes about which one has additional semantic knowledge.
+types, which can jointly cover any difference between two meta-models, and 
+\emph{complex} changes, which consist of a coherent list of interrelated atomic changes about which one has additional semantic knowledge in the context of meta-model evolution.
 
 
 \textcite{khelladi_detecting_2015} list the operations \emph{add}, \emph{delete} and \emph{update} as a complete set of atomic change types, usable on various \metamodel elements.
 In combination they are able to describe any difference between two \metamodels as a change sequence.
 \textcite{burger_change_2010} go further by defining a change \metamodel, which provides a more formalized complete description of \metamodel changes, and allows \metamodels to be treated as usual models.
 
-In order to define more meaningful change types for the purpose of analyzing \metamodel evolution, \textcite{herrmannsdoerfer_extensive_2011} define a catalogue of 61 \metamodel evolution operators.
+In order to define \LK{} change types for the purpose of analyzing \metamodel evolution, \textcite{herrmannsdoerfer_extensive_2011} define a catalogue of 61 \metamodel evolution operators.
 %Instead of claiming that this list is complete for all possible \metamodel differences,
 They state that they ``consider [the catalogue] complete for practical application'' \cite{herrmannsdoerfer_extensive_2011}.
 Their catalogue is split into primitive operators, such as \emph{Create Class}, and complex operators, such as \emph{Move Property} or \emph{Extract Super Class}.
-In contrast to the atomic change types, these operators
-\LC{'atomic change types' == 'primitive operators' and hence 'these operators' 
-refers to 'complex operators? I find the phrasing a bit ambiguous here, due to 
-sudden re-appearance of 'atomic change types' vs. 'primitive operators' sentence
-before}\LK{No, ``these operators'' should refer to both primitive and complex 
-operators, since I disagree that atomic change type (e.g., create element) and 
-primitive operators (e.g., create class) are the same concept, although they are
-on a similar level of granularity.}
-\LC{I'm still not clear on the difference, and in any case think that difference
-is not clear in the paper as-is either. Do you mean to say that atomic change 
-\textit{types} are generic (e.g. your mentioned create element), and the 
-primitive operators like create class concretize them?} 
-\MA{I would disagree on ``semantically meaningful'': all operators represent MM 
-manipulations, which may sometimes align with what a modeller would think, but they
-rarely represent the ``meaning'' of \emph{\textbf{why}} (semantics...) a change 
-is done. Anyway, my suggestion is simplifying: ``\emph{These operators represent evolution steps on which [...]}''}
-represent semantically 
-meaningful evolution steps on which further analyses and automated co-evolution support can be built.
+%In contrast to the atomic change types, these operators
+%\LC{'atomic change types' == 'primitive operators' and hence 'these operators' 
+%refers to 'complex operators? I find the phrasing a bit ambiguous here, due to 
+%sudden re-appearance of 'atomic change types' vs. 'primitive operators' sentence
+%before}\LK{No, ``these operators'' should refer to both primitive and complex 
+%operators, since I disagree that atomic change type (e.g., create element) and 
+%primitive operators (e.g., create class) are the same concept, although they are
+%on a similar level of granularity.}
+%\LC{I'm still not clear on the difference, and in any case think that difference
+%is not clear in the paper as-is either. Do you mean to say that atomic change 
+%\textit{types} are generic (e.g. your mentioned create element), and the 
+%primitive operators like create class concretize them?} 
+%\MA{I would disagree on ``semantically meaningful'': all operators represent MM 
+%manipulations, which may sometimes align with what a modeller would think, but they
+%rarely represent the ``meaning'' of \emph{\textbf{why}} (semantics...) a change 
+%is done. Anyway, my suggestion is simplifying: ``\emph{These operators represent evolution steps on which [...]}''}
+%represent semantically 
+%meaningful evolution steps
+These operators represent evolution steps on which further analyses and automated co-evolution support can be built.
+\LC{Lars, are you ok with preceding simplified sentence suggested by Moussa? Also see the comment thread in source that I commented out, just above this sentence.}
+\LK{I don't have any objections regarding the sentence from Moussa, but as I told Hossain, we are using descriptions like ``semantically meaningful'' also in other places in the paper.}\LC{Hossain tells me we currently have 'semantically meaningful' in just two other spots. Shall we remove the mention there as well?}
+\LK{I'll check it after my next meeting, but in the end, we need some way of talking about the difference between the basic operators for changes and the ones intended for describing evolution processes.}
+\LK{I changed the occurences of ``meaningful'' in this context and left empty comments wherever I did so. Could you check if the text (including the sentences that surround the changed ones) is still coherent and describes the change types as we use them in our paper?}
 In addition to providing a list of \metamodel evolution operators, \textcite{herrmannsdoerfer_extensive_2011} discuss the impact of the described evolution steps on the models adhering to the evolved \metamodels.
 For our approach, we will characterize the performed evolution steps and analyze their impact on dependent view types by using the most important evolution operators, according to an industry study of \textcite{khelladi_detecting_2015} and as explained in \cref{sec:Suggestion:Operator}.
 
