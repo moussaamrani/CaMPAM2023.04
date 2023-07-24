@@ -15,11 +15,12 @@ plain \metamodels, they serve the specific purpose of showing the system from a 
 As such, \viewtypes can
 be seen as abstractions of the underlying \metamodel{}(s): information from
 the original \metamodel{}(s) may be lost (i.e. irrelevant for the view), other
-may be presented differently (simplified, aggregated, etc.). Therefore, our
+may be presented differently (simplified, aggregated such as \textsf{nbStates} in
+\cref{fig:VT:VMM}, etc.). Therefore, our
 \textsf{Suggestion}s closely follow what an \textsf{Operator} describes on
 the evolved \metamodel, but translates this evolution into \emph{all} impacted
 elements of \emph{all} \viewtypes, as described in \cref{tab:suggestions}.
-This is made possible by the traceability \textsf{Relation} 
+This is a key feature of our approach, and this is made possible by the traceability \textsf{Relation} 
 (cf. \cref{fig:Relation}) that traces the impacted \viewtype elements by a change.
 Extending our approach to plain \metamodels, instead of \viewtypes, may partially
 work depending on the nature of the co-evolved \metamodels and how
@@ -32,8 +33,11 @@ is to \emph{also} provide \textsf{Suggestion}s at the VGT level to help the
 methodologist correct how information is represented (from models to the views),
 but also how edits in views may translate back into the various models specifying
 the system. We briefly sketched in our example how simple cases for the first 
-direction may be addressed; the reverse direction is more complicated and requires
-further research.
+direction may be addressed. The reverse direction is way more complicated, and 
+requires further research. 
+It will likely imposes to refine our conceptual model to integrate information
+on VGTs, and \textsf{Suggestion}s would highly depend on how precise 
+\textsf{Relation}s are computed. 
 
 Third, evolving a \metamodel and its associated \viewtypes naturally requires to
 co-evolve the corresponding 

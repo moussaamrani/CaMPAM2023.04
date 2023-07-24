@@ -5,8 +5,7 @@
     \centering
      \includegraphics[width=\columnwidth]{images/Suggestion.pdf}
     %\includegraphics[width=\columnwidth]{images/SuggestionWithCondition.pdf}
-    \caption{A \textsf{Suggestion} holds for a single \textsf{Operator}%\LC{Operator \textit{instance}, I reckon?}\LK{In the diagram we show the classes, but an instance of a suggestion would therefore contain an instance of an operator, right?}
-    linked to 
+    \caption{A \textsf{Suggestion} holds for a single \textsf{Operator} linked to 
 		elements in a View Type through \textsf{Relation}s, and consists of a set of \textsf{Recommendation}s and \textsf{Condition}s} 
 		\label{fig:Suggestion}
 \end{figure}
@@ -31,7 +30,7 @@ We identified the MM change \textsf{Operator}s based on the work of \textcite{he
 % Those were selected because according to \textcite{khelladi_detecting_2015}, 
 % they constitute 72\% of all complex changes appearing in a large case study. 
 
-\textsf{Operator}s are enriched with \emph{severity}: \textsf{MAJOR}, 
+\textsf{Operator}s are enriched with a \textsf{severity}: \textsf{MAJOR}, 
 \textsf{MINOR} and \textsf{IGNORE}. 
 When applied to a \metamodel, the \textsf{Operator}s in \textsf{IGNORE} have no 
 effect on the corresponding \viewtypes; \textsf{Operator}s that can break the 
@@ -49,7 +48,10 @@ breaking but can enrich the \viewtypes with additional information.
 Back to our example, the evolution steps of \cref{fig:FSM} make use of different \textsf{Operator}s.
 \begin{itemize}
 	\item In Step 1 (depicted from \cref{fig:FSM:Init} to \cref{fig:FSM:Relevant}),
-	the following sequence of \textsf{Operator}s is applied:
+	the following sequence of \textsf{Operator}s is applied
+	\footnote{Here and going forward, for brevity, we abstract from the \textsf{type}
+	of elements created or deleted, e.g.~simply using \textsf{Create} instead of 
+	\textsf{Create ATTribute} etc.}:
 	$$\langle \mathsf{PushProperty} \cdot \mathsf{Rename} \cdot \mathsf{Rename} \rangle$$
 	First, \textsf{PushProperty} pushes down $\mathsf{Named} \squaredots \mathsf{name}$
 	(i.e. pushes down the \textsf{element} \textsf{name} in the \textsf{container}
@@ -59,7 +61,7 @@ Back to our example, the evolution steps of \cref{fig:FSM} make use of different
 	\textsf{name}, located respectively in \textsf{container}s $\mathsf{FSM}$ and 
 	$\mathsf{Transition}$, thus obtaining the result of \cref{fig:FSM:Relevant}.
 	
-	\item Step 2 only consists of the following \textsf{Operator} sequence:\footnote{Here and going forward, for brevity, we abstract from the \textsf{type} of elements created or deleted, e.g.~simply using \textsf{Create} instead of \textsf{Create ATTribute} etc.}
+	\item Step 2 only consists of the following \textsf{Operator} sequence:
 	$$\langle \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \cdot \mathsf{Create} \rangle$$
     % \LK{\textsf{Create} and \textsf{Delete} are not listed by Herrmannsdoerfer as evolution operators. The primitive operators are, e.g., \textsf{Create Class} or \textsf{Delete Class}.}\LC{Good point; I've added a footnote above}
 	where three of these \textsf{Operator}s add a new \textsf{ATT}ribute \textsf{element}
@@ -71,7 +73,7 @@ Back to our example, the evolution steps of \cref{fig:FSM} make use of different
 	a new class hieararchy under \textsf{Expression}. However, this sequence may
 	start with the following:
 	$$\langle \mathsf{Delete}^3 \cdot \mathsf{Create}^2 \cdot \ldots \rangle$$
-	The initial \textsf{Delete}s undo the three \textsf{Create} \textsf{Operators}s 
+	The initial \textsf{Delete}s undo the three \textsf{Create} \textsf{Operator}s 
 	of Step 2
 	(thus, referring to the same \textsf{element}s and \textsf{container}); and
 	the two following \textsf{Create}s create the new \textsf{Expression} class
