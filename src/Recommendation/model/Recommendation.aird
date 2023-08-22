@@ -5,7 +5,7 @@
     <semanticResources>Recommendation.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_aHWQsBshEe6hn_3F6RZDaw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_aII64BshEe6hn_3F6RZDaw" name="Recommendation" repPath="#_aICNMBshEe6hn_3F6RZDaw" changeId="4e027e42-d442-4918-bd05-3588d849d19b">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_aII64BshEe6hn_3F6RZDaw" name="Recommendation" repPath="#_aICNMBshEe6hn_3F6RZDaw" changeId="42f733dd-fb26-49eb-919e-8ba668ca75a7">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="Recommendation.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -272,6 +272,7 @@
         <semanticElements xmi:type="ecore:EAttribute" href="Recommendation.ecore#//Recommendation/type"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_1eEdBh8NEe6RJ5Jltnz5vA" labelAlignment="LEFT" description="_o5rckBshEe6hn_3F6RZDaw">
           <customFeatures>labelColor</customFeatures>
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -280,6 +281,7 @@
         <semanticElements xmi:type="ecore:EAttribute" href="Recommendation.ecore#//Recommendation/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_lFAxoR8SEe6RJ5Jltnz5vA" labelAlignment="LEFT" description="_o5rckBshEe6hn_3F6RZDaw">
           <customFeatures>labelColor</customFeatures>
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -321,6 +323,7 @@
         <semanticElements xmi:type="ecore:EAttribute" href="Recommendation.ecore#//UP/previous"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_o5sDoRshEe6hn_3F6RZDaw" labelAlignment="LEFT" description="_o5rckBshEe6hn_3F6RZDaw">
           <customFeatures>labelColor</customFeatures>
+          <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
@@ -475,8 +478,9 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HECw8CJKEe6XDduCWbK8aQ" description="_UYjixh8PEe6RJ5Jltnz5vA" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HECw8iJKEe6XDduCWbK8aQ" showIcon="false">
           <customFeatures>labelColor</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_HECw8SJKEe6XDduCWbK8aQ" showIcon="false">
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_HECw8SJKEe6XDduCWbK8aQ" labelSize="6" showIcon="false">
           <customFeatures>labelColor</customFeatures>
         </endLabelStyle>
       </ownedStyle>
@@ -489,6 +493,7 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_UYjiyx8PEe6RJ5Jltnz5vA" showIcon="false">
           <customFeatures>labelColor</customFeatures>
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_UYjiyh8PEe6RJ5Jltnz5vA" showIcon="false">
           <customFeatures>labelColor</customFeatures>
@@ -504,6 +509,7 @@
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_WamTDh8PEe6RJ5Jltnz5vA" showIcon="false">
           <customFeatures>labelColor</customFeatures>
           <customFeatures>labelSize</customFeatures>
+          <labelFormat>bold</labelFormat>
         </centerLabelStyle>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_WamTDR8PEe6RJ5Jltnz5vA" showIcon="false">
           <customFeatures>labelColor</customFeatures>

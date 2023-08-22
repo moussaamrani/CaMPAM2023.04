@@ -9,7 +9,7 @@
             </linearGradient>
             <linearGradient x1="140" x2="211" y1="60" gradientUnits="userSpaceOnUse" y2="115" xlink:type="simple" xlink:actuate="onLoad" id="linearGradient2" xlink:show="other" spreadMethod="pad">
                 <stop stop-opacity="1" stop-color="white" offset="0%"/>
-                <stop stop-opacity="1" stop-color="rgb(255,252,216)" offset="100%"/>
+                <stop stop-opacity="1" stop-color="rgb(228,228,228)" offset="100%"/>
             </linearGradient>
             <linearGradient x1="220" x2="311" y1="55" gradientUnits="userSpaceOnUse" y2="121" xlink:type="simple" xlink:actuate="onLoad" id="linearGradient3" xlink:show="other" spreadMethod="pad">
                 <stop stop-opacity="1" stop-color="white" offset="0%"/>
@@ -45,10 +45,10 @@
                 <path d="M139 67 L212 67 L212 108 L139 108 L139 67 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath8">
-                <path d="M141 72 L209 72 L209 90 L141 90 L141 72 Z"/>
+                <path d="M143 72 L207 72 L207 90 L143 90 L143 72 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
-                <path d="M141 72 L211 72 L211 90 L141 90 L141 72 Z"/>
+                <path d="M143 72 L209 72 L209 90 L143 90 L143 72 Z"/>
             </clipPath>
             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath10">
                 <path d="M140 93 L211 93 L211 107 L140 107 L140 93 Z"/>
@@ -142,10 +142,10 @@
             <rect x="141" y="69" clip-path="url(#clipPath6)" fill="rgb(131,122,133)" width="71" rx="4" opacity="0.255" ry="4" height="39" stroke="none"/>
             <rect x="142" y="70" clip-path="url(#clipPath6)" fill="rgb(131,122,133)" width="71" rx="4" opacity="0.255" ry="4" height="39" stroke="none"/>
             <rect x="140" y="68" clip-path="url(#clipPath7)" fill="url(#linearGradient2)" width="71" rx="4" ry="4" height="39" stroke="none"/>
-            <rect x="140" y="68" clip-path="url(#clipPath7)" fill="none" width="70" rx="4" ry="4" height="38"/>
-            <image x="142" y="73" width="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAsklEQVR4XqWQ0QoB&#13;&#10;QRSG941sEhJ5F1HaViRCpKwoN25cUFI8khuvYvbq8IuaOuaftr34mmm+ztdpAhEJ&#13;&#10;8qAesqIeLouC+PAGTHp34g2c56EasoGngeM0lKd5fDDpl9/9fcLTwGFSlNsplqsD&#13;&#10;eBrYj0tqbRt4GtgNy2rIBp4G1v0K/QN4GljGVUm2K0k2/4GngVlUU2vbwNPAqFtX&#13;&#10;QzbwNDDoNOgfwNNAr92UqOUGngay8gIKdwdeFkAbDAAAAABJRU5ErkJggg==" xlink:type="simple" xlink:actuate="onLoad" height="16" preserveAspectRatio="none" xlink:show="embed"/>
-            <text x="161" xml:space="preserve" y="85" clip-path="url(#clipPath9)" stroke="none">Operator</text>
-            <line y2="94" fill="none" x1="141" clip-path="url(#clipPath10)" x2="210" y1="94"/>
+            <rect x="140" y="68" clip-path="url(#clipPath7)" fill="none" width="70" rx="4" ry="4" height="38" stroke="rgb(125,125,125)"/>
+            <image stroke="rgb(125,125,125)" width="16" xlink:show="embed" xlink:type="simple" fill="rgb(125,125,125)" preserveAspectRatio="none" height="16" font-style="italic" x="144" y="73" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAw0lEQVR4XmP4//8/&#13;&#10;AyUYQgApZIyuCB8Ga0YHILG5Nfo4MUgJDMMNQLIdTP/4eRErxmkAMsBnwOxqA7AS&#13;&#10;GMbpgu8/rgE1QDGMDaSnV2AxAKoRJgDmL5iRgxVPLjdCNQCZA8J9pSYYzkbGIHm8&#13;&#10;BnQWmWFoQsYgebwGNOebg/2PKwxA8ngNqMux+N/U1vi/qRU7BsnjNaAyywrD2cgY&#13;&#10;JI/XgJIMGwxNyBgkj9eAglRbvGEAksdrQG6K/f+sJNwYJI/XAFIxAHIn7dCPjVWK&#13;&#10;AAAAAElFTkSuQmCC" xlink:actuate="onLoad"/>
+            <text font-style="italic" x="163" xml:space="preserve" y="85" clip-path="url(#clipPath9)" stroke="none">Operator</text>
+            <line clip-path="url(#clipPath10)" fill="none" x1="141" x2="210" y1="94" y2="94" stroke="rgb(125,125,125)"/>
             <rect x="221" y="68" clip-path="url(#clipPath11)" fill="rgb(131,122,133)" width="91" rx="4" opacity="0.255" ry="4" height="41" stroke="none"/>
             <rect x="222" y="69" clip-path="url(#clipPath11)" fill="rgb(131,122,133)" width="91" rx="4" opacity="0.255" ry="4" height="41" stroke="none"/>
             <rect x="220" y="67" clip-path="url(#clipPath12)" fill="url(#linearGradient3)" width="91" rx="4" ry="4" height="41" stroke="none"/>
