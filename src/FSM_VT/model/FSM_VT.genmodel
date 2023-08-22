@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/FSM_VT/src-gen" creationIcons="false" editDirectory="/FSM_VT.edit/src-gen"
+    editorDirectory="/FSM_VT.editor/src-gen" modelPluginID="FSM_VT" modelName="FSM_VT"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>FSM_VT.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="FSM_VT" disposableProviderFactory="true" ecorePackage="FSM_VT.ecore#/">
+    <genClasses ecoreClass="FSM_VT.ecore#//VT_FSM">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FSM_VT.ecore#//VT_FSM/states"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM_VT.ecore#//VT_FSM/nbStates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM_VT.ecore#//VT_FSM/nbTransitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM_VT.ecore#//VT_FSM/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM_VT.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FSM_VT.ecore#//State/transitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM_VT.ecore#//State/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM_VT.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM_VT.ecore#//Transition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM_VT.ecore#//Initial"/>
+    <genClasses ecoreClass="FSM_VT.ecore#//Regular"/>
+  </genPackages>
+</genmodel:GenModel>

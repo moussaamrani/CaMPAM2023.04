@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Visual" nsURI="https://www.unamur.be/Visual" nsPrefix="Visual">
+  <eClassifiers xsi:type="ecore:EClass" name="Canvas">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
+        eType="#//Form" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" lowerBound="1"
+        eType="#//RGB"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rountangle" eSuperTypes="#//Form">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linecolor" lowerBound="1"
+        eType="#//RGB"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arrow" eSuperTypes="#//Form">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1" eType="#//AType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="#//AType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextArea" eSuperTypes="#//Form">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AType">
+    <eLiterals name="OPEN"/>
+    <eLiterals name="PLAIN" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RGB" instanceTypeName="newDataType2"/>
+</ecore:EPackage>

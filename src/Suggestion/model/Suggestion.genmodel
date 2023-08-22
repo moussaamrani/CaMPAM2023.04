@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Suggestion/src-gen" creationIcons="false" editDirectory="/Suggestion.edit/src-gen"
+    editorDirectory="/Suggestion.editor/src-gen" modelPluginID="Suggestion" modelName="Suggestion"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Suggestion.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Suggestion" disposableProviderFactory="true" ecorePackage="Suggestion.ecore#/">
+    <genClasses ecoreClass="Suggestion.ecore#//Suggestion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Suggestion.ecore#//Suggestion/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Suggestion.ecore#//Suggestion/relations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Suggestion.ecore#//Suggestion/recommendations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Suggestion.ecore#//Suggestion/conditions"/>
+    </genClasses>
+    <genClasses ecoreClass="Suggestion.ecore#//Operator"/>
+    <genClasses ecoreClass="Suggestion.ecore#//Relation"/>
+    <genClasses ecoreClass="Suggestion.ecore#//Recommendation"/>
+    <genClasses ecoreClass="Suggestion.ecore#//Condition"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Recommendation/src-gen" creationIcons="false"
+    editDirectory="/Recommendation.edit/src-gen" editorDirectory="/Recommendation.editor/src-gen"
+    modelPluginID="Recommendation" modelName="Recommendation" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Recommendation.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Recommendation" disposableProviderFactory="true" ecorePackage="Recommendation.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Recommendation.ecore#//TYPE">
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/PKG"/>
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/CLASS"/>
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/ATT"/>
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/REF"/>
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/ENUM"/>
+      <genEnumLiterals ecoreEnumLiteral="Recommendation.ecore#//TYPE/LIT"/>
+    </genEnums>
+    <genClasses ecoreClass="Recommendation.ecore#//Recommendation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Recommendation.ecore#//Recommendation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Recommendation.ecore#//Recommendation/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Recommendation.ecore#//Recommendation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Recommendation.ecore#//ADD"/>
+    <genClasses ecoreClass="Recommendation.ecore#//DEL"/>
+    <genClasses ecoreClass="Recommendation.ecore#//UP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Recommendation.ecore#//UP/previous"/>
+    </genClasses>
+    <genClasses ecoreClass="Recommendation.ecore#//MOVE">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Recommendation.ecore#//MOVE/src"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Recommendation.ecore#//MOVE/tgt"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Recommendation.ecore#//VT%3A%3ANamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Recommendation.ecore#//VT%3A%3ANamedElement/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

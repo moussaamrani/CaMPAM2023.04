@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Visual/src-gen" creationIcons="false" editDirectory="/Visual.edit/src-gen"
+    editorDirectory="/Visual.editor/src-gen" modelPluginID="Visual" modelName="Visual"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Visual.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Visual" disposableProviderFactory="true" ecorePackage="Visual.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Visual.ecore#//AType">
+      <genEnumLiterals ecoreEnumLiteral="Visual.ecore#//AType/OPEN"/>
+      <genEnumLiterals ecoreEnumLiteral="Visual.ecore#//AType/PLAIN"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="Visual.ecore#//RGB"/>
+    <genClasses ecoreClass="Visual.ecore#//Canvas">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Canvas/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Canvas/height"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Visual.ecore#//Canvas/forms"/>
+    </genClasses>
+    <genClasses ecoreClass="Visual.ecore#//Form">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Form/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Form/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Form/background"/>
+    </genClasses>
+    <genClasses ecoreClass="Visual.ecore#//Rountangle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Rountangle/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Rountangle/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Rountangle/linecolor"/>
+    </genClasses>
+    <genClasses ecoreClass="Visual.ecore#//Arrow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Arrow/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//Arrow/end"/>
+    </genClasses>
+    <genClasses ecoreClass="Visual.ecore#//TextArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Visual.ecore#//TextArea/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

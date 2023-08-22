@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Change/src-gen" creationIcons="false" editDirectory="/Change.edit/src-gen"
+    editorDirectory="/Change.editor/src-gen" modelPluginID="Change" modelName="Change"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Change.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Change" disposableProviderFactory="true" ecorePackage="Change.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Change.ecore#//Severity">
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//Severity/MINOR"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//Severity/MAJOR"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//Severity/IGNORE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Change.ecore#//TYPE">
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/PKG"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/CLASS"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/ATT"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/REF"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/ENUM"/>
+      <genEnumLiterals ecoreEnumLiteral="Change.ecore#//TYPE/LIT"/>
+    </genEnums>
+    <genClasses ecoreClass="Change.ecore#//Operator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//Operator/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//Operator/severity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//Operator/container"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//Create"/>
+    <genClasses ecoreClass="Change.ecore#//Rename">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//Rename/previous"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//Rename/new"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//MoveProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//MoveProperty/targetClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//Delete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//Delete/deletedName"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//MM%3A%3ANamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//MM%3A%3ANamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//PushProperty"/>
+    <genClasses ecoreClass="Change.ecore#//PullProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//PullProperty/targetClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//ExtractSuperclass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//ExtractSuperclass/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//ExtractSuperclass/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//FlattenHierarchy"/>
+    <genClasses ecoreClass="Change.ecore#//InlineClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//InlineClass/className"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//ExtractClass">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Change.ecore#//ExtractClass/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//Primitive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//Primitive/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//ChangePackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//ChangePackage/previous"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Change.ecore#//ChangePackage/new"/>
+    </genClasses>
+    <genClasses ecoreClass="Change.ecore#//Complex"/>
+  </genPackages>
+</genmodel:GenModel>

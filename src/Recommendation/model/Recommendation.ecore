@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Recommendation" nsURI="https://www.unamur.be/Recommendation"
+    nsPrefix="Recommendation">
+  <eClassifiers xsi:type="ecore:EClass" name="Recommendation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TYPE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+        eType="#//VT%3A%3ANamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ADD" eSuperTypes="#//Recommendation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DEL" eSuperTypes="#//Recommendation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UP" eSuperTypes="#//Recommendation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previous" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TYPE">
+    <eLiterals name="PKG"/>
+    <eLiterals name="CLASS" value="1"/>
+    <eLiterals name="ATT" value="2"/>
+    <eLiterals name="REF" value="3"/>
+    <eLiterals name="ENUM" value="4"/>
+    <eLiterals name="LIT" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MOVE" eSuperTypes="#//Recommendation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//VT%3A%3ANamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgt" lowerBound="1" eType="#//VT%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VT::NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

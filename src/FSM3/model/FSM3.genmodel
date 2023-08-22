@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/FSM3/src-gen" creationIcons="false" editDirectory="/FSM3.edit/src-gen"
+    editorDirectory="/FSM3.editor/src-gen" modelPluginID="FSM3" modelName="FSM3" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>FSM3.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="FSM3" disposableProviderFactory="true" ecorePackage="FSM3.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FSM3.ecore#//Kind">
+      <genEnumLiterals ecoreEnumLiteral="FSM3.ecore#//Kind/REGULAR"/>
+      <genEnumLiterals ecoreEnumLiteral="FSM3.ecore#//Kind/INITIAL"/>
+      <genEnumLiterals ecoreEnumLiteral="FSM3.ecore#//Kind/FINAL"/>
+    </genEnums>
+    <genClasses ecoreClass="FSM3.ecore#//FSM">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FSM3.ecore#//FSM/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FSM3.ecore#//FSM/transitions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM3.ecore#//FSM/title"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM3.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM3.ecore#//State/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM3.ecore#//State/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM3.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FSM3.ecore#//Transition/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FSM3.ecore#//Transition/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="FSM3.ecore#//Expression"/>
+  </genPackages>
+</genmodel:GenModel>

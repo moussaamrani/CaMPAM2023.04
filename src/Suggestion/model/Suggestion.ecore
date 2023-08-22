@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Suggestion" nsURI="https://www.unamur.be/Suggestion" nsPrefix="Suggestion">
+  <eClassifiers xsi:type="ecore:EClass" name="Suggestion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operator" lowerBound="1"
+        eType="#//Operator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recommendations" upperBound="-1"
+        eType="#//Recommendation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operator" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Recommendation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true"/>
+</ecore:EPackage>

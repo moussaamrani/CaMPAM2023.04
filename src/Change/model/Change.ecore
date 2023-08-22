@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Change" nsURI="https://www.unamur.be/Change" nsPrefix="Change">
+  <eClassifiers xsi:type="ecore:EClass" name="Operator" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//MM%3A%3ANamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
+        eType="#//Severity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//MM%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Create" eSuperTypes="#//Primitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rename" eSuperTypes="#//Primitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previous" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MoveProperty" eSuperTypes="#//Complex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" lowerBound="1"
+        eType="#//MM%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delete" eSuperTypes="#//Primitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deletedName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MM::NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PushProperty" eSuperTypes="#//Complex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PullProperty" eSuperTypes="#//Complex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetClass" lowerBound="1"
+        eType="#//MM%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtractSuperclass" eSuperTypes="#//Complex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1"
+        upperBound="-1" eType="#//MM%3A%3ANamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//MM%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlattenHierarchy" eSuperTypes="#//Complex"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InlineClass" eSuperTypes="#//Complex">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtractClass" eSuperTypes="#//Complex">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//MM%3A%3ANamedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="MINOR"/>
+    <eLiterals name="MAJOR" value="1"/>
+    <eLiterals name="IGNORE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TYPE">
+    <eLiterals name="PKG"/>
+    <eLiterals name="CLASS" value="1"/>
+    <eLiterals name="ATT" value="2"/>
+    <eLiterals name="REF" value="3"/>
+    <eLiterals name="ENUM" value="4"/>
+    <eLiterals name="LIT" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primitive" abstract="true" eSuperTypes="#//Operator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TYPE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangePackage" eSuperTypes="#//Primitive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previous" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="new" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Complex" abstract="true" eSuperTypes="#//Operator"/>
+</ecore:EPackage>
