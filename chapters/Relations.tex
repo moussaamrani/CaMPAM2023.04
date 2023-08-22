@@ -3,9 +3,12 @@
 
 The \textsf{Relation} part provides traceability links between \textsf{MM}
 and all the corresponding \textsf{changed} and \textsf{impacted} elements.
-One \textsf{MM} element change
-may impact several elements in the same \viewtype, but may also potentially
-impact several \viewtypes. We only require so-called \emph{links}; however richer
+One \textsf{MM} element change may impact several elements in the same \viewtype,
+but may also potentially impact several \viewtypes. To represent that, we create
+a set of \textsf{Link}s related to one \textsf{Operator} with all the \textsf{impacted}
+\viewtype element; and a set of \textsf{Relation}s for all the \viewtypes that 
+need to adapt to the change represented by the \textsf{Operator}.
+We only require so-called \emph{links}; however richer
 data structures for traceability may be used \cite{Batot-Cabot-Gerard:2021}.
 
 The way these traceability links are computed are left as implementation
